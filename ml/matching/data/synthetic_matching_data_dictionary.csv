@@ -1,0 +1,30 @@
+Column,Data_Type,Description,Role,Missing_Pct
+Data_Source,string,"Always 'synthetic' — this dataset is simulated, not real platform records.",info,0.0
+Match_ID,string,Unique id of one donation offered to one organization (e.g. MAT000001).,id,0.0
+Donation_ID,string,Donation identifier; one donation is offered to 4–6 candidate organizations.,id,0.0
+Org_ID,string,Organization identifier (fictional organization).,id,0.0
+Date,string (date),Date the donation was posted. Mixed formats YYYY-MM-DD and DD/MM/YYYY.,feature (day of week),0.0
+Time_Posted,string (time),Time posted. Mixed formats HH:MM and hh:mm AM/PM.,feature (hour),0.0
+Day_of_Week,categorical,Weekday of the donation.,feature,0.0
+Business_Type,categorical,"Donor business type (from the Kaggle dataset): Restaurant, Supermarket, Cafeteria, Cloud Kitchen.",feature,0.0
+Food_Category,categorical,"Fruits, Vegetables, Dairy, Bakery, Meat, Prepared Food. Some values in UPPER CASE.",feature,0.0
+Quantity_Units,integer,Units offered (sampled from Kaggle leftover stock). A few impossible values (0 or negative).,feature,0.0
+Hours_To_Expiry,float,"Hours until the food's safe-use deadline. ~2% missing, a few impossible 9999 values.",feature,1.9
+Storage_Required,categorical,"Ambient, Refrigerated or Frozen. Inconsistent spellings (Fridge, CHILLED, Room Temp...). ~2% missing.",feature,2.1
+Donor_Area,categorical,Dhaka area of the donor.,dropped (identity/location proxy; distance is used instead),0.0
+Org_Name,string,Fictional organization name.,dropped (identifier),0.0
+Org_Type,categorical,"NGO, Community Kitchen, Shelter, Food Bank, Orphanage. Some lower-case/trailing spaces, ~1% missing.",feature,1.2
+Org_Area,categorical,Dhaka area of the organization.,dropped (identity/location proxy),0.0
+Accepts_Category,Yes/No,Whether the organization accepts this food category. Mixed Yes/yes/Y/TRUE.,feature,0.0
+Has_Required_Storage,Yes/No,Whether it has the storage the food needs.,feature,0.0
+Daily_Capacity_Units,integer,Units the organization can receive per day.,feature,0.0
+Capacity_Remaining_Units,integer,"Free capacity at posting time. ~2.5% missing, a few impossible values above daily capacity.",feature,2.5
+Past_Acceptance_Rate,float 0–1,"Share of earlier offers the organization completed. ~3% missing, ~1% entered as percentages (e.g. 85.0).",feature,2.9
+Open_At_Post_Time,Yes/No,Whether the organization was open when the donation was posted.,feature,0.0
+Hours_Until_Open,float,Hours until the organization opens (0 if open).,feature,0.0
+Distance_km,float,"Straight-line distance donor → organization. ~3% missing, some as text '3.4 km', a few negative.",feature,3.1
+Est_Travel_Time_min,float,Estimated travel time in Dhaka traffic. ~2% missing.,feature,2.0
+Accepted,Yes/No,Organization said yes. Known only AFTER the offer.,LEAKAGE — not used as input,0.0
+Delivered_Quantity,integer,Units actually received. Known only after delivery.,LEAKAGE — not used as input,0.0
+Failure_Reason,string,Why the match failed. Known only after the outcome.,LEAKAGE — not used as input,0.0
+Successful_Match,Yes/No (target),TARGET: organization accepted AND received the food before expiry. Includes ~2% label noise.,target,0.0
