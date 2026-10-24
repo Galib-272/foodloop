@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm off-white canvas, white surfaces, charcoal text */
+    --background: 42 38% 97%;
+    --foreground: 150 12% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 12% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 12% 13%;
+    /* Forest green primary, fresh green secondary */
+    --primary: 152 46% 22%;
+    --primary-foreground: 42 38% 97%;
+    --secondary: 138 52% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 22% 93%;
+    --muted-foreground: 150 6% 38%;
+    --accent: 140 36% 92%;
+    --accent-foreground: 152 46% 18%;
+    --destructive: 2 68% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 46%;
+    --warning-foreground: 30 80% 12%;
+    --success: 142 62% 32%;
+    --success-foreground: 0 0% 100%;
+    --border: 40 16% 87%;
+    --input: 40 16% 82%;
+    --ring: 138 52% 40%;
+    --chart-1: 152 46% 22%;
+    --chart-2: 138 52% 40%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 200 50% 42%;
+    --chart-5: 12 70% 52%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .bg-grain {
+    background-image: radial-gradient(
+        circle at 15% 10%,
+        hsl(var(--accent)) 0,
+        transparent 38%
+      ),
+      radial-gradient(circle at 90% 30%, hsl(140 45% 90% / 0.7) 0, transparent 34%);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
