@@ -1,0 +1,27 @@
+{
+  "leftover_regression": {
+    "MAE": 7.818,
+    "RMSE": 12.393,
+    "R2": 0.915,
+    "baseline_mean_MAE": 22.733,
+    "baseline_rule_MAE": 7.773,
+    "baseline_rule_R2": 0.915,
+    "interval_80_coverage": 0.814,
+    "within_10_units": 0.711
+  },
+  "waste_level_classification": {
+    "accuracy": 0.712,
+    "precision_macro": 0.69,
+    "recall_macro": 0.643,
+    "f1_macro": 0.66,
+    "precision_weighted": 0.71,
+    "recall_weighted": 0.712,
+    "f1_weighted": 0.707,
+    "roc_auc_ovr_macro": 0.859,
+    "baseline_accuracy": 0.533
+  },
+  "selected": {
+    "leftover": "Gradient Boosting",
+    "waste_level": "Random Forest"
+  }
+}
