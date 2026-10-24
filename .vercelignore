@@ -1,0 +1,12 @@
+# Not needed by the live website (keeps the upload small).
+# A leading "/" means "only at the top of the project" (so /data does not hide ml/waste/data).
+/node_modules
+/.next
+/data
+/presentation
+/figma
+/tests
+/ml/matching
+/ml/waste/data/processed
+/ml/waste/reports
+/ml/**/*.ipynb
