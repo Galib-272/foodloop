@@ -1,0 +1,17 @@
+{
+  "selected": "Gradient Boosting",
+  "test": {
+    "accuracy": 0.811,
+    "precision": 0.733,
+    "recall": 0.842,
+    "f1": 0.784,
+    "roc_auc": 0.877,
+    "baseline_accuracy": 0.593
+  },
+  "ranking_top_pick": {
+    "AI model (top probability)": 0.753,
+    "Rule-based weighted score": 0.756,
+    "Nearest organization": 0.732,
+    "Random eligible organization": 0.702
+  }
+}
