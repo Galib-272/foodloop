@@ -1,0 +1,1204 @@
+Date,Business_Type,Food_Category,Purchase_Quantity,Units_Sold,Remaining_Stock,Shelf_Life_Days,Storage_Temperature,Daily_Demand,Promotion,Weather,Waste_Quantity,Waste_Reason,Donation_Made,Waste_Level
+2025-09-13,Supermarket,Bakery,141,80,61,4.0,12.8,80.0,0,Rainy,17,Overproduction,1.0,High
+2025-09-13,Supermarket,Meat,166,88,78,4.0,1.3,,0,Rainy,14,Overproduction,1.0,Medium
+2025-09-13,Restaurant,Meat,83,74,9,1.0,1.5,74.0,0,Cloudy,3,Expired,0.0,Medium
+2025-09-13,Supermarket,Dairy,157,125,32,2.0,1.0,125.0,0,Sunny,9,Expired,0.0,Medium
+2025-09-13,Restaurant,Prepared Food,87,86,1,1.0,27.3,86.0,0,Hot,0,No Waste,0.0,Low
+2025-09-13,Restaurant,Dairy,127,127,0,8.0,1.7,131.0,1,Hot,0,No Waste,0.0,Low
+2025-09-13,Restaurant,Fruits,77,67,10,2.0,2.1,67.0,0,Cloudy,3,Expired,0.0,Medium
+2025-09-13,Restaurant,Fruits,98,98,0,6.0,10.7,109.0,1,Cloudy,0,No Waste,0.0,Low
+2025-09-13,Supermarket,Dairy,123,123,0,3.0,3.0,151.0,0,Rainy,0,No Waste,0.0,Low
+2025-09-13,Supermarket,Bakery,190,129,61,3.0,19.2,129.0,0,Hot,14,Overproduction,0.0,Medium
+2025-09-13,Cafeteria,Fruits,58,54,4,7.0,3.8,54.0,0,Hot,1,Low Demand,0.0,Low
+2025-09-13,Cafeteria,Fruits,55,54,1,7.0,8.7,54.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-13,Cloud Kitchen,Dairy,91,91,0,8.0,5.2,118.0,0,Hot,0,No Waste,0.0,Low
+2025-09-13,Cafeteria,Vegetables,88,64,24,5.0,5.9,64.0,1,Rainy,5,Low Demand,0.0,Medium
+2025-09-13,Cafeteria,Vegetables,42,42,0,3.0,4.4,44.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-13,Restaurant,Bakery,114,79,35,7.0,15.4,79.0,1,Cloudy,8,Overproduction,0.0,Medium
+2025-09-13,Supermarket,Dairy,168,149,19,4.0,5.5,149.0,0,Sunny,4,Expired,0.0,Medium
+2025-09-13,Cloud Kitchen,Meat,118,78,40,5.0,-1.5,78.0,0,Cloudy,5,Overproduction,0.0,Medium
+2025-09-13,Cafeteria,Bakery,56,55,1,4.0,26.6,55.0,0,Sunny,0,No Waste,,Low
+2025-09-13,Restaurant,Meat,79,64,15,7.0,1.6,64.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-09-13,Cloud Kitchen,Fruits,131,58,73,9.0,8.5,58.0,0,Rainy,16,Overproduction,1.0,High
+2025-09-13,Cafeteria,Prepared Food,78,69,9,2.0,7.0,69.0,0,Hot,2,Low Demand,0.0,Medium
+2025-09-13,Cafeteria,Meat,65,65,0,7.0,4.6,87.0,1,Hot,0,No Waste,0.0,Low
+2025-09-13,Restaurant,Prepared Food,53,53,0,2.0,16.5,88.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-13,Cafeteria,Dairy,62,62,0,2.0,3.8,65.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-13,Cafeteria,Vegetables,65,65,0,7.0,8.2,79.0,0,Hot,0,No Waste,0.0,Low
+2025-09-13,Cafeteria,Vegetables,64,52,12,8.0,12.8,52.0,0,,3,Storage Issue,1.0,Medium
+2025-09-13,Supermarket,Meat,164,164,0,4.0,3.9,205.0,1,Sunny,0,No Waste,0.0,Medium
+2025-09-13,Cafeteria,Bakery,82,51,31,2.0,21.8,51.0,0,Cloudy,6,Low Demand,1.0,Medium
+2025-09-13,Supermarket,Bakery,131,131,0,4.0,15.0,137.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-13,Cloud Kitchen,Fruits,95,95,0,4.0,10.1,118.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-13,Restaurant,Vegetables,90,90,0,7.0,5.8,91.0,0,Hot,0,No Waste,0.0,Low
+2025-09-14,Cafeteria,Vegetables,55,54,1,7.0,7.7,54.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-14,Cloud Kitchen,Fruits,84,84,0,8.0,12.3,102.0,0,Hot,0,No Waste,0.0,Low
+2025-09-14,Supermarket,Fruits,157,157,0,4.0,8.5,193.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-14,Restaurant,Dairy,55,55,0,7.0,6.9,72.0,0,Rainy,0,No Waste,0.0,Low
+2025-09-14,Cafeteria,Bakery,87,39,48,2.0,23.4,39.0,0,Rainy,18,Overproduction,1.0,High
+2025-09-14,Restaurant,Dairy,76,73,3,1.0,3.9,73.0,0,Sunny,1,Expired,0.0,Low
+2025-09-14,Restaurant,Meat,121,71,50,3.0,2.8,71.0,0,Cloudy,12,Overproduction,1.0,High
+2025-09-14,Cloud Kitchen,Fruits,136,110,26,6.0,3.5,110.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-09-14,Restaurant,Dairy,117,94,23,,9.4,94.0,1,Cloudy,4,Storage Issue,0.0,Medium
+2025-09-14,Cloud Kitchen,Fruits,149,115,34,6.0,,115.0,0,Hot,2,Overproduction,0.0,Low
+2025-09-14,Cafeteria,Fruits,63,63,0,7.0,7.3,71.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-14,Cloud Kitchen,Prepared Food,779,88,691,2.0,20.3,88.0,0,Cloudy,290,Overproduction,1.0,High
+2025-09-14,Cloud Kitchen,Vegetables,123,114,9,7.0,4.9,114.0,0,Cloudy,1,Expired,0.0,Low
+2025-09-14,Supermarket,Meat,156,156,0,2.0,,182.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-14,Supermarket,Fruits,189,189,0,4.0,8.7,265.0,1,Hot,0,No Waste,0.0,Low
+2025-09-14,Supermarket,Meat,167,167,0,2.0,2.4,176.0,0,,0,No Waste,0.0,Low
+2025-09-14,Supermarket,Fruits,156,156,0,6.0,13.7,209.0,0,Hot,0,No Waste,0.0,Medium
+2025-09-15,Supermarket,Meat,178,175,3,8.0,1.2,175.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-15,Supermarket,Bakery,172,132,40,4.0,19.5,132.0,0,Cloudy,7,Overproduction,0.0,Medium
+2025-09-15,Cafeteria,Bakery,60,60,0,4.0,21.2,63.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-15,Supermarket,Meat,151,151,0,2.0,1.9,166.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-15,Cloud Kitchen,Fruits,109,109,0,4.0,3.9,124.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-15,Cafeteria,Meat,75,67,8,4.0,5.9,67.0,0,Hot,1,Storage Issue,0.0,Low
+2025-09-15,Cloud Kitchen,Meat,119,119,0,5.0,-0.9,119.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-15,Restaurant,Prepared Food,68,68,0,2.0,16.0,85.0,0,Hot,0,No Waste,0.0,Low
+2025-09-15,Cafeteria,Dairy,77,63,14,6.0,6.2,63.0,0,Sunny,1,Low Demand,0.0,Low
+2025-09-15,Restaurant,Meat,82,72,10,4.0,1.4,72.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-09-15,Supermarket,Vegetables,167,167,0,6.0,3.8,208.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-15,Restaurant,Fruits,96,49,47,5.0,12.8,49.0,0,Rainy,17,Overproduction,1.0,High
+2025-09-15,Supermarket,Meat,242,146,96,3.0,2.2,146.0,0,Hot,23,Overproduction,1.0,High
+2025-09-15,Restaurant,Bakery,102,74,28,2.0,23.4,74.0,0,Rainy,8,Low Demand,1.0,Medium
+2025-09-15,Restaurant,Prepared Food,77,66,11,3.0,25.3,66.0,0,Rainy,3,Storage Issue,0.0,Medium
+2025-09-15,Supermarket,Vegetables,188,129,59,5.0,2.0,129.0,0,Sunny,14,Overproduction,1.0,Medium
+2025-09-15,Cloud Kitchen,Prepared Food,96,96,0,1.0,13.7,96.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-15,Supermarket,Dairy,244,165,79,4.0,8.2,165.0,0,Sunny,21,Expired,0.0,Medium
+2025-09-16,Cloud Kitchen,Fruits,142,142,0,6.0,5.8,150.0,1,Hot,0,No Waste,0.0,Low
+2025-09-16,Cafeteria,Bakery,67,42,25,3.0,27.6,42.0,0,Rainy,8,Low Demand,1.0,High
+2025-09-16,Restaurant,Vegetables,82,76,6,3.0,7.9,76.0,0,Hot,1,Low Demand,0.0,Low
+2025-09-16,Restaurant,Meat,78,78,0,2.0,1.0,102.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-16,Restaurant,Vegetables,130,102,28,5.0,2.6,102.0,0,Sunny,3,Expired,0.0,Medium
+2025-09-16,Cafeteria,Prepared Food,73,45,28,1.0,34.6,45.0,0,Rainy,17,Storage Issue,0.0,High
+2025-09-16,Supermarket,Vegetables,190,144,46,4.0,9.1,144.0,0,Cloudy,12,Expired,0.0,Medium
+2025-09-16,Cafeteria,Prepared Food,70,70,0,1.0,17.7,78.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-16,Supermarket,Prepared Food,174,174,0,2.0,18.1,255.0,1,Cloudy,0,No Waste,0.0,Low
+2025-09-16,Restaurant,Fruits,104,81,23,6.0,5.8,81.0,0,Cloudy,1,Expired,0.0,Low
+2025-09-16,Restaurant,Meat,118,93,25,1.0,3.5,93.0,1,Sunny,8,Expired,0.0,Medium
+2025-09-16,Cloud Kitchen,Meat,119,111,8,3.0,4.7,111.0,0,Sunny,1,Expired,0.0,Low
+2025-09-16,Supermarket,Prepared Food,185,185,0,1.0,16.7,194.0,0,Hot,0,No Waste,0.0,Low
+2025-09-16,Cloud Kitchen,Bakery,103,68,35,5.0,24.4,68.0,0,Rainy,6,Low Demand,0.0,Medium
+2025-09-16,Supermarket,Fruits,137,137,0,3.0,13.4,143.0,0,Hot,0,No Waste,0.0,Low
+2025-09-16,Restaurant,Meat,86,84,2,5.0,0.4,84.0,1,Rainy,0,No Waste,0.0,Low
+2025-09-16,Cafeteria,Meat,66,56,10,2.0,4.7,56.0,0,Cloudy,3,Low Demand,0.0,Medium
+2025-09-16,Restaurant,Fruits,78,76,2,4.0,12.2,76.0,0,,0,No Waste,0.0,Low
+2025-09-16,Restaurant,Bakery,77,51,26,2.0,31.6,51.0,0,Cloudy,13,Storage Issue,1.0,High
+2025-09-16,Restaurant,Meat,85,85,0,6.0,2.1,94.0,0,Hot,0,No Waste,0.0,Low
+2025-09-16,Supermarket,Meat,176,176,0,4.0,3.3,191.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-17,Cafeteria,Prepared Food,92,36,56,1.0,25.8,36.0,0,Rainy,34,Overproduction,1.0,High
+2025-09-17,Cloud Kitchen,Vegetables,121,121,0,5.0,2.0,126.0,0,Hot,0,No Waste,0.0,Low
+2025-09-17,Supermarket,Dairy,156,156,0,12.0,2.1,162.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-17,Cafeteria,Prepared Food,43,43,0,3.0,22.0,44.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-17,Restaurant,Bakery,101,99,2,3.0,29.2,99.0,0,Hot,1,Storage Issue,0.0,Low
+2025-09-17,Cafeteria,Prepared Food,55,55,0,3.0,19.9,81.0,1,Cloudy,0,No Waste,0.0,Low
+2025-09-17,Supermarket,Prepared Food,140,140,0,2.0,18.8,166.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-17,Restaurant,Prepared Food,110,75,35,1.0,16.2,75.0,0,Sunny,10,Expired,0.0,High
+2025-09-17,Supermarket,Fruits,165,138,27,5.0,10.8,138.0,0,Sunny,3,Low Demand,0.0,Low
+2025-09-17,Restaurant,Vegetables,87,87,0,4.0,1.6,118.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-17,Cafeteria,Bakery,101,49,52,2.0,28.0,49.0,0,Rainy,19,Overproduction,1.0,High
+2025-09-17,Cloud Kitchen,Vegetables,123,123,0,2.0,3.9,137.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-17,Restaurant,Bakery,107,42,65,4.0,18.8,42.0,0,Rainy,18,Overproduction,1.0,High
+2025-09-17,Cloud Kitchen,Bakery,129,129,0,3.0,17.3,148.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-17,Restaurant,Fruits,121,89,32,4.0,5.5,89.0,1,Sunny,8,Overproduction,1.0,Medium
+2025-09-17,Restaurant,Prepared Food,70,70,0,1.0,21.0,95.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-17,Supermarket,Prepared Food,135,135,0,1.0,14.8,146.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-17,Supermarket,Prepared Food,158,138,20,1.0,30.2,138.0,0,Sunny,10,Storage Issue,1.0,Medium
+2025-09-17,Cafeteria,Bakery,67,67,0,2.0,19.8,69.0,0,Hot,0,No Waste,0.0,Low
+2025-09-17,Supermarket,Vegetables,164,149,15,5.0,7.0,149.0,0,Hot,2,Expired,0.0,Low
+2025-09-17,Restaurant,Fruits,85,68,17,5.0,5.6,68.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-09-17,Cafeteria,Prepared Food,78,64,14,1.0,17.9,64.0,0,Sunny,4,Expired,0.0,Medium
+2025-09-17,Supermarket,Meat,141,141,0,2.0,-0.8,160.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-18,Restaurant,Meat,91,91,0,2.0,1.4,130.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-18,Cloud Kitchen,Fruits,89,89,0,9.0,10.0,116.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-18,Restaurant,Prepared Food,93,48,45,2.0,15.7,48.0,0,Rainy,16,Overproduction,1.0,High
+2025-09-18,Supermarket,Bakery,141,141,0,3.0,25.2,186.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-18,Restaurant,Fruits,85,52,33,,5.0,52.0,0,Rainy,10,Overproduction,0.0,High
+2025-09-18,Supermarket,Prepared Food,187,187,0,2.0,21.5,214.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-18,Cafeteria,Dairy,82,47,35,8.0,8.0,47.0,0,Sunny,10,Overproduction,0.0,High
+2025-09-18,Supermarket,Prepared Food,198,140,58,1.0,20.6,140.0,0,Hot,22,Expired,0.0,High
+2025-09-18,Restaurant,Meat,77,63,14,3.0,2.0,63.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-09-18,Supermarket,Fruits,167,148,19,6.0,4.2,148.0,0,Hot,2,Expired,0.0,Low
+2025-09-18,Restaurant,Bakery,86,55,31,2.0,27.8,55.0,0,Rainy,12,Low Demand,1.0,High
+2025-09-18,Cloud Kitchen,Dairy,153,84,69,8.0,2.3,84.0,0,Sunny,8,Overproduction,0.0,Medium
+2025-09-18,Restaurant,Vegetables,92,74,18,5.0,7.4,74.0,0,Hot,4,Overproduction,0.0,Medium
+2025-09-18,Supermarket,Fruits,179,141,38,3.0,,141.0,0,Hot,8,Overproduction,0.0,Medium
+2025-09-18,Restaurant,Prepared Food,74,74,0,1.0,20.4,136.0,1,Hot,0,No Waste,0.0,Medium
+2025-09-18,Restaurant,Bakery,107,82,25,1.0,23.3,82.0,0,Hot,9,Expired,0.0,Medium
+2025-09-18,Restaurant,Fruits,57,57,0,3.0,6.0,90.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-18,Restaurant,Meat,107,55,52,1.0,1.3,55.0,0,Rainy,25,Overproduction,1.0,High
+2025-09-18,Cafeteria,Vegetables,101,61,40,8.0,2.2,61.0,0,Cloudy,7,Overproduction,0.0,Medium
+2025-09-19,Cafeteria,Meat,62,62,0,5.0,-1.3,63.0,0,Hot,0,No Waste,0.0,Low
+2025-09-19,Restaurant,Fruits,121,121,0,3.0,8.1,123.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-19,Supermarket,Prepared Food,127,127,0,1.0,17.0,134.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-19,Cafeteria,Dairy,65,60,5,10.0,1.9,60.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-19,Cloud Kitchen,Bakery,94,94,0,3.0,20.0,100.0,0,,0,No Waste,0.0,Low
+2025-09-19,Restaurant,Meat,94,67,27,6.0,3.6,67.0,0,Hot,6,Overproduction,0.0,Medium
+2025-09-19,Supermarket,Fruits,183,115,68,2.0,6.9,115.0,0,Rainy,23,Overproduction,1.0,High
+2025-09-19,Supermarket,Dairy,220,178,42,7.0,3.0,178.0,0,Sunny,5,Overproduction,0.0,Medium
+2025-09-19,Restaurant,Vegetables,73,73,0,8.0,4.3,93.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-19,Restaurant,Dairy,610,105,505,9.0,0.8,105.0,1,Cloudy,184,Overproduction,1.0,High
+2025-09-19,Supermarket,Vegetables,163,109,54,8.0,4.5,109.0,0,Cloudy,7,Overproduction,0.0,Medium
+2025-09-19,Supermarket,Prepared Food,174,146,28,3.0,16.6,146.0,1,Rainy,4,Expired,0.0,Medium
+2025-09-19,Restaurant,Meat,103,71,32,6.0,2.7,71.0,0,Cloudy,6,Overproduction,0.0,Low
+2025-09-19,Restaurant,Vegetables,104,104,0,6.0,4.3,118.0,1,Hot,0,No Waste,0.0,Low
+2025-09-19,Supermarket,Fruits,157,101,56,6.0,9.7,101.0,0,Rainy,13,Overproduction,1.0,Medium
+2025-09-19,Restaurant,Fruits,75,75,0,5.0,8.4,84.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-19,Restaurant,Bakery,72,72,0,1.0,21.9,72.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-19,Supermarket,Dairy,156,103,53,5.0,5.9,103.0,0,Cloudy,9,Overproduction,1.0,Medium
+2025-09-19,Restaurant,Fruits,77,77,0,2.0,6.4,86.0,0,Hot,0,No Waste,0.0,Low
+2025-09-19,Restaurant,Meat,71,58,13,5.0,0.5,58.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-09-19,Cafeteria,Prepared Food,52,37,15,1.0,17.3,37.0,0,Rainy,6,Expired,0.0,High
+2025-09-19,Supermarket,Vegetables,118,118,0,8.0,6.1,216.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-20,Cloud Kitchen,Bakery,120,120,0,4.0,21.7,124.0,0,Hot,0,No Waste,0.0,Low
+2025-09-20,Restaurant,Prepared Food,84,84,0,2.0,,106.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-20,Restaurant,Meat,76,71,5,4.0,2.3,71.0,0,Sunny,1,Low Demand,0.0,Low
+2025-09-20,Restaurant,Dairy,111,103,8,5.0,3.9,103.0,1,Sunny,1,Low Demand,0.0,Low
+2025-09-20,Supermarket,Prepared Food,196,138,58,1.0,21.5,138.0,0,Sunny,16,Expired,0.0,Medium
+2025-09-20,Cafeteria,Fruits,75,50,25,5.0,11.9,50.0,0,Cloudy,7,Low Demand,0.0,High
+2025-09-20,Restaurant,Dairy,86,56,30,6.0,1.6,56.0,0,,7,Low Demand,1.0,Medium
+2025-09-20,Restaurant,Bakery,104,96,8,3.0,25.8,96.0,0,Cloudy,2,Expired,0.0,Low
+2025-09-20,Restaurant,Prepared Food,82,63,19,2.0,14.2,63.0,0,Cloudy,5,Low Demand,0.0,Medium
+2025-09-20,Supermarket,Dairy,209,115,94,8.0,2.9,115.0,0,Cloudy,22,Overproduction,1.0,High
+2025-09-20,Restaurant,Vegetables,86,81,5,3.0,3.2,81.0,0,Cloudy,1,Expired,0.0,Low
+2025-09-20,Cafeteria,Meat,55,55,0,3.0,0.6,58.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-20,Cafeteria,Fruits,56,56,0,5.0,7.6,83.0,0,Hot,0,No Waste,0.0,Low
+2025-09-20,Supermarket,Prepared Food,232,102,130,1.0,20.8,102.0,0,Rainy,58,Overproduction,1.0,High
+2025-09-20,Cloud Kitchen,Vegetables,70,70,0,6.0,3.3,103.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-20,Restaurant,Fruits,65,65,0,9.0,7.0,86.0,0,Cloudy,0,No Waste,,Low
+2025-09-20,Cloud Kitchen,Bakery,107,88,19,2.0,26.9,88.0,0,Hot,6,Expired,0.0,Medium
+2025-09-20,Cafeteria,Bakery,86,62,24,4.0,21.1,62.0,0,Sunny,6,Low Demand,1.0,Medium
+2025-09-20,Supermarket,Prepared Food,218,142,76,1.0,19.5,,0,Cloudy,30,Expired,0.0,High
+2025-09-21,Cafeteria,Vegetables,49,47,2,5.0,5.9,47.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-21,Restaurant,Dairy,59,59,0,14.0,2.8,80.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-21,Cafeteria,Meat,60,58,2,4.0,2.5,58.0,0,Hot,0,No Waste,0.0,Low
+2025-09-21,Restaurant,Prepared Food,80,80,0,1.0,24.7,110.0,0,Hot,0,No Waste,0.0,Low
+2025-09-21,Restaurant,Bakery,93,77,16,2.0,23.0,77.0,0,Sunny,4,Expired,0.0,High
+2025-09-21,Supermarket,Meat,145,145,0,2.0,5.0,161.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-21,Restaurant,Bakery,75,75,0,5.0,22.1,97.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-21,Cloud Kitchen,Vegetables,91,85,6,8.0,4.5,85.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-21,Supermarket,Prepared Food,166,91,75,1.0,21.6,91.0,0,Rainy,26,Expired,0.0,High
+2025-09-21,Cafeteria,Fruits,79,78,1,5.0,15.4,,0,Sunny,0,No Waste,0.0,Low
+2025-09-21,Cloud Kitchen,Fruits,92,92,0,8.0,2.0,116.0,1,Rainy,0,No Waste,0.0,Low
+2025-09-21,Restaurant,Vegetables,86,74,12,6.0,3.3,74.0,0,Sunny,2,Low Demand,0.0,Medium
+2025-09-21,Supermarket,Meat,192,152,40,4.0,3.2,152.0,1,Cloudy,6,Expired,0.0,Medium
+2025-09-21,Supermarket,Bakery,140,133,7,4.0,24.7,133.0,0,Sunny,1,Expired,0.0,Low
+2025-09-21,Supermarket,Bakery,171,88,83,4.0,19.7,88.0,0,Rainy,21,Overproduction,1.0,High
+2025-09-21,Cloud Kitchen,Meat,123,123,0,1.0,1.2,129.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-21,Restaurant,Prepared Food,134,115,19,2.0,25.7,115.0,1,Sunny,5,Storage Issue,1.0,Medium
+2025-09-21,Restaurant,Dairy,72,72,0,12.0,1.0,74.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-21,Supermarket,Vegetables,140,129,11,4.0,5.6,129.0,0,Cloudy,1,Low Demand,0.0,High
+2025-09-22,Cafeteria,Vegetables,88,84,4,4.0,5.3,84.0,0,Hot,1,Low Demand,0.0,Low
+2025-09-22,Cloud Kitchen,Meat,82,82,0,3.0,0.2,129.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-22,Cafeteria,Vegetables,82,82,0,8.0,1.1,104.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-22,Cafeteria,Bakery,53,53,0,4.0,20.8,58.0,0,Hot,0,No Waste,0.0,Low
+2025-09-22,Cloud Kitchen,Dairy,101,91,10,6.0,1.1,91.0,0,Hot,2,Expired,0.0,Low
+2025-09-22,Cafeteria,Bakery,57,57,0,4.0,16.3,70.0,1,Rainy,0,No Waste,0.0,Low
+2025-09-22,Restaurant,Meat,101,96,5,5.0,1.6,96.0,1,Cloudy,1,Low Demand,0.0,Low
+2025-09-22,Cafeteria,Prepared Food,67,44,23,,5.6,44.0,0,Rainy,8,Low Demand,0.0,High
+2025-09-22,Cafeteria,Bakery,52,52,0,3.0,24.5,72.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-22,Cloud Kitchen,Vegetables,93,80,13,8.0,8.8,,0,Sunny,3,Low Demand,0.0,Medium
+2025-09-22,Supermarket,Prepared Food,145,145,0,1.0,18.8,163.0,0,Hot,0,No Waste,0.0,Low
+2025-09-22,Restaurant,Prepared Food,71,62,9,2.0,24.2,62.0,0,Cloudy,2,Storage Issue,0.0,Medium
+2025-09-22,Supermarket,Fruits,209,97,112,5.0,10.5,97.0,0,Rainy,32,Overproduction,1.0,High
+2025-09-22,Supermarket,Vegetables,149,95,54,5.0,5.2,95.0,0,Rainy,13,Overproduction,0.0,High
+2025-09-22,Restaurant,Vegetables,67,67,0,6.0,4.3,82.0,0,Hot,0,No Waste,0.0,Low
+2025-09-22,Supermarket,Fruits,161,152,9,7.0,8.2,152.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-22,Restaurant,Prepared Food,81,81,0,2.0,22.1,123.0,1,Hot,0,No Waste,0.0,Low
+2025-09-22,Restaurant,Dairy,98,57,41,10.0,3.5,57.0,0,Rainy,6,Overproduction,0.0,Medium
+2025-09-22,Restaurant,Prepared Food,94,77,17,2.0,14.0,77.0,0,Sunny,4,Expired,0.0,Medium
+2025-09-22,Cafeteria,Prepared Food,48,48,0,2.0,26.5,58.0,0,Rainy,0,No Waste,0.0,Low
+2025-09-22,Supermarket,Bakery,170,158,12,4.0,26.2,158.0,0,Cloudy,3,Storage Issue,1.0,Low
+2025-09-22,Restaurant,Meat,103,86,17,2.0,3.2,86.0,0,Sunny,3,Expired,,Medium
+2025-09-22,Cloud Kitchen,Prepared Food,72,72,0,1.0,21.0,122.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-23,Cafeteria,Prepared Food,65,50,15,2.0,12.2,50.0,0,Cloudy,4,Low Demand,0.0,Medium
+2025-09-23,Cafeteria,Dairy,72,65,7,7.0,3.0,65.0,0,Hot,0,No Waste,0.0,Low
+2025-09-23,Cloud Kitchen,Meat,109,80,29,4.0,3.5,80.0,0,Rainy,7,Overproduction,0.0,Medium
+2025-09-23,Restaurant,Vegetables,78,78,0,6.0,11.6,90.0,1,Hot,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Vegetables,90,90,0,11.0,3.0,127.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-23,Cloud Kitchen,Fruits,142,79,63,6.0,4.3,79.0,0,Cloudy,15,Overproduction,1.0,High
+2025-09-23,Restaurant,Bakery,87,87,0,3.0,19.9,141.0,1,Cloudy,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Meat,66,66,0,,1.9,89.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-23,Cloud Kitchen,Fruits,112,52,60,4.0,9.1,52.0,0,Rainy,15,Overproduction,1.0,High
+2025-09-23,Cloud Kitchen,Prepared Food,107,105,2,1.0,19.1,105.0,0,Sunny,1,Expired,0.0,Low
+2025-09-23,Supermarket,Bakery,120,120,0,5.0,24.7,183.0,0,,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Bakery,106,83,23,2.0,28.6,83.0,0,Sunny,8,Storage Issue,1.0,High
+2025-09-23,Supermarket,Dairy,150,98,52,8.0,7.6,98.0,0,Rainy,10,Overproduction,0.0,Medium
+2025-09-23,Cloud Kitchen,Vegetables,122,122,0,8.0,0.9,135.0,0,Hot,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Fruits,90,90,0,4.0,9.8,103.0,0,Hot,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Bakery,76,60,16,1.0,24.8,60.0,0,Cloudy,7,Expired,0.0,High
+2025-09-23,Supermarket,Dairy,149,148,1,10.0,4.5,148.0,0,Hot,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Prepared Food,113,81,32,1.0,16.4,81.0,0,Sunny,10,Expired,0.0,High
+2025-09-23,Restaurant,Bakery,71,47,24,3.0,25.0,47.0,0,Cloudy,8,Low Demand,1.0,High
+2025-09-23,Cafeteria,Dairy,51,51,0,10.0,5.1,60.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-23,Supermarket,Dairy,135,135,0,7.0,6.2,191.0,0,Hot,0,No Waste,0.0,Low
+2025-09-23,Restaurant,Vegetables,87,53,34,5.0,1.2,53.0,0,Rainy,5,Overproduction,0.0,Medium
+2025-09-23,Restaurant,Prepared Food,103,57,46,2.0,34.4,57.0,0,Rainy,28,Storage Issue,1.0,High
+2025-09-23,Restaurant,Vegetables,69,61,8,5.0,10.7,61.0,0,Rainy,1,Low Demand,0.0,Low
+2025-09-23,Supermarket,Bakery,184,172,12,3.0,28.5,172.0,0,Hot,3,Storage Issue,0.0,Low
+2025-09-23,Supermarket,Bakery,177,177,0,2.0,20.1,180.0,1,Cloudy,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Bakery,111,90,21,3.0,20.5,90.0,0,Rainy,5,Expired,0.0,Medium
+2025-09-24,Cafeteria,Bakery,60,60,0,4.0,22.2,73.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-24,Restaurant,Dairy,57,57,0,3.0,4.2,96.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Vegetables,180,100,80,3.0,6.3,100.0,0,Rainy,25,Overproduction,1.0,High
+2025-09-24,Supermarket,Bakery,207,207,0,4.0,21.0,238.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-24,Restaurant,Bakery,116,112,4,2.0,16.2,112.0,0,Sunny,1,Expired,0.0,Low
+2025-09-24,Supermarket,Fruits,225,142,83,3.0,6.4,142.0,0,Sunny,20,Overproduction,0.0,High
+2025-09-24,Restaurant,Prepared Food,103,103,0,1.0,19.7,118.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Bakery,165,165,0,2.0,26.2,172.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Meat,146,146,0,5.0,-0.2,194.0,1,Rainy,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Bakery,157,122,35,2.0,27.2,122.0,0,Cloudy,11,Expired,0.0,Medium
+2025-09-24,Restaurant,Prepared Food,108,55,53,2.0,15.2,55.0,0,Cloudy,16,Overproduction,1.0,High
+2025-09-24,Restaurant,Vegetables,94,46,48,4.0,4.4,46.0,0,Rainy,13,Overproduction,1.0,High
+2025-09-24,Cafeteria,Bakery,66,66,0,4.0,24.1,72.0,1,,0,No Waste,0.0,Low
+2025-09-24,Cafeteria,Prepared Food,78,78,0,1.0,16.8,90.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Fruits,173,166,7,7.0,7.7,166.0,0,Sunny,1,Low Demand,0.0,Low
+2025-09-24,Restaurant,Meat,105,93,12,4.0,0.6,93.0,0,Hot,2,Expired,0.0,Low
+2025-09-24,Cafeteria,Prepared Food,64,58,6,2.0,18.8,58.0,0,Hot,1,Expired,0.0,Low
+2025-09-24,Cafeteria,Meat,68,48,20,4.0,2.6,48.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-09-24,Restaurant,Vegetables,80,80,0,9.0,5.3,84.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-24,Cloud Kitchen,Meat,131,53,78,4.0,1.2,53.0,0,Rainy,23,Overproduction,1.0,High
+2025-09-24,Supermarket,Dairy,135,135,0,9.0,3.0,135.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-24,Cafeteria,Meat,73,66,7,4.0,0.4,66.0,0,Sunny,1,Low Demand,0.0,Low
+2025-09-24,Restaurant,Meat,82,82,0,4.0,9.2,113.0,1,Hot,0,No Waste,0.0,Low
+2025-09-24,Restaurant,Fruits,91,91,0,6.0,9.1,150.0,1,Hot,0,No Waste,0.0,Low
+2025-09-24,Supermarket,Bakery,169,142,27,1.0,15.3,142.0,0,Sunny,10,Expired,0.0,Medium
+2025-09-24,Cloud Kitchen,Vegetables,102,60,42,6.0,7.6,60.0,0,Rainy,9,Overproduction,0.0,High
+2025-09-24,Restaurant,Prepared Food,159,108,51,2.0,18.0,108.0,1,Cloudy,13,Expired,0.0,Medium
+2025-09-24,Cafeteria,Vegetables,59,55,4,7.0,,55.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-24,Cloud Kitchen,Dairy,107,82,25,11.0,5.3,82.0,1,Rainy,4,Overproduction,0.0,Medium
+2025-09-24,Supermarket,Prepared Food,170,144,26,1.0,,144.0,0,Hot,10,Expired,0.0,Medium
+2025-09-24,Supermarket,Fruits,119,99,20,7.0,7.4,99.0,0,Rainy,2,Low Demand,0.0,Low
+2025-09-25,Supermarket,Dairy,151,121,30,,1.8,121.0,0,Cloudy,4,Low Demand,0.0,Medium
+2025-09-25,Supermarket,Meat,188,146,42,6.0,3.6,146.0,1,Rainy,9,Overproduction,0.0,Medium
+2025-09-25,Supermarket,Vegetables,215,169,46,5.0,8.3,169.0,0,Cloudy,8,Overproduction,0.0,Medium
+2025-09-25,Cafeteria,Meat,80,58,22,5.0,1.4,58.0,0,Hot,3,Low Demand,0.0,Medium
+2025-09-25,Restaurant,Fruits,259,67,192,5.0,5.2,67.0,0,Sunny,68,Overproduction,1.0,High
+2025-09-25,Cafeteria,Prepared Food,261,64,197,2.0,24.0,64.0,0,Cloudy,91,Overproduction,0.0,High
+2025-09-25,Restaurant,Fruits,102,41,61,2.0,11.1,41.0,0,Rainy,31,Overproduction,0.0,High
+2025-09-25,Cafeteria,Fruits,62,61,1,3.0,5.8,61.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-25,Supermarket,Bakery,182,153,29,2.0,17.3,153.0,0,Cloudy,8,Expired,0.0,Medium
+2025-09-25,Cloud Kitchen,Fruits,114,93,21,8.0,6.2,93.0,0,Sunny,2,Overproduction,0.0,Low
+2025-09-25,Supermarket,Prepared Food,147,84,63,1.0,22.0,84.0,0,Rainy,27,Expired,0.0,High
+2025-09-25,Restaurant,Prepared Food,78,55,23,2.0,27.8,55.0,0,Rainy,10,Storage Issue,0.0,High
+2025-09-25,Supermarket,Vegetables,120,120,0,5.0,5.5,135.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-25,Cafeteria,Meat,69,66,3,3.0,,,0,Hot,1,Low Demand,0.0,Low
+2025-09-25,Cloud Kitchen,Fruits,104,100,4,6.0,9.9,100.0,0,Cloudy,1,Storage Issue,0.0,Low
+2025-09-25,Restaurant,Meat,109,75,34,6.0,1.7,75.0,0,Cloudy,6,Overproduction,0.0,Medium
+2025-09-25,Supermarket,Meat,250,127,123,4.0,1.6,127.0,0,Cloudy,30,Overproduction,,High
+2025-09-26,Supermarket,Dairy,187,187,0,1.0,2.6,254.0,1,,0,No Waste,0.0,Low
+2025-09-26,Cloud Kitchen,Bakery,122,122,0,3.0,19.7,181.0,1,Hot,0,No Waste,0.0,Low
+2025-09-26,Supermarket,Dairy,181,162,19,6.0,2.8,162.0,0,Hot,3,Expired,0.0,Low
+2025-09-26,Cloud Kitchen,Bakery,106,98,8,3.0,16.9,98.0,0,Cloudy,1,Expired,0.0,Low
+2025-09-26,Supermarket,Dairy,189,120,69,12.0,5.0,,0,Rainy,11,Overproduction,1.0,Medium
+2025-09-26,Restaurant,Prepared Food,70,63,7,3.0,18.2,63.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-09-26,Cafeteria,Prepared Food,79,69,10,2.0,6.1,69.0,0,Sunny,2,Expired,0.0,Medium
+2025-09-26,Supermarket,Vegetables,123,123,0,6.0,4.8,172.0,0,Hot,0,No Waste,0.0,Low
+2025-09-26,Supermarket,Fruits,185,169,16,5.0,9.4,169.0,0,Sunny,2,Expired,0.0,Low
+2025-09-26,Restaurant,Vegetables,83,83,0,6.0,9.9,90.0,0,Hot,0,No Waste,0.0,Low
+2025-09-26,Supermarket,Bakery,147,138,9,4.0,22.9,138.0,0,Hot,1,Expired,0.0,Low
+2025-09-26,Restaurant,Meat,119,67,52,2.0,-2.5,67.0,0,Cloudy,19,Overproduction,0.0,High
+2025-09-26,Cafeteria,Fruits,49,49,0,4.0,5.6,58.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-26,Supermarket,Prepared Food,253,97,156,2.0,8.5,97.0,1,Rainy,52,Overproduction,1.0,High
+2025-09-26,Cloud Kitchen,Prepared Food,99,80,19,1.0,32.9,80.0,0,Cloudy,10,Storage Issue,1.0,High
+2025-09-26,Supermarket,Fruits,185,152,33,6.0,12.0,152.0,1,Rainy,8,Storage Issue,1.0,Medium
+2025-09-27,Restaurant,Prepared Food,105,105,0,2.0,28.8,114.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-27,Cloud Kitchen,Bakery,133,133,0,4.0,18.4,159.0,1,Hot,0,No Waste,0.0,Low
+2025-09-27,Restaurant,Vegetables,107,77,30,9.0,7.7,77.0,0,Hot,6,Low Demand,,Medium
+2025-09-27,Restaurant,Meat,88,56,32,,1.6,56.0,0,Rainy,9,Overproduction,1.0,High
+2025-09-27,Restaurant,Bakery,89,54,35,5.0,23.9,54.0,0,Rainy,8,Overproduction,1.0,High
+2025-09-27,Cloud Kitchen,Prepared Food,101,101,0,1.0,17.7,148.0,0,Hot,0,No Waste,0.0,Low
+2025-09-27,Restaurant,Dairy,102,102,0,13.0,2.0,103.0,1,Cloudy,0,No Waste,,Low
+2025-09-27,Supermarket,Meat,183,165,18,5.0,2.2,165.0,1,Cloudy,2,Expired,0.0,Low
+2025-09-27,Restaurant,Dairy,70,70,0,7.0,2.7,88.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-27,Restaurant,Dairy,98,89,9,7.0,5.0,89.0,0,Sunny,1,Low Demand,0.0,Low
+2025-09-27,Cloud Kitchen,Prepared Food,94,94,0,1.0,17.6,98.0,0,,0,No Waste,0.0,Low
+2025-09-27,Supermarket,Meat,147,144,3,7.0,2.0,144.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-27,Cloud Kitchen,Fruits,114,91,23,7.0,8.6,91.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-09-27,Cafeteria,Dairy,90,59,31,6.0,4.4,59.0,0,Hot,8,Low Demand,1.0,High
+2025-09-27,Supermarket,Prepared Food,153,133,20,2.0,23.5,133.0,0,Rainy,5,Expired,0.0,Medium
+2025-09-27,Cloud Kitchen,Meat,88,88,0,8.0,0.4,107.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-27,Cloud Kitchen,Bakery,134,112,22,2.0,23.1,112.0,0,Sunny,7,Expired,0.0,Medium
+2025-09-27,Supermarket,Vegetables,198,175,23,4.0,5.1,175.0,0,Sunny,3,Expired,0.0,Low
+2025-09-27,Cloud Kitchen,Prepared Food,104,104,0,1.0,25.8,105.0,0,Hot,0,No Waste,0.0,Low
+2025-09-27,Cafeteria,Meat,78,78,0,6.0,0.9,112.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-27,Cloud Kitchen,Bakery,90,75,15,4.0,15.5,75.0,0,Rainy,1,Low Demand,0.0,Low
+2025-09-27,Supermarket,Fruits,165,165,0,10.0,8.7,180.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-28,Supermarket,Fruits,160,133,27,6.0,10.1,133.0,0,Hot,3,Overproduction,0.0,Low
+2025-09-28,Restaurant,Meat,100,100,0,4.0,4.2,110.0,0,Hot,0,No Waste,0.0,Low
+2025-09-28,Supermarket,Prepared Food,131,131,0,2.0,21.3,156.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-28,Cloud Kitchen,Fruits,152,152,0,3.0,3.6,159.0,1,Sunny,0,No Waste,,Medium
+2025-09-28,Supermarket,Dairy,163,125,38,7.0,7.4,125.0,0,Cloudy,7,Overproduction,0.0,Medium
+2025-09-28,Restaurant,Vegetables,78,71,7,9.0,4.7,71.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-28,Supermarket,Bakery,166,166,0,4.0,24.3,167.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-28,Supermarket,Prepared Food,148,83,65,2.0,24.1,83.0,0,Rainy,27,Overproduction,1.0,High
+2025-09-28,Supermarket,Fruits,157,148,9,3.0,7.8,148.0,0,Cloudy,1,Expired,0.0,Low
+2025-09-28,Supermarket,Dairy,201,201,0,6.0,3.2,235.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-28,Supermarket,Prepared Food,200,105,95,1.0,21.4,105.0,0,Cloudy,41,Overproduction,1.0,High
+2025-09-28,Supermarket,Vegetables,181,160,21,8.0,7.8,160.0,0,Cloudy,3,Low Demand,0.0,Low
+2025-09-28,Supermarket,Bakery,244,244,0,6.0,22.0,244.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-28,Supermarket,Bakery,162,132,30,3.0,24.4,132.0,1,Rainy,5,Storage Issue,1.0,Medium
+2025-09-28,Cafeteria,Vegetables,60,43,17,7.0,9.4,43.0,0,Rainy,4,Low Demand,0.0,Medium
+2025-09-28,Restaurant,Meat,103,103,0,3.0,2.8,121.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-28,Cloud Kitchen,Fruits,90,90,0,9.0,8.3,116.0,0,Hot,0,No Waste,0.0,Medium
+2025-09-28,Supermarket,Bakery,137,137,0,4.0,23.7,169.0,0,,0,No Waste,0.0,Low
+2025-09-28,Restaurant,Meat,103,72,31,7.0,6.3,72.0,0,Sunny,7,Storage Issue,0.0,Medium
+2025-09-28,Restaurant,Meat,104,86,18,5.0,3.4,86.0,0,Cloudy,3,Low Demand,0.0,Medium
+2025-09-28,Cafeteria,Vegetables,61,61,0,5.0,6.6,107.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-28,Cafeteria,Bakery,64,49,15,3.0,19.7,49.0,0,Cloudy,3,Low Demand,0.0,Medium
+2025-09-28,Cafeteria,Fruits,72,40,32,6.0,11.5,40.0,0,Rainy,6,Low Demand,0.0,Medium
+2025-09-28,Supermarket,Vegetables,207,207,0,4.0,12.8,228.0,1,Sunny,0,No Waste,0.0,Low
+2025-09-29,Restaurant,Bakery,88,75,13,3.0,22.3,75.0,0,Sunny,2,Low Demand,,Medium
+2025-09-29,Restaurant,Bakery,113,113,0,3.0,21.6,120.0,0,Hot,0,No Waste,0.0,Low
+2025-09-29,Supermarket,Vegetables,176,170,6,7.0,0.6,170.0,0,Sunny,1,Low Demand,0.0,Low
+2025-09-29,Supermarket,Meat,142,142,0,5.0,0.8,208.0,0,Hot,0,No Waste,0.0,Low
+2025-09-29,Restaurant,Fruits,86,76,10,4.0,14.9,76.0,0,Hot,2,Storage Issue,0.0,Medium
+2025-09-29,Cloud Kitchen,Prepared Food,63,63,0,1.0,28.4,67.0,0,Rainy,0,No Waste,0.0,Low
+2025-09-29,Cloud Kitchen,Fruits,93,93,0,5.0,4.4,123.0,0,Sunny,0,No Waste,,Low
+2025-09-29,Restaurant,Fruits,87,73,14,,7.1,73.0,0,Sunny,2,Low Demand,0.0,Medium
+2025-09-29,Cloud Kitchen,Prepared Food,88,88,0,2.0,24.5,128.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-29,Cafeteria,Fruits,64,47,17,3.0,6.8,47.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-09-29,Restaurant,Dairy,86,81,5,6.0,3.9,81.0,0,Hot,0,No Waste,0.0,Low
+2025-09-29,Cafeteria,Meat,58,58,0,1.0,1.1,91.0,0,Hot,0,No Waste,0.0,High
+2025-09-29,Cloud Kitchen,Meat,83,83,0,4.0,3.4,84.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-29,Cloud Kitchen,Prepared Food,390,118,272,1.0,19.6,118.0,0,Hot,140,Overproduction,1.0,High
+2025-09-29,Supermarket,Prepared Food,204,150,54,1.0,16.5,150.0,1,Sunny,21,Expired,0.0,High
+2025-09-29,Supermarket,Bakery,173,173,0,3.0,21.7,180.0,0,Sunny,0,No Waste,,Low
+2025-09-29,Supermarket,Vegetables,248,179,69,10.0,7.0,179.0,0,Cloudy,12,Overproduction,1.0,Medium
+2025-09-29,Supermarket,Bakery,170,170,0,3.0,21.3,192.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-29,Restaurant,Meat,99,75,24,6.0,-0.6,75.0,0,Sunny,4,Low Demand,0.0,Medium
+2025-09-29,Cafeteria,Bakery,56,45,11,4.0,27.1,45.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-09-29,Restaurant,Prepared Food,95,81,14,,17.9,81.0,0,Cloudy,3,Expired,0.0,Medium
+2025-09-29,Restaurant,Fruits,79,57,22,5.0,9.0,57.0,0,Rainy,5,Low Demand,0.0,Medium
+2025-09-29,Supermarket,Vegetables,187,155,32,5.0,8.7,155.0,0,Sunny,6,Expired,0.0,Medium
+2025-09-29,Cloud Kitchen,Fruits,110,100,10,7.0,13.3,100.0,0,Cloudy,2,Storage Issue,0.0,Low
+2025-09-29,Supermarket,Meat,140,140,0,5.0,0.5,147.0,0,Hot,0,No Waste,0.0,Low
+2025-09-29,Supermarket,Dairy,212,157,55,9.0,5.3,157.0,0,Cloudy,6,Overproduction,1.0,Medium
+2025-09-30,Cloud Kitchen,Vegetables,98,89,9,6.0,2.3,89.0,0,Sunny,2,Expired,0.0,Low
+2025-09-30,Cloud Kitchen,Prepared Food,115,73,42,1.0,18.2,73.0,0,Cloudy,17,Expired,0.0,High
+2025-09-30,Restaurant,Prepared Food,63,63,0,1.0,14.9,109.0,0,Hot,0,No Waste,0.0,Low
+2025-09-30,Cafeteria,Prepared Food,65,65,0,2.0,27.6,80.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-30,Restaurant,Meat,67,64,3,5.0,-2.7,64.0,0,Cloudy,0,No Waste,0.0,Low
+2025-09-30,Supermarket,Meat,161,121,40,6.0,-0.2,121.0,0,Sunny,6,Overproduction,0.0,Low
+2025-09-30,Restaurant,Bakery,100,88,12,1.0,22.9,88.0,0,Sunny,3,Expired,0.0,Medium
+2025-09-30,Cafeteria,Bakery,59,40,19,3.0,17.9,40.0,0,Rainy,5,Low Demand,1.0,Medium
+2025-09-30,Supermarket,Meat,146,146,0,8.0,-1.1,213.0,1,Hot,0,No Waste,0.0,Low
+2025-09-30,Cafeteria,Fruits,59,42,17,5.0,10.1,42.0,0,,4,Low Demand,0.0,Medium
+2025-09-30,Supermarket,Vegetables,196,146,50,6.0,2.3,146.0,0,Sunny,6,Overproduction,0.0,Medium
+2025-09-30,Cloud Kitchen,Vegetables,88,64,24,6.0,6.4,64.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-09-30,Restaurant,Dairy,70,55,15,3.0,5.9,55.0,0,Rainy,4,Low Demand,0.0,Medium
+2025-09-30,Restaurant,Fruits,88,86,2,4.0,13.4,86.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-30,Supermarket,Vegetables,142,142,0,10.0,9.7,148.0,0,Hot,0,No Waste,0.0,Low
+2025-09-30,Restaurant,Prepared Food,99,77,22,1.0,20.9,77.0,0,Sunny,9,Expired,0.0,High
+2025-09-30,Supermarket,Meat,156,144,12,8.0,2.0,144.0,0,Sunny,1,Expired,0.0,Low
+2025-09-30,Cloud Kitchen,Dairy,88,88,0,8.0,3.7,113.0,0,Sunny,0,No Waste,0.0,Low
+2025-09-30,Supermarket,Dairy,181,152,29,5.0,5.0,152.0,0,Hot,6,Expired,0.0,Medium
+2025-10-01,Cloud Kitchen,Meat,115,115,0,6.0,2.9,153.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Restaurant,Vegetables,75,67,8,7.0,9.0,67.0,0,Rainy,1,Low Demand,0.0,Low
+2025-10-01,Restaurant,Dairy,101,53,48,12.0,5.5,53.0,0,,8,Overproduction,,Medium
+2025-10-01,Restaurant,Vegetables,75,75,0,4.0,10.0,91.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Restaurant,Meat,61,57,4,2.0,5.6,57.0,0,Cloudy,1,Low Demand,0.0,Low
+2025-10-01,Supermarket,Meat,197,149,48,4.0,2.1,149.0,0,Hot,8,Overproduction,0.0,Medium
+2025-10-01,Restaurant,Prepared Food,92,65,27,2.0,21.4,65.0,0,Cloudy,7,Expired,0.0,Medium
+2025-10-01,Restaurant,Fruits,115,70,45,6.0,6.9,70.0,0,Sunny,8,Overproduction,0.0,Medium
+2025-10-01,Cloud Kitchen,Prepared Food,112,112,0,2.0,24.8,123.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Restaurant,Fruits,265,87,178,6.0,9.5,,0,Sunny,56,Overproduction,0.0,High
+2025-10-01,Restaurant,Meat,69,69,0,1.0,-4.3,74.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Supermarket,Meat,157,157,0,2.0,-2.0,166.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Restaurant,Prepared Food,91,91,0,,14.0,104.0,0,Hot,0,No Waste,0.0,Low
+2025-10-01,Cafeteria,Dairy,66,63,3,5.0,3.8,63.0,0,,0,No Waste,0.0,Low
+2025-10-01,Restaurant,Vegetables,62,62,0,5.0,3.6,74.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Cafeteria,Fruits,69,36,33,5.0,6.5,36.0,0,Rainy,8,Overproduction,1.0,High
+2025-10-01,Supermarket,Meat,162,124,38,3.0,4.6,124.0,0,Sunny,12,Expired,0.0,Medium
+2025-10-01,Supermarket,Vegetables,121,118,3,,6.6,118.0,0,Rainy,1,Expired,0.0,Low
+2025-10-01,Supermarket,Prepared Food,178,101,77,1.0,24.1,101.0,0,Rainy,37,Expired,,High
+2025-10-01,Cafeteria,Prepared Food,64,40,24,2.0,19.5,40.0,0,Rainy,8,Low Demand,1.0,High
+2025-10-01,Restaurant,Prepared Food,94,94,0,,13.8,99.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-01,Restaurant,Vegetables,121,75,46,4.0,,75.0,1,Rainy,11,Overproduction,0.0,High
+2025-10-01,Restaurant,Prepared Food,84,76,8,2.0,19.5,76.0,0,Cloudy,2,Expired,0.0,Medium
+2025-10-01,Cloud Kitchen,Bakery,78,78,0,2.0,23.5,99.0,0,Sunny,0,No Waste,,Low
+2025-10-01,Restaurant,Meat,71,51,20,2.0,2.4,51.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-10-01,Cafeteria,Vegetables,48,48,0,5.0,7.6,72.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-02,Restaurant,Prepared Food,54,54,0,2.0,20.2,76.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-02,Cloud Kitchen,Fruits,137,109,28,5.0,9.1,109.0,0,Hot,7,Overproduction,0.0,Medium
+2025-10-02,Restaurant,Meat,99,54,45,5.0,3.7,54.0,1,,10,Overproduction,1.0,High
+2025-10-02,Cloud Kitchen,Bakery,85,85,0,3.0,17.2,109.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-02,Cloud Kitchen,Dairy,122,115,7,6.0,3.6,115.0,0,Hot,0,No Waste,0.0,High
+2025-10-02,Supermarket,Vegetables,128,128,0,4.0,11.1,142.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-02,Supermarket,Bakery,143,143,0,5.0,20.8,173.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-02,Restaurant,Meat,102,71,31,1.0,-0.6,71.0,1,Rainy,13,Expired,0.0,High
+2025-10-02,Restaurant,Bakery,102,61,41,4.0,28.3,61.0,0,Hot,13,Overproduction,1.0,High
+2025-10-02,Supermarket,Fruits,128,128,0,4.0,9.3,178.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-02,Supermarket,Fruits,146,137,9,6.0,7.5,137.0,0,Cloudy,2,Low Demand,0.0,Low
+2025-10-02,Restaurant,Bakery,63,62,1,4.0,19.4,62.0,0,Cloudy,0,No Waste,0.0,High
+2025-10-02,Cafeteria,Prepared Food,86,63,23,1.0,21.4,63.0,1,Cloudy,8,Expired,0.0,High
+2025-10-02,Supermarket,Prepared Food,781,142,639,1.0,16.0,142.0,0,Sunny,366,Overproduction,0.0,High
+2025-10-02,Restaurant,Dairy,106,67,39,5.0,3.8,67.0,0,Rainy,7,Overproduction,1.0,Medium
+2025-10-02,Cloud Kitchen,Bakery,154,107,47,3.0,20.4,107.0,0,Cloudy,14,Expired,,High
+2025-10-02,Supermarket,Dairy,196,196,0,5.0,3.6,235.0,1,Cloudy,0,No Waste,0.0,High
+2025-10-02,Cloud Kitchen,Prepared Food,86,82,4,2.0,21.6,82.0,0,Rainy,1,Expired,0.0,Low
+2025-10-02,Cafeteria,Prepared Food,69,59,10,1.0,28.1,59.0,0,Sunny,4,Storage Issue,0.0,Medium
+2025-10-02,Restaurant,Bakery,92,92,0,2.0,22.2,116.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-02,Cafeteria,Vegetables,79,58,21,3.0,-2.7,58.0,0,Sunny,5,Expired,0.0,Medium
+2025-10-02,Cloud Kitchen,Dairy,475,58,417,9.0,0.6,58.0,0,Rainy,134,Overproduction,1.0,High
+2025-10-02,Supermarket,Dairy,190,105,85,8.0,2.9,105.0,0,Rainy,17,Overproduction,1.0,High
+2025-10-02,Restaurant,Bakery,94,56,38,4.0,17.4,56.0,0,Rainy,10,Overproduction,0.0,High
+2025-10-03,Supermarket,Prepared Food,163,140,23,1.0,16.1,140.0,0,Sunny,5,Expired,0.0,Medium
+2025-10-03,Cloud Kitchen,Prepared Food,108,108,0,2.0,18.3,170.0,1,Hot,0,No Waste,0.0,Low
+2025-10-03,Supermarket,Prepared Food,171,129,42,1.0,17.3,129.0,0,Sunny,13,Expired,0.0,Medium
+2025-10-03,Supermarket,Dairy,200,200,0,5.0,2.7,206.0,1,Hot,0,No Waste,0.0,Low
+2025-10-03,Cloud Kitchen,Fruits,109,104,5,4.0,13.0,104.0,0,Sunny,1,Storage Issue,0.0,Low
+2025-10-03,Cafeteria,Vegetables,60,53,7,4.0,9.8,53.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-10-03,Cloud Kitchen,Bakery,104,103,1,3.0,31.7,103.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-03,Cafeteria,Dairy,57,57,0,3.0,3.2,80.0,1,Hot,0,No Waste,0.0,Low
+2025-10-03,Restaurant,Prepared Food,67,57,10,3.0,,57.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-10-03,Supermarket,Dairy,128,128,0,8.0,2.6,183.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-03,Supermarket,Bakery,181,123,58,5.0,17.7,123.0,0,Cloudy,9,Overproduction,1.0,Medium
+2025-10-03,Restaurant,Meat,121,51,70,2.0,-0.9,51.0,0,Rainy,20,Overproduction,0.0,High
+2025-10-03,Restaurant,Vegetables,80,80,0,4.0,8.4,89.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-03,Restaurant,Meat,100,43,57,6.0,-0.9,43.0,0,Rainy,13,Overproduction,1.0,High
+2025-10-03,Restaurant,Meat,78,78,0,2.0,4.7,98.0,0,Hot,0,No Waste,0.0,Low
+2025-10-03,Cloud Kitchen,Fruits,101,91,10,3.0,8.4,91.0,0,Hot,2,Expired,0.0,High
+2025-10-03,Restaurant,Bakery,120,102,18,3.0,10.5,102.0,1,Sunny,3,Expired,0.0,Medium
+2025-10-03,Restaurant,Prepared Food,87,87,0,1.0,22.3,109.0,0,Hot,0,No Waste,0.0,Low
+2025-10-03,Restaurant,Vegetables,107,53,54,5.0,4.7,53.0,0,Rainy,13,Overproduction,1.0,High
+2025-10-03,Supermarket,Meat,154,154,0,6.0,0.7,158.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-03,Restaurant,Bakery,123,67,56,4.0,26.1,67.0,0,Cloudy,15,Overproduction,1.0,High
+2025-10-03,Restaurant,Dairy,79,79,0,5.0,3.9,93.0,0,Hot,0,No Waste,0.0,Low
+2025-10-03,Cloud Kitchen,Bakery,103,103,0,3.0,17.5,111.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-03,Cloud Kitchen,Vegetables,107,107,0,3.0,7.0,116.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-03,Cloud Kitchen,Prepared Food,72,72,0,1.0,34.3,109.0,0,Hot,0,No Waste,0.0,Low
+2025-10-03,Cloud Kitchen,Vegetables,97,97,0,9.0,0.7,123.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-04,Supermarket,Meat,147,82,65,3.0,5.1,82.0,0,Rainy,19,Overproduction,1.0,High
+2025-10-04,Cloud Kitchen,Prepared Food,118,88,30,2.0,23.8,88.0,0,Sunny,9,Expired,0.0,Medium
+2025-10-04,Cloud Kitchen,Bakery,113,106,7,3.0,28.0,106.0,0,Sunny,2,Storage Issue,0.0,Low
+2025-10-04,Supermarket,Bakery,220,170,50,,20.1,170.0,0,Sunny,8,Expired,0.0,Medium
+2025-10-04,Supermarket,Prepared Food,120,120,0,1.0,22.8,123.0,0,Rainy,0,No Waste,0.0,Low
+2025-10-04,Restaurant,Dairy,86,86,0,4.0,4.1,100.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-04,Supermarket,Bakery,146,146,0,4.0,19.2,165.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-04,Cloud Kitchen,Prepared Food,104,95,9,1.0,23.1,95.0,0,Hot,3,Expired,0.0,Medium
+2025-10-04,Supermarket,Vegetables,169,148,21,3.0,5.8,148.0,0,Sunny,5,Expired,0.0,Medium
+2025-10-04,Restaurant,Bakery,66,66,0,4.0,23.6,67.0,0,Rainy,0,No Waste,0.0,Low
+2025-10-04,Cloud Kitchen,Dairy,88,88,0,3.0,3.5,101.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-04,Cafeteria,Fruits,54,54,0,8.0,3.2,77.0,0,Hot,0,No Waste,0.0,Low
+2025-10-04,Cafeteria,Fruits,53,53,0,4.0,10.9,54.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-04,Restaurant,Vegetables,105,102,3,6.0,5.3,102.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-04,Restaurant,Prepared Food,117,78,39,2.0,26.6,78.0,0,Cloudy,18,Storage Issue,1.0,High
+2025-10-04,Cafeteria,Bakery,67,38,29,3.0,20.8,38.0,0,Rainy,6,Overproduction,0.0,High
+2025-10-04,Cafeteria,Vegetables,88,38,50,4.0,3.0,38.0,0,Rainy,13,Overproduction,0.0,High
+2025-10-04,Supermarket,Fruits,128,105,23,2.0,7.2,105.0,0,Rainy,4,Expired,0.0,Medium
+2025-10-04,Supermarket,Fruits,219,219,0,2.0,10.9,234.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-04,Restaurant,Bakery,93,51,42,3.0,23.9,51.0,0,Rainy,11,Overproduction,1.0,High
+2025-10-04,Restaurant,Meat,102,85,17,4.0,2.4,85.0,0,Cloudy,3,Expired,0.0,Medium
+2025-10-04,Restaurant,Vegetables,64,64,0,7.0,0.8,86.0,0,Hot,0,No Waste,0.0,Low
+2025-10-05,Cloud Kitchen,Fruits,141,109,32,5.0,4.9,109.0,0,Sunny,8,Overproduction,1.0,Medium
+2025-10-05,Supermarket,Vegetables,176,97,79,5.0,3.8,97.0,0,Rainy,19,Overproduction,1.0,High
+2025-10-05,Supermarket,Meat,199,92,107,4.0,6.9,92.0,0,Rainy,36,Overproduction,1.0,Medium
+2025-10-05,Supermarket,Dairy,180,180,0,8.0,3.3,216.0,0,Hot,0,No Waste,0.0,Low
+2025-10-05,Cloud Kitchen,Fruits,106,100,6,2.0,9.3,100.0,0,Sunny,1,Expired,0.0,Low
+2025-10-05,Restaurant,Prepared Food,101,53,48,1.0,25.2,53.0,0,Rainy,21,Overproduction,1.0,High
+2025-10-05,Restaurant,Prepared Food,93,62,31,1.0,27.8,62.0,0,Cloudy,16,Storage Issue,1.0,High
+2025-10-05,Restaurant,Prepared Food,80,67,13,1.0,17.1,67.0,0,Sunny,4,Expired,0.0,Medium
+2025-10-05,Restaurant,Dairy,131,86,45,7.0,5.4,86.0,0,Hot,10,Overproduction,0.0,Medium
+2025-10-05,Cloud Kitchen,Dairy,125,76,49,6.0,3.9,76.0,0,Rainy,12,Overproduction,0.0,High
+2025-10-05,Cafeteria,Vegetables,59,40,19,6.0,4.8,40.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-10-05,Cafeteria,Vegetables,106,62,44,6.0,2.3,62.0,0,Hot,9,Overproduction,1.0,Medium
+2025-10-05,Supermarket,Dairy,222,112,110,11.0,2.5,112.0,0,Rainy,28,Overproduction,1.0,High
+2025-10-05,Cloud Kitchen,Dairy,160,152,8,5.0,2.7,152.0,1,Cloudy,1,Expired,0.0,Low
+2025-10-05,Cloud Kitchen,Meat,124,77,47,5.0,4.5,77.0,0,Rainy,11,Overproduction,1.0,High
+2025-10-05,Cafeteria,Bakery,64,53,11,5.0,22.0,53.0,0,Hot,2,Low Demand,0.0,Medium
+2025-10-06,Restaurant,Meat,100,68,32,3.0,5.5,68.0,0,Sunny,7,Overproduction,1.0,Medium
+2025-10-06,Supermarket,Dairy,153,144,9,7.0,4.0,144.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-06,Restaurant,Prepared Food,120,66,54,1.0,25.3,66.0,0,Rainy,30,Overproduction,1.0,High
+2025-10-06,Restaurant,Prepared Food,103,76,27,1.0,23.4,76.0,0,Cloudy,11,Expired,0.0,High
+2025-10-06,Supermarket,Fruits,228,96,132,6.0,5.4,96.0,0,Rainy,27,Overproduction,,High
+2025-10-06,Supermarket,Bakery,103,103,0,3.0,21.3,132.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-06,Cafeteria,Vegetables,75,63,12,7.0,3.0,63.0,0,Sunny,2,Low Demand,0.0,Medium
+2025-10-06,Cafeteria,Dairy,66,60,6,10.0,2.5,60.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-06,Cloud Kitchen,Dairy,86,86,0,3.0,4.1,93.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-06,Supermarket,Meat,236,182,54,3.0,1.5,182.0,1,Sunny,13,Expired,0.0,Medium
+2025-10-06,Cloud Kitchen,Vegetables,120,120,0,10.0,1.0,150.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-06,Cloud Kitchen,Bakery,112,85,27,3.0,18.8,,0,Hot,7,Low Demand,0.0,Medium
+2025-10-06,Supermarket,Dairy,186,145,41,4.0,2.3,145.0,0,Rainy,7,Expired,0.0,Medium
+2025-10-06,Cafeteria,Bakery,67,53,14,4.0,26.5,53.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-10-06,Restaurant,Prepared Food,121,73,48,1.0,25.6,73.0,1,Rainy,25,Expired,0.0,High
+2025-10-06,Restaurant,Bakery,85,80,5,3.0,19.5,80.0,0,Sunny,1,Expired,0.0,Low
+2025-10-06,Supermarket,Fruits,148,148,0,2.0,8.4,151.0,0,Sunny,0,No Waste,0.0,Medium
+2025-10-06,Supermarket,Meat,148,115,33,1.0,2.6,115.0,0,Rainy,14,Expired,0.0,High
+2025-10-06,Supermarket,Bakery,168,156,12,2.0,20.3,156.0,0,Cloudy,3,Expired,0.0,Low
+2025-10-06,Restaurant,Bakery,107,94,13,3.0,21.1,94.0,1,,2,Expired,0.0,Low
+2025-10-06,Restaurant,Meat,84,63,21,1.0,4.0,63.0,0,Rainy,8,Expired,0.0,High
+2025-10-06,Supermarket,Vegetables,140,110,30,6.0,4.3,110.0,0,Rainy,2,Low Demand,0.0,Low
+2025-10-06,Restaurant,Prepared Food,82,63,19,1.0,15.4,63.0,0,Rainy,8,Expired,0.0,High
+2025-10-06,Supermarket,Bakery,188,104,84,4.0,20.8,,0,Rainy,16,Overproduction,0.0,Medium
+2025-10-06,Supermarket,Vegetables,156,92,64,7.0,7.7,92.0,0,Rainy,12,Overproduction,0.0,Medium
+2025-10-06,Cafeteria,Prepared Food,67,55,12,1.0,19.8,55.0,0,Sunny,5,Expired,0.0,Medium
+2025-10-06,Supermarket,Fruits,143,143,0,5.0,6.5,159.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-07,Supermarket,Bakery,222,161,61,1.0,20.6,161.0,0,Hot,22,Expired,0.0,High
+2025-10-07,Restaurant,Fruits,108,50,58,8.0,6.9,50.0,0,Rainy,13,Overproduction,1.0,High
+2025-10-07,Restaurant,Meat,77,59,18,5.0,3.0,59.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-10-07,Cloud Kitchen,Bakery,134,104,30,4.0,19.9,104.0,0,Cloudy,6,Expired,0.0,Medium
+2025-10-07,Cloud Kitchen,Prepared Food,112,99,13,2.0,22.5,99.0,0,Hot,4,Expired,0.0,Medium
+2025-10-07,Supermarket,Meat,221,133,88,3.0,-0.5,133.0,0,Hot,26,Overproduction,1.0,High
+2025-10-07,Supermarket,Prepared Food,138,98,40,2.0,30.9,98.0,0,Rainy,19,Storage Issue,1.0,High
+2025-10-07,Cafeteria,Fruits,51,51,0,2.0,7.3,75.0,0,Hot,0,No Waste,0.0,Low
+2025-10-07,Cafeteria,Fruits,65,65,0,5.0,4.7,70.0,0,Hot,0,No Waste,0.0,Low
+2025-10-07,Restaurant,Prepared Food,88,88,0,2.0,9.0,112.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-07,Cafeteria,Dairy,62,41,21,4.0,5.8,41.0,0,Rainy,4,Low Demand,1.0,Medium
+2025-10-07,Cloud Kitchen,Bakery,118,111,7,3.0,22.6,111.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-07,Cloud Kitchen,Vegetables,126,63,63,7.0,8.0,63.0,0,Rainy,14,Overproduction,0.0,High
+2025-10-07,Supermarket,Prepared Food,231,156,75,1.0,20.1,156.0,0,Sunny,27,Expired,0.0,High
+2025-10-07,Supermarket,Bakery,208,152,56,3.0,20.2,152.0,0,Hot,12,Expired,0.0,Medium
+2025-10-07,Cloud Kitchen,Meat,103,103,0,5.0,-2.5,126.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-07,Cloud Kitchen,Meat,116,72,44,6.0,2.2,72.0,0,Rainy,8,Overproduction,0.0,Medium
+2025-10-07,Restaurant,Vegetables,114,99,15,8.0,8.4,99.0,0,Hot,3,Low Demand,0.0,Medium
+2025-10-07,Restaurant,Bakery,81,78,3,3.0,22.3,78.0,0,Sunny,1,Expired,0.0,Low
+2025-10-07,Restaurant,Prepared Food,83,74,9,2.0,14.5,74.0,0,Cloudy,2,Expired,0.0,Medium
+2025-10-07,Cloud Kitchen,Fruits,96,61,35,5.0,12.4,61.0,0,Rainy,11,Overproduction,1.0,High
+2025-10-07,Supermarket,Bakery,155,155,0,4.0,17.6,237.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-08,Restaurant,Meat,89,78,11,1.0,1.2,78.0,0,Sunny,4,Expired,0.0,Medium
+2025-10-08,Supermarket,Vegetables,140,140,0,8.0,1.9,153.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-08,Cloud Kitchen,Vegetables,117,117,0,6.0,8.0,118.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-08,Cloud Kitchen,Dairy,104,62,42,7.0,5.8,62.0,0,Rainy,12,Low Demand,0.0,High
+2025-10-08,Restaurant,Bakery,91,83,8,1.0,28.9,83.0,1,Cloudy,4,Expired,0.0,Medium
+2025-10-08,Cloud Kitchen,Fruits,110,110,0,6.0,4.7,126.0,0,Hot,0,No Waste,0.0,Low
+2025-10-08,Supermarket,Prepared Food,169,169,0,1.0,17.9,210.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-08,Supermarket,Vegetables,156,74,82,5.0,4.6,74.0,0,Rainy,25,Overproduction,1.0,High
+2025-10-08,Restaurant,Meat,78,78,0,4.0,3.1,85.0,0,Hot,0,No Waste,,Low
+2025-10-08,Restaurant,Dairy,101,101,0,4.0,3.7,112.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-08,Restaurant,Bakery,89,87,2,4.0,11.0,87.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-08,Restaurant,Meat,67,67,0,5.0,3.5,94.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-08,Restaurant,Fruits,83,81,2,3.0,2.0,,0,Sunny,0,No Waste,0.0,Low
+2025-10-08,Restaurant,Vegetables,91,77,14,7.0,6.5,77.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-10-08,Restaurant,Dairy,94,77,17,4.0,3.0,77.0,0,Sunny,2,Low Demand,0.0,Medium
+2025-10-08,Cafeteria,Prepared Food,75,75,0,2.0,17.9,85.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-08,Restaurant,Vegetables,127,99,28,5.0,9.4,99.0,1,Cloudy,9,Storage Issue,0.0,Medium
+2025-10-08,Restaurant,Meat,92,77,15,3.0,3.4,77.0,0,Cloudy,3,Low Demand,0.0,Medium
+2025-10-08,Cloud Kitchen,Fruits,113,94,19,5.0,7.3,94.0,0,Rainy,4,Overproduction,0.0,Medium
+2025-10-08,Supermarket,Bakery,143,121,22,5.0,25.7,121.0,0,Rainy,5,Expired,0.0,Medium
+2025-10-08,Cafeteria,Dairy,60,60,0,4.0,6.5,61.0,0,Hot,0,No Waste,0.0,Low
+2025-10-08,Supermarket,Prepared Food,198,171,27,1.0,17.0,171.0,1,,9,Expired,0.0,Medium
+2025-10-09,Cloud Kitchen,Vegetables,130,109,21,8.0,5.7,109.0,0,Hot,2,Overproduction,0.0,Low
+2025-10-09,Supermarket,Fruits,663,130,533,3.0,-0.3,130.0,0,Sunny,225,Overproduction,1.0,High
+2025-10-09,Restaurant,Vegetables,103,91,12,5.0,,91.0,0,Hot,2,Expired,0.0,Low
+2025-10-09,Restaurant,Fruits,81,81,0,2.0,,99.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-09,Cloud Kitchen,Fruits,92,87,5,4.0,8.7,87.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-09,Restaurant,Dairy,105,83,22,3.0,2.2,83.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-10-09,Cloud Kitchen,Bakery,109,77,32,4.0,15.9,77.0,0,Rainy,6,Overproduction,0.0,Medium
+2025-10-09,Cafeteria,Vegetables,96,82,14,7.0,6.4,82.0,1,Hot,1,Overproduction,0.0,Low
+2025-10-09,Cloud Kitchen,Meat,65,65,0,3.0,0.2,129.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-09,Restaurant,Meat,80,71,9,3.0,3.7,71.0,0,Hot,1,Expired,0.0,Low
+2025-10-09,Cafeteria,Prepared Food,77,45,32,2.0,19.1,45.0,0,Cloudy,9,Overproduction,1.0,High
+2025-10-09,Supermarket,Fruits,134,134,0,6.0,8.5,148.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-09,Supermarket,Prepared Food,223,118,105,1.0,21.5,118.0,0,Cloudy,39,Overproduction,1.0,High
+2025-10-09,Restaurant,Vegetables,77,77,0,4.0,3.4,156.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-09,Cloud Kitchen,Vegetables,116,116,0,6.0,6.5,117.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-09,Cloud Kitchen,Fruits,134,100,34,1.0,8.1,100.0,0,Sunny,10,Expired,0.0,Medium
+2025-10-09,Cloud Kitchen,Bakery,144,84,60,3.0,22.9,84.0,0,Sunny,16,Overproduction,1.0,High
+2025-10-09,Cafeteria,Prepared Food,65,46,19,,17.8,46.0,0,Rainy,7,Expired,0.0,High
+2025-10-09,Restaurant,Prepared Food,76,68,8,1.0,20.0,68.0,0,Cloudy,3,Expired,0.0,Medium
+2025-10-10,Cafeteria,Meat,70,62,8,4.0,0.5,62.0,0,Sunny,1,Expired,0.0,Low
+2025-10-10,Restaurant,Fruits,77,77,0,,8.6,78.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-10,Supermarket,Dairy,137,137,0,8.0,2.9,148.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-10,Supermarket,Fruits,189,118,71,5.0,6.9,118.0,0,Rainy,11,Overproduction,1.0,Medium
+2025-10-10,Cloud Kitchen,Bakery,118,116,2,2.0,19.6,116.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-10,Cloud Kitchen,Bakery,146,51,95,5.0,14.5,51.0,0,Rainy,25,Overproduction,1.0,High
+2025-10-10,Cloud Kitchen,Bakery,114,114,0,1.0,20.8,121.0,0,Hot,0,No Waste,0.0,Low
+2025-10-10,Cloud Kitchen,Prepared Food,152,133,19,2.0,22.5,133.0,1,Cloudy,5,Expired,0.0,Medium
+2025-10-10,Restaurant,Bakery,88,64,24,3.0,20.7,64.0,0,Sunny,5,Low Demand,0.0,Medium
+2025-10-10,Cafeteria,Meat,76,76,0,7.0,1.3,87.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-10,Cafeteria,Vegetables,59,36,23,5.0,6.1,36.0,0,Rainy,6,Low Demand,0.0,High
+2025-10-10,Cafeteria,Meat,58,52,6,3.0,6.9,52.0,0,Cloudy,1,Low Demand,0.0,Low
+2025-10-10,Cloud Kitchen,Fruits,139,64,75,1.0,15.4,64.0,0,Rainy,34,Overproduction,1.0,High
+2025-10-10,Restaurant,Fruits,117,102,15,5.0,5.2,,1,Sunny,2,Low Demand,0.0,Low
+2025-10-10,Restaurant,Meat,86,84,2,6.0,1.4,84.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-10,Cafeteria,Fruits,58,51,7,1.0,5.6,51.0,0,Sunny,2,Expired,0.0,Medium
+2025-10-10,Restaurant,Dairy,63,63,0,6.0,5.6,77.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-10,Supermarket,Prepared Food,142,118,24,1.0,14.7,118.0,0,Cloudy,8,Expired,0.0,Medium
+2025-10-10,Restaurant,Vegetables,85,85,0,5.0,6.7,95.0,0,Cloudy,0,No Waste,,Low
+2025-10-10,Cloud Kitchen,Vegetables,95,73,22,5.0,5.6,73.0,0,Cloudy,4,Low Demand,0.0,Medium
+2025-10-10,Restaurant,Prepared Food,65,47,18,2.0,13.5,47.0,0,Rainy,5,Low Demand,0.0,Medium
+2025-10-10,Cloud Kitchen,Bakery,87,87,0,1.0,24.6,115.0,0,Hot,0,No Waste,0.0,Low
+2025-10-11,Cafeteria,Prepared Food,68,55,13,2.0,16.5,55.0,0,Sunny,3,Low Demand,0.0,Low
+2025-10-11,Cafeteria,Dairy,60,49,11,8.0,3.7,49.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-11,Restaurant,Fruits,114,106,8,6.0,5.3,106.0,0,Hot,1,Low Demand,0.0,Low
+2025-10-11,Cloud Kitchen,Prepared Food,158,109,49,1.0,26.1,109.0,0,Sunny,22,Expired,0.0,High
+2025-10-11,Restaurant,Fruits,99,99,0,6.0,6.2,121.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-11,Cloud Kitchen,Vegetables,79,79,0,6.0,10.6,139.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-11,Restaurant,Bakery,101,101,0,4.0,21.7,115.0,0,Hot,0,No Waste,0.0,Low
+2025-10-11,Supermarket,Vegetables,207,190,17,8.0,7.7,190.0,0,Sunny,3,Storage Issue,0.0,Low
+2025-10-11,Supermarket,Dairy,157,157,0,9.0,4.9,164.0,0,Hot,0,No Waste,0.0,Low
+2025-10-11,Supermarket,Bakery,168,168,0,3.0,22.0,186.0,0,Cloudy,0,No Waste,0.0,Medium
+2025-10-11,Supermarket,Bakery,225,111,114,3.0,19.0,111.0,0,Rainy,31,Overproduction,1.0,High
+2025-10-11,Supermarket,Prepared Food,124,124,0,,13.8,168.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-11,Supermarket,Fruits,141,137,4,4.0,8.2,137.0,1,Rainy,0,No Waste,0.0,Low
+2025-10-11,Cafeteria,Dairy,62,62,0,11.0,1.8,63.0,0,Sunny,0,No Waste,,Low
+2025-10-11,Restaurant,Meat,78,78,0,3.0,2.1,83.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-11,Supermarket,Vegetables,194,194,0,6.0,9.4,198.0,0,,0,No Waste,0.0,Low
+2025-10-11,Cafeteria,Meat,70,49,21,3.0,0.1,49.0,0,Rainy,5,Low Demand,0.0,Medium
+2025-10-11,Restaurant,Meat,66,66,0,4.0,2.8,77.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-11,Cloud Kitchen,Fruits,110,110,0,2.0,11.4,149.0,1,Hot,0,No Waste,0.0,Low
+2025-10-11,Cloud Kitchen,Bakery,94,94,0,2.0,21.1,123.0,0,Hot,0,No Waste,0.0,Low
+2025-10-12,Cloud Kitchen,Bakery,136,109,27,4.0,17.8,109.0,0,Sunny,6,Overproduction,0.0,Medium
+2025-10-12,Supermarket,Meat,203,137,66,5.0,3.3,137.0,1,Rainy,11,Expired,0.0,Medium
+2025-10-12,Supermarket,Fruits,127,127,0,4.0,11.3,182.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-12,Restaurant,Dairy,103,95,8,4.0,3.1,95.0,0,Hot,1,Expired,0.0,Low
+2025-10-12,Restaurant,Fruits,71,61,10,6.0,9.6,61.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-10-12,Supermarket,Fruits,134,81,53,7.0,9.6,81.0,0,Rainy,16,Overproduction,0.0,High
+2025-10-12,Supermarket,Prepared Food,182,120,62,2.0,14.1,120.0,1,Rainy,18,Overproduction,,High
+2025-10-12,Supermarket,Fruits,187,133,54,9.0,5.3,133.0,0,Cloudy,9,Overproduction,0.0,Medium
+2025-10-12,Cloud Kitchen,Fruits,102,89,13,5.0,4.3,89.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-12,Restaurant,Meat,82,82,0,1.0,2.9,120.0,1,Hot,0,No Waste,0.0,Low
+2025-10-12,Cloud Kitchen,Meat,107,107,0,3.0,0.9,148.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-12,Restaurant,Dairy,82,80,2,4.0,1.4,80.0,0,Hot,0,No Waste,0.0,Low
+2025-10-12,Cloud Kitchen,Bakery,130,85,45,2.0,28.9,85.0,0,Cloudy,17,Storage Issue,0.0,High
+2025-10-12,Supermarket,Dairy,887,157,730,4.0,5.0,157.0,1,Rainy,274,Overproduction,0.0,High
+2025-10-12,Cafeteria,Fruits,83,71,12,5.0,7.7,71.0,1,Hot,1,Low Demand,1.0,Low
+2025-10-12,Supermarket,Prepared Food,155,155,0,2.0,28.3,229.0,1,Hot,0,No Waste,0.0,Low
+2025-10-12,Cafeteria,Dairy,68,68,0,9.0,4.6,70.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-12,Restaurant,Vegetables,114,77,37,6.0,4.5,77.0,0,Hot,7,Overproduction,0.0,Medium
+2025-10-12,Cloud Kitchen,Bakery,141,137,4,3.0,16.0,137.0,1,,1,Expired,0.0,Low
+2025-10-12,Cloud Kitchen,Prepared Food,115,59,56,1.0,14.0,59.0,0,Rainy,22,Overproduction,1.0,High
+2025-10-12,Restaurant,Prepared Food,77,56,21,1.0,24.4,56.0,0,Rainy,8,Expired,0.0,High
+2025-10-12,Supermarket,Vegetables,163,103,60,9.0,8.7,103.0,0,Rainy,12,Overproduction,0.0,Medium
+2025-10-12,Restaurant,Prepared Food,81,67,14,2.0,17.0,67.0,0,Cloudy,3,Expired,0.0,Medium
+2025-10-12,Supermarket,Dairy,141,141,0,10.0,1.2,151.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-12,Cloud Kitchen,Vegetables,126,68,58,6.0,8.7,68.0,0,Rainy,14,Overproduction,0.0,High
+2025-10-12,Cafeteria,Meat,60,44,16,3.0,5.4,44.0,0,Rainy,5,Low Demand,0.0,Medium
+2025-10-12,Cafeteria,Vegetables,78,60,18,3.0,1.4,60.0,0,Hot,3,Low Demand,0.0,Medium
+2025-10-12,Supermarket,Prepared Food,220,177,43,1.0,21.9,177.0,1,Rainy,17,Expired,0.0,Medium
+2025-10-12,Supermarket,Bakery,160,110,50,4.0,18.8,110.0,0,Rainy,13,Expired,0.0,Medium
+2025-10-12,Restaurant,Vegetables,93,52,41,10.0,4.9,52.0,0,Rainy,9,Overproduction,1.0,High
+2025-10-12,Restaurant,Prepared Food,99,93,6,2.0,10.5,93.0,0,Sunny,1,Expired,0.0,Low
+2025-10-13,Supermarket,Fruits,206,206,0,4.0,11.6,208.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-13,Cloud Kitchen,Dairy,120,120,0,5.0,-0.1,137.0,1,Sunny,0,No Waste,0.0,Medium
+2025-10-13,Cloud Kitchen,Dairy,121,115,6,8.0,2.8,115.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-13,Cloud Kitchen,Vegetables,140,93,47,8.0,7.7,93.0,0,Cloudy,11,Overproduction,0.0,Medium
+2025-10-13,Cloud Kitchen,Prepared Food,157,98,59,1.0,18.4,98.0,0,Hot,24,Expired,0.0,High
+2025-10-13,Restaurant,Vegetables,77,77,0,7.0,4.8,123.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-13,Cafeteria,Meat,74,60,14,6.0,1.6,60.0,0,Sunny,2,Low Demand,0.0,Medium
+2025-10-13,Cafeteria,Dairy,66,60,6,8.0,7.0,60.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-13,Supermarket,Fruits,134,134,0,5.0,10.7,173.0,0,Rainy,0,No Waste,0.0,Low
+2025-10-13,Supermarket,Prepared Food,206,150,56,2.0,18.6,150.0,0,Sunny,13,Expired,0.0,Medium
+2025-10-13,Supermarket,Prepared Food,201,118,83,1.0,18.0,118.0,1,Rainy,40,Overproduction,1.0,High
+2025-10-13,Cloud Kitchen,Dairy,117,94,23,1.0,-3.0,94.0,0,Sunny,6,Expired,0.0,Medium
+2025-10-13,Cafeteria,Vegetables,75,41,34,3.0,8.9,41.0,0,Rainy,10,Low Demand,1.0,High
+2025-10-13,Cloud Kitchen,Bakery,129,98,31,4.0,18.1,98.0,0,Sunny,6,Expired,0.0,Medium
+2025-10-13,Cafeteria,Meat,54,54,0,4.0,2.5,56.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-13,Supermarket,Meat,164,121,43,8.0,0.1,121.0,0,Cloudy,8,Overproduction,0.0,Medium
+2025-10-13,Cafeteria,Prepared Food,58,58,0,3.0,21.5,62.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-13,Cloud Kitchen,Meat,100,77,23,3.0,1.9,77.0,0,Rainy,4,Expired,0.0,High
+2025-10-13,Restaurant,Prepared Food,88,88,0,1.0,21.3,103.0,1,Sunny,0,No Waste,0.0,Medium
+2025-10-13,Supermarket,Bakery,273,119,154,2.0,23.2,119.0,0,Rainy,55,Overproduction,1.0,High
+2025-10-14,Cafeteria,Dairy,93,60,33,8.0,5.9,60.0,0,Sunny,5,Overproduction,0.0,Medium
+2025-10-14,Supermarket,Meat,154,90,64,2.0,4.2,90.0,0,Rainy,21,Overproduction,1.0,High
+2025-10-14,Cloud Kitchen,Prepared Food,107,107,0,1.0,28.3,110.0,0,Hot,0,No Waste,0.0,Low
+2025-10-14,Cloud Kitchen,Prepared Food,113,72,41,2.0,21.3,72.0,0,Rainy,12,Overproduction,1.0,High
+2025-10-14,Supermarket,Vegetables,190,190,0,6.0,9.3,200.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-14,Cafeteria,Fruits,97,37,60,6.0,2.2,37.0,0,Rainy,14,Overproduction,1.0,High
+2025-10-14,Supermarket,Prepared Food,199,107,92,1.0,17.7,107.0,0,Cloudy,31,Overproduction,1.0,High
+2025-10-14,Restaurant,Bakery,73,73,0,3.0,18.7,105.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-14,Restaurant,Prepared Food,74,74,0,2.0,13.0,78.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-14,Supermarket,Fruits,183,92,91,5.0,,92.0,0,Rainy,25,Overproduction,1.0,High
+2025-10-14,Supermarket,Prepared Food,144,139,5,1.0,19.7,139.0,0,Sunny,1,Expired,0.0,Low
+2025-10-14,Restaurant,Fruits,65,55,10,5.0,10.4,55.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-10-14,Supermarket,Meat,127,127,0,2.0,5.2,150.0,0,Cloudy,0,No Waste,,Low
+2025-10-14,Supermarket,Meat,183,183,0,5.0,1.8,221.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-14,Cafeteria,Dairy,84,53,31,6.0,4.3,53.0,0,Sunny,5,Low Demand,0.0,Medium
+2025-10-14,Cloud Kitchen,Meat,90,68,22,1.0,3.0,68.0,0,Rainy,8,Expired,0.0,High
+2025-10-14,Cafeteria,Meat,227,73,154,5.0,1.8,73.0,0,Sunny,35,Overproduction,1.0,High
+2025-10-14,Restaurant,Fruits,88,80,8,6.0,7.3,80.0,1,Rainy,0,No Waste,0.0,Low
+2025-10-14,Restaurant,Dairy,104,72,32,13.0,7.1,72.0,0,Cloudy,5,Overproduction,0.0,Medium
+2025-10-14,Cloud Kitchen,Meat,107,107,0,3.0,2.5,124.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-14,Supermarket,Bakery,128,90,38,3.0,17.7,90.0,0,Rainy,9,Overproduction,,Medium
+2025-10-15,Cafeteria,Meat,60,33,27,6.0,1.3,33.0,0,Rainy,9,Low Demand,0.0,High
+2025-10-15,Restaurant,Fruits,94,94,0,6.0,9.2,108.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-15,Restaurant,Bakery,81,81,0,3.0,18.6,109.0,0,Hot,0,No Waste,0.0,Low
+2025-10-15,Supermarket,Vegetables,195,195,0,6.0,2.2,197.0,1,,0,No Waste,0.0,Low
+2025-10-15,Cloud Kitchen,Prepared Food,81,81,0,,30.8,107.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-15,Restaurant,Prepared Food,83,70,13,3.0,24.0,70.0,0,Rainy,3,Expired,0.0,Medium
+2025-10-15,Restaurant,Bakery,125,114,11,4.0,11.1,114.0,0,Sunny,2,Low Demand,0.0,Low
+2025-10-15,Cafeteria,Prepared Food,57,57,0,2.0,21.4,90.0,0,Hot,0,No Waste,0.0,Medium
+2025-10-15,Cafeteria,Meat,63,63,0,3.0,-0.7,77.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-15,Cafeteria,Bakery,66,63,3,2.0,23.3,63.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-15,Supermarket,Meat,264,245,19,4.0,4.9,245.0,1,Sunny,4,Storage Issue,,Medium
+2025-10-15,Restaurant,Bakery,122,112,10,4.0,19.6,112.0,1,Sunny,1,Low Demand,0.0,Low
+2025-10-15,Restaurant,Dairy,79,79,0,4.0,,105.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-15,Supermarket,Meat,156,156,0,3.0,3.2,191.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-15,Restaurant,Prepared Food,98,61,37,1.0,22.5,61.0,0,Sunny,17,Expired,0.0,High
+2025-10-15,Cloud Kitchen,Prepared Food,102,102,0,1.0,17.8,126.0,1,Rainy,0,No Waste,0.0,Low
+2025-10-15,Restaurant,Prepared Food,70,70,0,2.0,22.7,74.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-15,Restaurant,Fruits,75,75,0,1.0,9.8,82.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-15,Supermarket,Vegetables,178,178,0,6.0,1.8,237.0,1,Hot,0,No Waste,0.0,Low
+2025-10-15,Supermarket,Bakery,159,159,0,1.0,22.0,203.0,1,Hot,0,No Waste,0.0,Low
+2025-10-16,Supermarket,Meat,176,124,52,5.0,2.4,124.0,0,Sunny,7,Overproduction,0.0,Medium
+2025-10-16,Cloud Kitchen,Prepared Food,87,87,0,3.0,18.6,119.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-16,Cafeteria,Vegetables,71,71,0,8.0,4.5,87.0,0,Hot,0,No Waste,0.0,Low
+2025-10-16,Supermarket,Dairy,155,155,0,3.0,1.1,232.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-16,Cafeteria,Bakery,53,44,9,3.0,16.5,44.0,0,,2,Low Demand,0.0,Medium
+2025-10-16,Cafeteria,Vegetables,64,50,14,4.0,10.9,50.0,0,Hot,4,Storage Issue,1.0,Medium
+2025-10-16,Cafeteria,Fruits,93,58,35,4.0,6.1,58.0,1,Rainy,8,Overproduction,0.0,Medium
+2025-10-16,Cafeteria,Fruits,66,60,6,9.0,8.9,60.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-16,Supermarket,Vegetables,176,103,73,1.0,5.4,103.0,0,Rainy,29,Expired,0.0,High
+2025-10-16,Cloud Kitchen,Prepared Food,134,134,0,1.0,23.3,162.0,1,Hot,0,No Waste,0.0,Low
+2025-10-16,Cloud Kitchen,Dairy,116,77,39,8.0,4.4,77.0,0,Hot,3,Overproduction,0.0,Medium
+2025-10-16,Supermarket,Vegetables,212,143,69,3.0,-0.8,143.0,1,Cloudy,14,Overproduction,0.0,Medium
+2025-10-16,Cloud Kitchen,Bakery,132,81,51,3.0,25.2,81.0,0,Rainy,17,Overproduction,0.0,High
+2025-10-16,Cloud Kitchen,Vegetables,118,88,30,9.0,10.4,88.0,0,Rainy,7,Storage Issue,0.0,Medium
+2025-10-16,Cloud Kitchen,Dairy,135,66,69,12.0,6.2,66.0,0,Rainy,14,Overproduction,0.0,High
+2025-10-16,Supermarket,Vegetables,153,129,24,5.0,7.2,,0,Hot,5,Low Demand,0.0,Medium
+2025-10-16,Cafeteria,Prepared Food,78,78,0,1.0,21.9,81.0,1,Hot,0,No Waste,0.0,Low
+2025-10-16,Restaurant,Vegetables,125,123,2,5.0,6.3,123.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-16,Restaurant,Fruits,115,75,40,7.0,8.5,75.0,0,Cloudy,8,Overproduction,0.0,Medium
+2025-10-16,Cafeteria,Meat,73,71,2,1.0,2.6,71.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-16,Supermarket,Prepared Food,186,182,4,2.0,20.8,182.0,0,Hot,1,Expired,0.0,Low
+2025-10-16,Restaurant,Prepared Food,96,90,6,1.0,22.8,90.0,0,Sunny,2,Expired,0.0,Medium
+2025-10-16,Restaurant,Prepared Food,89,73,16,1.0,23.6,73.0,0,Cloudy,6,Expired,0.0,Medium
+2025-10-17,Supermarket,Vegetables,137,137,0,5.0,3.5,151.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-17,Cloud Kitchen,Dairy,83,83,0,5.0,2.0,109.0,0,Hot,0,No Waste,0.0,Low
+2025-10-17,Supermarket,Fruits,194,149,45,7.0,9.7,149.0,0,Cloudy,8,Overproduction,1.0,Medium
+2025-10-17,Cloud Kitchen,Fruits,126,113,13,3.0,12.3,,0,Sunny,2,Storage Issue,0.0,Low
+2025-10-17,Restaurant,Fruits,92,92,0,3.0,6.5,97.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-17,Supermarket,Fruits,158,90,68,10.0,12.3,90.0,0,Rainy,19,Overproduction,0.0,High
+2025-10-17,Restaurant,Vegetables,79,79,0,7.0,7.7,107.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-17,Restaurant,Vegetables,101,55,46,7.0,8.6,55.0,0,Rainy,11,Overproduction,0.0,Low
+2025-10-17,Restaurant,Vegetables,84,45,39,4.0,6.4,45.0,0,Rainy,8,Overproduction,,High
+2025-10-17,Restaurant,Vegetables,80,80,0,6.0,4.5,107.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-17,Cloud Kitchen,Vegetables,109,102,7,4.0,4.7,102.0,0,Hot,1,Low Demand,0.0,Medium
+2025-10-17,Supermarket,Dairy,153,81,72,4.0,4.2,81.0,0,Rainy,21,Overproduction,1.0,High
+2025-10-17,Supermarket,Dairy,234,117,117,7.0,4.3,,0,Rainy,30,Overproduction,1.0,High
+2025-10-17,Cloud Kitchen,Vegetables,122,92,30,6.0,12.1,92.0,0,Rainy,7,Storage Issue,1.0,Medium
+2025-10-17,Supermarket,Fruits,110,106,4,6.0,7.7,106.0,0,Rainy,0,No Waste,0.0,Low
+2025-10-17,Cafeteria,Meat,57,57,0,7.0,1.9,70.0,1,Rainy,0,No Waste,0.0,Low
+2025-10-17,Restaurant,Vegetables,104,85,19,6.0,10.6,85.0,0,Sunny,5,Low Demand,0.0,Medium
+2025-10-17,Supermarket,Bakery,191,191,0,4.0,24.1,217.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-17,Restaurant,Dairy,62,62,0,11.0,3.7,77.0,0,Cloudy,0,No Waste,0.0,Medium
+2025-10-17,Cloud Kitchen,Vegetables,98,82,16,6.0,0.5,82.0,0,Cloudy,2,Low Demand,0.0,Low
+2025-10-17,Restaurant,Bakery,75,75,0,4.0,24.4,103.0,0,Hot,0,No Waste,0.0,Low
+2025-10-18,Restaurant,Bakery,108,89,19,3.0,15.8,89.0,1,Cloudy,3,Expired,,Medium
+2025-10-18,Restaurant,Meat,86,73,13,3.0,2.1,73.0,0,Sunny,4,Expired,0.0,Medium
+2025-10-18,Cafeteria,Fruits,72,71,1,5.0,11.4,71.0,1,Rainy,0,No Waste,0.0,Low
+2025-10-18,Supermarket,Bakery,112,102,10,2.0,23.8,102.0,0,Rainy,3,Expired,0.0,Medium
+2025-10-18,Restaurant,Fruits,78,78,0,7.0,7.8,86.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-18,Cafeteria,Prepared Food,58,58,0,2.0,22.5,64.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-18,Cafeteria,Vegetables,61,61,0,4.0,8.8,63.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-18,Restaurant,Vegetables,100,54,46,3.0,1.1,54.0,0,Rainy,13,Overproduction,0.0,High
+2025-10-18,Supermarket,Vegetables,179,179,0,9.0,5.6,273.0,1,Hot,0,No Waste,0.0,Low
+2025-10-18,Restaurant,Prepared Food,87,87,0,1.0,13.6,113.0,0,Hot,0,No Waste,0.0,High
+2025-10-18,Cafeteria,Meat,71,63,8,6.0,1.6,63.0,0,Hot,1,Low Demand,0.0,Low
+2025-10-18,Restaurant,Prepared Food,75,75,0,1.0,24.4,127.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-18,Supermarket,Vegetables,166,166,0,8.0,13.3,189.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-18,Cafeteria,Dairy,68,68,0,9.0,1.9,127.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-18,Cafeteria,Fruits,89,66,23,,9.0,66.0,1,Cloudy,4,Overproduction,0.0,Medium
+2025-10-18,Cloud Kitchen,Bakery,142,105,37,3.0,20.2,105.0,0,Sunny,7,Expired,0.0,Medium
+2025-10-18,Cafeteria,Meat,70,70,0,4.0,3.2,81.0,1,Hot,0,No Waste,0.0,Low
+2025-10-18,Cloud Kitchen,Prepared Food,138,85,53,2.0,24.3,85.0,0,Cloudy,16,Overproduction,1.0,High
+2025-10-18,Cafeteria,Vegetables,93,66,27,5.0,8.9,66.0,1,Rainy,6,Low Demand,0.0,Medium
+2025-10-18,Cafeteria,Fruits,69,69,0,6.0,11.8,77.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-18,Supermarket,Bakery,188,141,47,3.0,23.6,141.0,0,Sunny,12,Overproduction,1.0,Medium
+2025-10-18,Cafeteria,Vegetables,69,52,17,5.0,3.3,52.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-10-18,Supermarket,Vegetables,163,125,38,6.0,2.2,125.0,0,Cloudy,8,Low Demand,0.0,Low
+2025-10-18,Supermarket,Fruits,108,108,0,7.0,4.9,145.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-18,Supermarket,Vegetables,238,157,81,2.0,2.6,157.0,1,Sunny,19,Expired,0.0,Medium
+2025-10-18,Cloud Kitchen,Fruits,98,61,37,1.0,5.6,,0,Rainy,14,Expired,0.0,High
+2025-10-18,Restaurant,Dairy,81,81,0,7.0,3.4,88.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-18,Cafeteria,Prepared Food,68,61,7,3.0,21.1,61.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-19,Cafeteria,Prepared Food,69,69,0,2.0,15.6,71.0,0,Hot,0,No Waste,0.0,Low
+2025-10-19,Cafeteria,Prepared Food,98,43,55,2.0,19.3,43.0,0,Rainy,23,Overproduction,1.0,High
+2025-10-19,Cafeteria,Fruits,67,55,12,7.0,12.0,55.0,0,Cloudy,2,Low Demand,0.0,Low
+2025-10-19,Supermarket,Prepared Food,162,162,0,3.0,21.8,215.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-19,Cafeteria,Meat,67,67,0,1.0,-1.0,68.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-19,Cafeteria,Bakery,52,52,0,2.0,17.8,93.0,0,Hot,0,No Waste,0.0,Low
+2025-10-19,Restaurant,Meat,95,53,42,5.0,2.0,53.0,0,Rainy,10,Overproduction,1.0,High
+2025-10-19,Cafeteria,Bakery,86,85,1,2.0,22.2,85.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-19,Cloud Kitchen,Vegetables,103,103,0,5.0,6.6,115.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-19,Cloud Kitchen,Vegetables,84,84,0,4.0,7.5,108.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-19,Restaurant,Dairy,92,88,4,7.0,3.5,88.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-19,Restaurant,Fruits,69,68,1,4.0,0.9,68.0,0,Hot,0,No Waste,0.0,Medium
+2025-10-19,Cafeteria,Dairy,84,57,27,9.0,4.9,57.0,0,Sunny,4,Low Demand,0.0,Medium
+2025-10-19,Cloud Kitchen,Prepared Food,107,95,12,1.0,20.3,95.0,0,Sunny,4,Expired,,Medium
+2025-10-19,Cloud Kitchen,Meat,120,70,50,3.0,-0.1,70.0,1,Rainy,12,Overproduction,0.0,High
+2025-10-19,Supermarket,Dairy,210,176,34,6.0,1.5,176.0,0,Sunny,4,Expired,0.0,Low
+2025-10-19,Supermarket,Prepared Food,162,159,3,2.0,17.9,159.0,0,Sunny,1,Expired,0.0,Low
+2025-10-19,Supermarket,Dairy,230,195,35,6.0,7.1,195.0,1,,6,Overproduction,0.0,Medium
+2025-10-19,Cloud Kitchen,Meat,92,87,5,3.0,4.2,87.0,0,Sunny,1,Expired,0.0,Low
+2025-10-19,Cloud Kitchen,Dairy,102,85,17,8.0,2.8,85.0,0,Hot,2,Low Demand,0.0,Low
+2025-10-19,Restaurant,Vegetables,78,78,0,6.0,10.2,92.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-19,Supermarket,Vegetables,162,137,25,5.0,8.7,137.0,0,Rainy,7,Low Demand,0.0,Medium
+2025-10-19,Restaurant,Fruits,75,75,0,6.0,13.9,117.0,1,Hot,0,No Waste,0.0,Low
+2025-10-19,Cloud Kitchen,Dairy,129,88,41,8.0,0.6,88.0,0,Cloudy,3,Overproduction,0.0,Medium
+2025-10-19,Restaurant,Dairy,80,76,4,,0.7,76.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-19,Restaurant,Bakery,79,56,23,2.0,23.4,56.0,0,Rainy,5,Overproduction,0.0,Medium
+2025-10-19,Cafeteria,Vegetables,76,59,17,5.0,11.5,59.0,0,Hot,4,Storage Issue,0.0,Medium
+2025-10-19,Supermarket,Meat,194,148,46,3.0,4.6,148.0,1,Rainy,12,Overproduction,1.0,Medium
+2025-10-19,Supermarket,Meat,268,158,110,4.0,1.4,158.0,1,Sunny,23,Overproduction,1.0,Medium
+2025-10-20,Supermarket,Meat,190,177,13,5.0,4.0,177.0,1,Cloudy,1,Expired,0.0,Low
+2025-10-20,Restaurant,Vegetables,96,96,0,2.0,6.4,158.0,1,Hot,0,No Waste,0.0,Low
+2025-10-20,Cloud Kitchen,Dairy,97,97,0,5.0,3.9,97.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-20,Supermarket,Vegetables,161,129,32,8.0,5.8,129.0,0,Cloudy,3,Low Demand,0.0,Low
+2025-10-20,Supermarket,Fruits,146,111,35,1.0,8.4,111.0,0,Cloudy,15,Expired,0.0,High
+2025-10-20,Cafeteria,Fruits,84,76,8,5.0,6.5,76.0,0,Sunny,1,Low Demand,0.0,High
+2025-10-20,Restaurant,Meat,73,70,3,4.0,-0.3,70.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-20,Cloud Kitchen,Bakery,98,93,5,3.0,16.0,93.0,0,,1,Low Demand,0.0,Low
+2025-10-20,Supermarket,Fruits,157,125,32,5.0,4.4,125.0,0,Cloudy,4,Low Demand,0.0,Medium
+2025-10-20,Supermarket,Prepared Food,135,135,0,,,210.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-20,Cafeteria,Bakery,71,69,2,3.0,21.0,69.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-20,Cafeteria,Dairy,78,46,32,5.0,4.5,46.0,0,,7,Overproduction,0.0,High
+2025-10-20,Restaurant,Fruits,89,65,24,5.0,9.7,65.0,0,Cloudy,4,Low Demand,0.0,Medium
+2025-10-20,Restaurant,Prepared Food,83,78,5,1.0,20.3,78.0,0,Sunny,1,Expired,0.0,Low
+2025-10-20,Cafeteria,Prepared Food,63,58,5,1.0,13.3,58.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-20,Supermarket,Fruits,154,137,17,2.0,5.2,137.0,0,Cloudy,3,Expired,0.0,Low
+2025-10-20,Cafeteria,Vegetables,88,88,0,7.0,10.3,89.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-20,Cloud Kitchen,Meat,91,91,0,4.0,3.7,141.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-20,Supermarket,Fruits,158,158,0,6.0,11.0,162.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-21,Cloud Kitchen,Dairy,96,87,9,9.0,5.3,87.0,0,Rainy,1,Low Demand,0.0,Low
+2025-10-21,Cloud Kitchen,Prepared Food,112,112,0,,,113.0,0,Hot,0,No Waste,0.0,Low
+2025-10-21,Restaurant,Meat,127,91,36,5.0,3.3,91.0,0,Cloudy,5,Low Demand,0.0,Medium
+2025-10-21,Supermarket,Fruits,230,193,37,6.0,10.5,193.0,1,Sunny,4,Storage Issue,0.0,Low
+2025-10-21,Supermarket,Bakery,136,90,46,3.0,18.8,90.0,0,Cloudy,10,Overproduction,1.0,Medium
+2025-10-21,Cloud Kitchen,Prepared Food,115,89,26,1.0,18.5,89.0,0,Cloudy,7,Expired,0.0,Medium
+2025-10-21,Cloud Kitchen,Dairy,109,108,1,6.0,1.6,108.0,0,Hot,0,No Waste,0.0,Low
+2025-10-21,Cafeteria,Fruits,84,69,15,7.0,10.7,69.0,0,Hot,3,Low Demand,,Medium
+2025-10-21,Supermarket,Vegetables,167,162,5,7.0,7.4,162.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-21,Cloud Kitchen,Fruits,103,102,1,2.0,3.3,102.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-21,Cafeteria,Prepared Food,61,38,23,1.0,18.2,38.0,0,Rainy,8,Expired,0.0,High
+2025-10-21,Restaurant,Prepared Food,108,90,18,2.0,24.7,90.0,0,Sunny,6,Expired,0.0,Low
+2025-10-21,Supermarket,Dairy,168,145,23,7.0,6.8,145.0,0,Sunny,5,Storage Issue,0.0,Medium
+2025-10-21,Cafeteria,Meat,88,84,4,1.0,2.9,84.0,0,Hot,1,Expired,0.0,Low
+2025-10-21,Cloud Kitchen,Meat,84,84,0,6.0,2.5,105.0,0,Hot,0,No Waste,0.0,Low
+2025-10-21,Cloud Kitchen,Fruits,105,105,0,3.0,5.3,119.0,0,Hot,0,No Waste,0.0,Low
+2025-10-21,Cloud Kitchen,Fruits,107,105,2,6.0,10.7,105.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-21,Supermarket,Vegetables,293,278,15,8.0,1.3,278.0,1,Hot,1,Expired,0.0,Low
+2025-10-21,Cafeteria,Dairy,57,57,0,7.0,4.9,86.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-22,Cloud Kitchen,Fruits,172,117,55,6.0,13.1,117.0,1,Cloudy,18,Storage Issue,1.0,High
+2025-10-22,Supermarket,Dairy,113,113,0,11.0,5.9,144.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-22,Restaurant,Vegetables,104,95,9,12.0,5.5,95.0,1,Cloudy,1,Low Demand,0.0,Low
+2025-10-22,Cafeteria,Vegetables,57,50,7,7.0,,50.0,0,Rainy,0,No Waste,,Low
+2025-10-22,Supermarket,Meat,160,154,6,1.0,0.1,154.0,0,Sunny,2,Expired,0.0,Low
+2025-10-22,Supermarket,Vegetables,230,147,83,,5.1,147.0,1,Rainy,18,Overproduction,1.0,Medium
+2025-10-22,Supermarket,Fruits,119,119,0,6.0,9.3,144.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-22,Supermarket,Vegetables,149,149,0,6.0,7.5,188.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-22,Supermarket,Fruits,197,197,0,5.0,9.6,239.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-22,Supermarket,Prepared Food,116,116,0,1.0,22.1,135.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-22,Supermarket,Fruits,131,131,0,4.0,6.0,138.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-22,Cloud Kitchen,Dairy,135,82,53,7.0,5.0,82.0,0,Rainy,12,Overproduction,0.0,High
+2025-10-22,Supermarket,Fruits,154,106,48,6.0,6.5,106.0,0,Cloudy,10,Overproduction,1.0,Medium
+2025-10-22,Supermarket,Dairy,161,161,0,4.0,2.4,210.0,0,Cloudy,0,No Waste,,Low
+2025-10-23,Supermarket,Meat,244,244,0,6.0,-1.5,248.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-23,Restaurant,Prepared Food,77,77,0,2.0,21.8,78.0,0,Hot,0,No Waste,0.0,Low
+2025-10-23,Cloud Kitchen,Vegetables,142,89,53,3.0,5.7,89.0,1,Hot,11,Overproduction,0.0,High
+2025-10-23,Cloud Kitchen,Prepared Food,67,67,0,1.0,7.1,117.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-23,Restaurant,Prepared Food,101,74,27,,20.2,74.0,0,Hot,5,Expired,0.0,Medium
+2025-10-23,Cafeteria,Bakery,79,65,14,2.0,20.3,65.0,0,Sunny,3,Expired,0.0,Medium
+2025-10-23,Cloud Kitchen,Dairy,306,71,235,5.0,6.1,,0,Cloudy,58,Overproduction,1.0,High
+2025-10-23,Supermarket,Meat,164,145,19,,-0.4,145.0,0,Cloudy,3,Low Demand,0.0,Low
+2025-10-23,Supermarket,Prepared Food,177,174,3,2.0,25.0,174.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-23,Cafeteria,Fruits,71,62,9,5.0,6.5,62.0,0,Hot,1,Low Demand,0.0,High
+2025-10-23,Supermarket,Vegetables,163,163,0,4.0,8.5,182.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-23,Cafeteria,Meat,68,68,0,4.0,4.6,75.0,1,Hot,0,No Waste,0.0,Low
+2025-10-23,Restaurant,Prepared Food,86,86,0,2.0,16.9,96.0,0,Hot,0,No Waste,0.0,Low
+2025-10-23,Supermarket,Fruits,311,210,101,4.0,7.2,210.0,1,Sunny,18,Expired,0.0,Medium
+2025-10-23,Supermarket,Vegetables,139,103,36,10.0,2.1,103.0,0,Rainy,6,Low Demand,0.0,Medium
+2025-10-23,Restaurant,Prepared Food,94,84,10,,,84.0,0,Hot,3,Expired,0.0,Medium
+2025-10-23,Cloud Kitchen,Bakery,98,98,0,2.0,25.0,111.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-23,Restaurant,Prepared Food,72,72,0,1.0,14.4,74.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-23,Cafeteria,Bakery,94,66,28,4.0,24.3,66.0,0,Hot,7,Low Demand,,Medium
+2025-10-23,Supermarket,Prepared Food,164,128,36,1.0,14.5,128.0,0,Sunny,12,Expired,0.0,Medium
+2025-10-23,Cloud Kitchen,Fruits,71,71,0,9.0,12.6,103.0,0,Hot,0,No Waste,0.0,Low
+2025-10-23,Restaurant,Prepared Food,108,103,5,2.0,24.5,103.0,1,Sunny,1,Expired,0.0,Low
+2025-10-23,Supermarket,Vegetables,169,148,21,9.0,4.8,148.0,0,Sunny,2,Overproduction,0.0,Low
+2025-10-23,Supermarket,Fruits,166,166,0,3.0,8.6,182.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-23,Cloud Kitchen,Meat,67,67,0,4.0,0.9,116.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-23,Supermarket,Fruits,156,150,6,8.0,11.1,150.0,0,Sunny,1,Storage Issue,0.0,Low
+2025-10-23,Restaurant,Dairy,126,99,27,12.0,2.5,99.0,1,Sunny,4,Overproduction,0.0,Medium
+2025-10-24,Restaurant,Prepared Food,114,73,41,1.0,18.9,73.0,0,Rainy,16,Expired,0.0,High
+2025-10-24,Cafeteria,Fruits,61,46,15,8.0,9.6,46.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-10-24,Supermarket,Vegetables,147,147,0,6.0,5.1,180.0,0,Hot,0,No Waste,0.0,Low
+2025-10-24,Cafeteria,Vegetables,63,63,0,4.0,8.9,88.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-24,Restaurant,Meat,71,71,0,4.0,4.9,91.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-24,Cloud Kitchen,Fruits,98,81,17,1.0,10.2,81.0,0,Cloudy,6,Expired,0.0,Medium
+2025-10-24,Restaurant,Dairy,69,59,10,2.0,4.4,59.0,0,Sunny,2,Expired,0.0,Medium
+2025-10-24,Supermarket,Prepared Food,208,166,42,2.0,6.3,166.0,0,Sunny,9,Expired,,Medium
+2025-10-24,Supermarket,Dairy,152,152,0,10.0,3.6,220.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-24,Cafeteria,Bakery,59,59,0,4.0,28.0,65.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-24,Cafeteria,Fruits,76,60,16,9.0,9.7,60.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-24,Supermarket,Dairy,155,155,0,4.0,,165.0,0,Sunny,0,No Waste,0.0,High
+2025-10-24,Cloud Kitchen,Prepared Food,93,91,2,2.0,23.0,91.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-24,Supermarket,Bakery,198,137,61,4.0,25.6,,0,Sunny,18,Overproduction,1.0,High
+2025-10-24,Restaurant,Vegetables,81,78,3,9.0,4.5,78.0,0,,0,No Waste,0.0,Low
+2025-10-25,Supermarket,Fruits,159,159,0,5.0,2.8,203.0,1,Rainy,0,No Waste,,Low
+2025-10-25,Cafeteria,Meat,62,48,14,4.0,1.2,48.0,0,Rainy,2,Low Demand,1.0,Medium
+2025-10-25,Restaurant,Prepared Food,81,74,7,2.0,18.3,74.0,0,Rainy,1,Expired,0.0,Low
+2025-10-25,Cafeteria,Meat,65,56,9,2.0,0.2,56.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-10-25,Supermarket,Fruits,141,141,0,8.0,7.0,170.0,0,Hot,0,No Waste,0.0,Low
+2025-10-25,Restaurant,Dairy,83,52,31,7.0,1.5,52.0,0,,6,Overproduction,1.0,Medium
+2025-10-25,Supermarket,Bakery,147,108,39,3.0,15.9,108.0,0,Rainy,9,Expired,0.0,Medium
+2025-10-25,Cloud Kitchen,Fruits,104,104,0,7.0,9.8,119.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-25,Supermarket,Meat,129,129,0,,0.7,149.0,0,Hot,0,No Waste,0.0,Low
+2025-10-25,Supermarket,Dairy,168,121,47,8.0,0.2,121.0,0,Sunny,9,Overproduction,1.0,Medium
+2025-10-25,Restaurant,Meat,251,80,171,1.0,3.5,80.0,0,Sunny,87,Overproduction,1.0,High
+2025-10-25,Supermarket,Prepared Food,142,142,0,3.0,20.9,153.0,0,Cloudy,0,No Waste,,High
+2025-10-25,Supermarket,Fruits,190,170,20,2.0,11.9,,0,Sunny,4,Expired,0.0,Medium
+2025-10-25,Supermarket,Vegetables,169,137,32,10.0,3.3,137.0,0,Hot,5,Low Demand,1.0,Medium
+2025-10-25,Restaurant,Dairy,70,70,0,10.0,4.5,72.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-25,Cloud Kitchen,Bakery,91,78,13,3.0,,78.0,0,Rainy,4,Expired,0.0,Medium
+2025-10-25,Cloud Kitchen,Meat,72,72,0,1.0,7.8,101.0,0,Hot,0,No Waste,0.0,Low
+2025-10-25,Restaurant,Vegetables,96,43,53,7.0,-0.4,43.0,0,Rainy,12,Overproduction,1.0,High
+2025-10-25,Restaurant,Meat,85,85,0,5.0,4.0,98.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-25,Cloud Kitchen,Prepared Food,134,98,36,2.0,16.6,98.0,0,Sunny,8,Expired,0.0,Medium
+2025-10-25,Supermarket,Vegetables,121,121,0,6.0,5.3,167.0,0,Hot,0,No Waste,0.0,Low
+2025-10-25,Supermarket,Meat,217,217,0,3.0,3.0,227.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-25,Supermarket,Fruits,184,115,69,5.0,5.3,115.0,0,Rainy,13,Overproduction,1.0,Medium
+2025-10-25,Cloud Kitchen,Prepared Food,109,63,46,2.0,17.9,63.0,0,Rainy,15,Overproduction,1.0,High
+2025-10-25,Supermarket,Meat,148,108,40,3.0,3.3,108.0,0,,11,Overproduction,0.0,Medium
+2025-10-25,Cloud Kitchen,Meat,102,102,0,8.0,1.0,113.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-26,Restaurant,Dairy,82,82,0,4.0,4.6,107.0,0,Hot,0,No Waste,0.0,Low
+2025-10-26,Restaurant,Vegetables,120,69,51,3.0,-0.2,69.0,0,Sunny,15,Overproduction,0.0,High
+2025-10-26,Cafeteria,Prepared Food,63,63,0,1.0,10.5,75.0,1,,0,No Waste,0.0,Low
+2025-10-26,Cloud Kitchen,Bakery,108,95,13,4.0,24.8,95.0,1,Rainy,2,Expired,0.0,Low
+2025-10-26,Cafeteria,Bakery,63,63,0,2.0,17.2,96.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-26,Supermarket,Bakery,128,128,0,1.0,21.4,181.0,1,Rainy,0,No Waste,0.0,Low
+2025-10-26,Cloud Kitchen,Prepared Food,161,128,33,2.0,16.8,128.0,1,Sunny,9,Expired,0.0,Medium
+2025-10-26,Supermarket,Bakery,195,125,70,4.0,17.7,125.0,0,Cloudy,14,Overproduction,0.0,Medium
+2025-10-26,Cafeteria,Meat,35,35,0,4.0,2.2,58.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-26,Supermarket,Prepared Food,162,103,59,3.0,20.9,103.0,0,Rainy,12,Overproduction,1.0,Medium
+2025-10-26,Cloud Kitchen,Meat,146,142,4,5.0,1.1,142.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-26,Supermarket,Dairy,222,149,73,10.0,5.1,149.0,0,Sunny,11,Overproduction,1.0,Medium
+2025-10-26,Restaurant,Dairy,113,87,26,6.0,5.1,,0,Hot,5,Overproduction,0.0,Medium
+2025-10-26,Restaurant,Vegetables,94,75,19,5.0,2.5,75.0,0,Cloudy,4,Low Demand,0.0,Medium
+2025-10-26,Restaurant,Dairy,94,82,12,4.0,-1.1,82.0,0,Sunny,1,Expired,0.0,Low
+2025-10-26,Restaurant,Prepared Food,78,78,0,3.0,18.9,91.0,0,Hot,0,No Waste,0.0,Low
+2025-10-26,Supermarket,Fruits,171,110,61,8.0,7.7,110.0,0,Cloudy,11,Overproduction,1.0,Medium
+2025-10-27,Restaurant,Meat,100,100,0,,-1.5,108.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-27,Cafeteria,Vegetables,65,54,11,6.0,6.6,54.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-27,Restaurant,Fruits,78,78,0,2.0,11.7,102.0,0,Sunny,0,No Waste,,Low
+2025-10-27,Supermarket,Meat,180,163,17,9.0,3.5,163.0,0,Hot,2,Overproduction,0.0,Low
+2025-10-27,Cloud Kitchen,Bakery,136,127,9,4.0,,127.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-27,Supermarket,Dairy,203,154,49,5.0,3.5,154.0,1,Rainy,11,Overproduction,0.0,Medium
+2025-10-27,Supermarket,Prepared Food,231,84,147,1.0,20.2,84.0,0,Rainy,70,Overproduction,1.0,High
+2025-10-27,Restaurant,Bakery,144,66,78,2.0,18.1,66.0,0,Rainy,28,Overproduction,1.0,High
+2025-10-27,Cloud Kitchen,Vegetables,98,98,0,6.0,7.4,118.0,0,,0,No Waste,0.0,Low
+2025-10-27,Cloud Kitchen,Fruits,120,85,35,1.0,7.9,85.0,0,Cloudy,14,Expired,0.0,High
+2025-10-27,Restaurant,Fruits,102,69,33,7.0,10.5,69.0,0,Sunny,8,Overproduction,1.0,Medium
+2025-10-27,Cloud Kitchen,Fruits,141,113,28,10.0,11.6,113.0,0,Sunny,4,Storage Issue,0.0,Low
+2025-10-27,Supermarket,Dairy,204,204,0,8.0,5.1,228.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-27,Supermarket,Prepared Food,150,150,0,2.0,19.7,178.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-27,Restaurant,Prepared Food,86,60,26,1.0,20.0,60.0,0,,8,Expired,,High
+2025-10-27,Cloud Kitchen,Dairy,100,100,0,6.0,7.0,187.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-27,Supermarket,Dairy,150,108,42,9.0,2.2,108.0,0,Cloudy,7,Overproduction,0.0,Medium
+2025-10-27,Cafeteria,Meat,90,58,32,4.0,2.8,58.0,0,Hot,6,Low Demand,1.0,Medium
+2025-10-27,Restaurant,Bakery,108,108,0,,20.0,155.0,1,Hot,0,No Waste,0.0,Low
+2025-10-27,Supermarket,Meat,153,80,73,4.0,-1.6,80.0,0,Rainy,17,Overproduction,1.0,High
+2025-10-27,Cloud Kitchen,Dairy,109,109,0,4.0,1.7,109.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-27,Cloud Kitchen,Fruits,120,104,16,7.0,7.5,104.0,0,Sunny,1,Low Demand,0.0,Low
+2025-10-28,Restaurant,Bakery,87,68,19,4.0,29.3,68.0,0,Hot,7,Storage Issue,0.0,Medium
+2025-10-28,Cloud Kitchen,Meat,121,99,22,6.0,-0.1,99.0,0,Hot,4,Low Demand,0.0,Medium
+2025-10-28,Supermarket,Meat,218,154,64,7.0,-1.7,154.0,0,Hot,10,Overproduction,1.0,Medium
+2025-10-28,Cafeteria,Dairy,71,53,18,2.0,3.1,53.0,0,Sunny,5,Low Demand,0.0,Medium
+2025-10-28,Supermarket,Prepared Food,212,85,127,2.0,14.6,85.0,0,Rainy,46,Overproduction,1.0,High
+2025-10-28,Cafeteria,Meat,90,87,3,4.0,1.7,,1,Cloudy,0,No Waste,,Low
+2025-10-28,Restaurant,Prepared Food,79,64,15,3.0,15.8,64.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-10-28,Restaurant,Vegetables,73,73,0,5.0,6.1,112.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-28,Cafeteria,Vegetables,75,52,23,8.0,6.4,52.0,0,Sunny,3,Low Demand,0.0,Medium
+2025-10-28,Cloud Kitchen,Prepared Food,124,100,24,2.0,17.8,100.0,1,Rainy,7,Expired,0.0,Medium
+2025-10-28,Restaurant,Prepared Food,83,83,0,1.0,19.6,100.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-28,Cloud Kitchen,Prepared Food,112,76,36,2.0,17.2,76.0,0,Rainy,11,Expired,0.0,High
+2025-10-28,Cafeteria,Bakery,60,60,0,3.0,18.3,62.0,0,Hot,0,No Waste,0.0,Low
+2025-10-28,Cloud Kitchen,Vegetables,156,129,27,6.0,1.1,129.0,1,Cloudy,6,Overproduction,0.0,Medium
+2025-10-28,Restaurant,Meat,90,90,0,6.0,-1.0,94.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-28,Cloud Kitchen,Meat,100,78,22,3.0,3.3,78.0,0,,5,Expired,0.0,Medium
+2025-10-28,Supermarket,Vegetables,161,138,23,6.0,10.6,138.0,0,Sunny,5,Storage Issue,0.0,Medium
+2025-10-28,Cafeteria,Prepared Food,35,35,0,1.0,11.8,68.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-28,Cafeteria,Prepared Food,57,57,0,1.0,19.4,57.0,0,Hot,0,No Waste,0.0,Low
+2025-10-28,Restaurant,Bakery,122,102,20,2.0,27.9,102.0,1,Hot,7,Storage Issue,0.0,Medium
+2025-10-28,Restaurant,Dairy,86,86,0,4.0,2.3,87.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-29,Cloud Kitchen,Bakery,116,107,9,4.0,21.4,107.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-29,Supermarket,Meat,195,192,3,6.0,5.2,192.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-29,Restaurant,Vegetables,78,69,9,7.0,3.6,69.0,0,Cloudy,1,Low Demand,0.0,Low
+2025-10-29,Supermarket,Meat,107,107,0,3.0,4.8,264.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-29,Supermarket,Prepared Food,92,92,0,2.0,24.6,148.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-29,Cafeteria,Dairy,60,60,0,7.0,4.7,68.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-29,Supermarket,Fruits,129,129,0,4.0,8.1,204.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-29,Restaurant,Meat,97,93,4,6.0,-1.0,93.0,0,Cloudy,0,No Waste,0.0,High
+2025-10-29,Supermarket,Fruits,181,96,85,2.0,9.2,96.0,0,Rainy,34,Overproduction,1.0,High
+2025-10-29,Restaurant,Fruits,71,71,0,6.0,8.1,94.0,0,Hot,0,No Waste,0.0,Low
+2025-10-29,Cafeteria,Vegetables,49,49,0,6.0,2.2,49.0,0,Rainy,0,No Waste,0.0,Low
+2025-10-29,Supermarket,Vegetables,179,149,30,8.0,4.7,149.0,0,Hot,4,Low Demand,1.0,Medium
+2025-10-29,Cloud Kitchen,Prepared Food,109,109,0,2.0,16.2,126.0,1,Cloudy,0,No Waste,0.0,Low
+2025-10-29,Restaurant,Prepared Food,96,86,10,2.0,24.6,86.0,0,Sunny,3,Expired,0.0,Medium
+2025-10-29,Cloud Kitchen,Prepared Food,89,89,0,2.0,6.7,124.0,0,Hot,0,No Waste,0.0,Low
+2025-10-29,Cloud Kitchen,Dairy,93,93,0,4.0,6.5,135.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-29,Cafeteria,Dairy,65,58,7,6.0,2.3,58.0,0,Cloudy,1,Low Demand,0.0,Low
+2025-10-29,Supermarket,Meat,178,128,50,6.0,2.3,128.0,0,Cloudy,7,Expired,0.0,Medium
+2025-10-29,Supermarket,Vegetables,149,145,4,6.0,3.3,145.0,0,Hot,0,No Waste,0.0,Low
+2025-10-29,Restaurant,Dairy,104,104,0,9.0,4.1,121.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-30,Supermarket,Meat,183,170,13,2.0,3.6,170.0,0,Hot,2,Expired,0.0,Low
+2025-10-30,Restaurant,Meat,79,79,0,4.0,2.4,83.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-30,Cafeteria,Dairy,74,56,18,11.0,5.4,56.0,0,Cloudy,1,Low Demand,0.0,Low
+2025-10-30,Cafeteria,Fruits,69,52,17,5.0,7.3,52.0,0,Hot,4,Low Demand,0.0,Medium
+2025-10-30,Restaurant,Prepared Food,87,76,11,2.0,13.8,76.0,0,Hot,2,Expired,0.0,Medium
+2025-10-30,Cafeteria,Fruits,53,53,0,1.0,8.7,60.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-30,Cafeteria,Fruits,61,61,0,5.0,4.3,63.0,0,Hot,0,No Waste,0.0,Low
+2025-10-30,Cloud Kitchen,Meat,115,83,32,4.0,1.5,83.0,0,Cloudy,7,Low Demand,0.0,Medium
+2025-10-30,Restaurant,Prepared Food,85,61,24,2.0,23.1,61.0,0,Rainy,8,Low Demand,1.0,High
+2025-10-30,Restaurant,Meat,52,51,1,2.0,2.4,51.0,0,Rainy,0,No Waste,0.0,Low
+2025-10-30,Restaurant,Dairy,113,80,33,9.0,6.0,80.0,0,Sunny,6,Low Demand,0.0,Medium
+2025-10-30,Supermarket,Prepared Food,135,135,0,2.0,24.2,146.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-30,Supermarket,Meat,155,128,27,1.0,3.8,128.0,0,Cloudy,10,Expired,0.0,Medium
+2025-10-30,Supermarket,Fruits,132,123,9,5.0,8.9,123.0,0,Cloudy,1,Expired,0.0,Low
+2025-10-30,Supermarket,Fruits,229,229,0,9.0,8.3,299.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-30,Cafeteria,Prepared Food,82,77,5,2.0,24.2,77.0,1,Hot,1,Expired,0.0,Low
+2025-10-30,Supermarket,Prepared Food,101,101,0,2.0,23.2,146.0,0,Hot,0,No Waste,0.0,Low
+2025-10-30,Restaurant,Vegetables,69,69,0,4.0,4.4,84.0,0,Sunny,0,No Waste,,Low
+2025-10-30,Cafeteria,Vegetables,55,55,0,,4.3,64.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-30,Cafeteria,Prepared Food,72,54,18,2.0,22.7,54.0,1,Rainy,7,Low Demand,0.0,High
+2025-10-30,Supermarket,Meat,123,123,0,5.0,-0.7,168.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-30,Supermarket,Dairy,154,125,29,3.0,4.8,125.0,0,Rainy,6,Expired,0.0,Medium
+2025-10-30,Restaurant,Meat,97,71,26,3.0,4.3,71.0,0,Rainy,6,Low Demand,0.0,Medium
+2025-10-30,Cafeteria,Bakery,58,40,18,5.0,21.7,40.0,0,Rainy,5,Low Demand,0.0,High
+2025-10-30,Cafeteria,Meat,59,34,25,8.0,1.8,34.0,0,Rainy,5,Low Demand,0.0,Medium
+2025-10-31,Supermarket,Meat,184,108,76,8.0,-0.7,108.0,0,,18,Overproduction,1.0,High
+2025-10-31,Cloud Kitchen,Bakery,128,101,27,3.0,26.6,101.0,0,Cloudy,8,Expired,0.0,Medium
+2025-10-31,Restaurant,Prepared Food,130,103,27,3.0,17.4,103.0,1,Sunny,6,Expired,0.0,Medium
+2025-10-31,Cafeteria,Bakery,71,71,0,3.0,18.4,75.0,1,Hot,0,No Waste,0.0,High
+2025-10-31,Restaurant,Vegetables,94,81,13,9.0,3.3,81.0,0,Rainy,1,Low Demand,0.0,Medium
+2025-10-31,Restaurant,Fruits,85,82,3,7.0,6.9,82.0,0,Cloudy,0,No Waste,0.0,Low
+2025-10-31,Restaurant,Bakery,85,48,37,2.0,19.6,48.0,0,Rainy,12,Low Demand,1.0,High
+2025-10-31,Supermarket,Fruits,144,144,0,5.0,4.8,173.0,0,Hot,0,No Waste,0.0,Low
+2025-10-31,Restaurant,Prepared Food,71,71,0,2.0,20.9,,0,Cloudy,0,No Waste,0.0,Low
+2025-10-31,Cloud Kitchen,Vegetables,102,102,0,6.0,3.9,106.0,0,Hot,0,No Waste,0.0,Low
+2025-10-31,Cafeteria,Bakery,91,80,11,1.0,22.4,80.0,0,Hot,4,Expired,0.0,Medium
+2025-10-31,Cafeteria,Vegetables,77,53,24,9.0,11.4,53.0,0,,8,Low Demand,0.0,High
+2025-10-31,Restaurant,Meat,66,58,8,5.0,1.5,58.0,0,Rainy,1,Low Demand,0.0,Low
+2025-10-31,Restaurant,Prepared Food,105,58,47,1.0,15.8,58.0,0,Sunny,21,Overproduction,1.0,High
+2025-10-31,Supermarket,Dairy,190,190,0,3.0,4.0,240.0,1,Sunny,0,No Waste,0.0,Low
+2025-10-31,Cloud Kitchen,Dairy,85,85,0,3.0,4.3,110.0,0,Sunny,0,No Waste,0.0,Low
+2025-10-31,Restaurant,Prepared Food,92,74,18,2.0,,74.0,0,Cloudy,8,Storage Issue,0.0,Medium
+2025-11-01,Cafeteria,Prepared Food,72,61,11,2.0,15.7,61.0,0,Cloudy,2,Expired,0.0,Medium
+2025-11-01,Supermarket,Fruits,113,113,0,6.0,7.3,165.0,0,Hot,0,No Waste,0.0,Low
+2025-11-01,Supermarket,Fruits,164,164,0,5.0,6.8,169.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-01,Cafeteria,Meat,69,51,18,6.0,4.0,51.0,0,Cloudy,3,Low Demand,0.0,Medium
+2025-11-01,Cloud Kitchen,Dairy,125,88,37,5.0,4.9,88.0,0,Cloudy,8,Overproduction,0.0,Medium
+2025-11-01,Supermarket,Prepared Food,218,146,72,1.0,18.6,146.0,0,Cloudy,27,Expired,0.0,High
+2025-11-01,Restaurant,Fruits,83,83,0,5.0,9.8,89.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-01,Supermarket,Dairy,175,164,11,7.0,5.6,164.0,0,Hot,1,Expired,0.0,Low
+2025-11-01,Restaurant,Dairy,92,91,1,5.0,,91.0,0,Hot,0,No Waste,0.0,Low
+2025-11-01,Cafeteria,Meat,51,51,0,4.0,2.2,58.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-01,Cafeteria,Vegetables,73,63,10,6.0,5.7,63.0,1,Rainy,2,Low Demand,0.0,Medium
+2025-11-01,Cloud Kitchen,Bakery,149,148,1,2.0,17.8,148.0,1,Hot,0,No Waste,0.0,Low
+2025-11-01,Supermarket,Meat,151,141,10,3.0,1.9,141.0,0,Cloudy,1,Expired,0.0,Low
+2025-11-01,Supermarket,Meat,179,179,0,3.0,-1.3,192.0,0,Hot,0,No Waste,0.0,Low
+2025-11-01,Restaurant,Dairy,65,65,0,6.0,4.1,73.0,0,Hot,0,No Waste,0.0,Low
+2025-11-01,Restaurant,Vegetables,91,77,14,,6.2,77.0,0,Hot,2,Low Demand,0.0,Medium
+2025-11-01,Supermarket,Vegetables,190,135,55,6.0,2.6,135.0,0,Rainy,10,Overproduction,0.0,Medium
+2025-11-01,Restaurant,Fruits,107,55,52,4.0,6.4,55.0,0,Rainy,16,Overproduction,0.0,High
+2025-11-01,Restaurant,Dairy,67,67,0,6.0,1.1,68.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-01,Cloud Kitchen,Vegetables,107,85,22,7.0,2.3,85.0,0,Hot,2,Low Demand,,Low
+2025-11-02,Cafeteria,Dairy,90,33,57,7.0,6.3,33.0,0,Rainy,17,Overproduction,1.0,Medium
+2025-11-02,Supermarket,Bakery,202,133,69,3.0,25.4,133.0,0,Sunny,23,Overproduction,0.0,High
+2025-11-02,Supermarket,Vegetables,187,182,5,3.0,11.8,182.0,1,Cloudy,1,Storage Issue,0.0,Low
+2025-11-02,Supermarket,Meat,224,167,57,3.0,-4.1,167.0,0,Sunny,12,Expired,,Medium
+2025-11-02,Cloud Kitchen,Prepared Food,149,149,0,1.0,23.8,173.0,1,Hot,0,No Waste,0.0,Low
+2025-11-02,Restaurant,Dairy,66,46,20,11.0,2.9,46.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-11-02,Restaurant,Vegetables,81,73,8,3.0,3.5,,0,Hot,2,Expired,0.0,Medium
+2025-11-02,Cloud Kitchen,Fruits,119,83,36,2.0,9.0,83.0,0,Cloudy,8,Expired,0.0,Medium
+2025-11-02,Restaurant,Vegetables,114,93,21,7.0,3.2,93.0,0,Sunny,3,Expired,0.0,Medium
+2025-11-02,Supermarket,Bakery,142,131,11,3.0,21.3,131.0,1,Rainy,2,Expired,0.0,Low
+2025-11-02,Supermarket,Dairy,133,124,9,3.0,3.6,124.0,0,Rainy,1,Expired,0.0,Low
+2025-11-02,Restaurant,Vegetables,79,79,0,10.0,8.1,93.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-02,Supermarket,Fruits,186,145,41,7.0,4.5,145.0,0,Cloudy,5,Overproduction,0.0,Medium
+2025-11-02,Cloud Kitchen,Dairy,125,115,10,10.0,1.2,115.0,1,Cloudy,1,Low Demand,0.0,Low
+2025-11-02,Supermarket,Vegetables,134,134,0,7.0,10.2,136.0,0,,0,No Waste,0.0,Low
+2025-11-02,Cloud Kitchen,Bakery,111,111,0,4.0,20.1,117.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-02,Supermarket,Fruits,163,163,0,4.0,7.8,164.0,0,,0,No Waste,0.0,Low
+2025-11-02,Cloud Kitchen,Prepared Food,122,122,0,2.0,29.6,148.0,1,Hot,0,No Waste,0.0,Low
+2025-11-02,Supermarket,Prepared Food,197,156,41,1.0,19.8,156.0,0,Sunny,11,Expired,0.0,Medium
+2025-11-02,Restaurant,Fruits,89,89,0,6.0,10.1,130.0,1,Hot,0,No Waste,0.0,Low
+2025-11-02,Cloud Kitchen,Bakery,104,104,0,6.0,22.8,124.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-02,Restaurant,Dairy,90,56,34,7.0,6.1,56.0,0,Rainy,7,Low Demand,1.0,Medium
+2025-11-02,Cloud Kitchen,Meat,79,79,0,3.0,3.5,105.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-02,Restaurant,Fruits,88,88,0,,8.7,95.0,0,Hot,0,No Waste,0.0,Low
+2025-11-02,Cafeteria,Vegetables,76,56,20,7.0,2.2,56.0,0,Sunny,2,Low Demand,0.0,Medium
+2025-11-02,Cloud Kitchen,Prepared Food,154,80,74,1.0,17.2,80.0,0,Rainy,29,Overproduction,1.0,High
+2025-11-02,Supermarket,Meat,239,170,69,3.0,-0.6,170.0,0,Hot,18,Expired,0.0,Medium
+2025-11-03,Restaurant,Dairy,98,98,0,11.0,6.1,107.0,0,Hot,0,No Waste,0.0,Low
+2025-11-03,Supermarket,Fruits,205,181,24,4.0,9.7,181.0,1,Cloudy,4,Expired,0.0,Low
+2025-11-03,Supermarket,Vegetables,150,129,21,7.0,5.4,129.0,1,Rainy,3,Low Demand,0.0,Low
+2025-11-03,Cafeteria,Fruits,64,46,18,5.0,10.2,46.0,0,Rainy,4,Low Demand,0.0,Medium
+2025-11-03,Supermarket,Meat,157,146,11,1.0,2.3,146.0,0,Cloudy,3,Expired,0.0,Low
+2025-11-03,Restaurant,Fruits,111,65,46,3.0,11.8,65.0,0,Rainy,15,Overproduction,0.0,Medium
+2025-11-03,Restaurant,Bakery,122,68,54,3.0,23.4,68.0,0,Hot,14,Overproduction,0.0,Medium
+2025-11-03,Restaurant,Meat,84,84,0,6.0,3.0,85.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-03,Restaurant,Prepared Food,127,127,0,1.0,25.7,135.0,1,Sunny,0,No Waste,0.0,Low
+2025-11-03,Cafeteria,Prepared Food,72,55,17,1.0,26.4,55.0,0,Cloudy,6,Storage Issue,0.0,Medium
+2025-11-03,Cloud Kitchen,Meat,88,85,3,5.0,3.5,85.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-03,Supermarket,Dairy,152,116,36,8.0,5.2,116.0,0,Cloudy,6,Overproduction,0.0,Medium
+2025-11-03,Supermarket,Bakery,215,134,81,3.0,17.3,134.0,0,Hot,19,Overproduction,1.0,High
+2025-11-03,Supermarket,Prepared Food,144,144,0,1.0,24.4,197.0,0,Hot,0,No Waste,0.0,Low
+2025-11-03,Restaurant,Fruits,121,109,12,,9.4,109.0,1,Cloudy,1,Low Demand,0.0,Low
+2025-11-03,Supermarket,Dairy,148,111,37,14.0,5.7,111.0,0,Rainy,3,Overproduction,0.0,Low
+2025-11-03,Restaurant,Bakery,90,67,23,5.0,,67.0,0,Rainy,6,Low Demand,0.0,Medium
+2025-11-03,Cafeteria,Dairy,49,49,0,5.0,5.1,81.0,0,Hot,0,No Waste,0.0,High
+2025-11-03,Restaurant,Bakery,87,71,16,4.0,23.3,71.0,0,Rainy,4,Expired,0.0,Medium
+2025-11-04,Restaurant,Meat,99,67,32,4.0,3.2,67.0,0,Rainy,7,Overproduction,0.0,Medium
+2025-11-04,Cafeteria,Prepared Food,36,36,0,1.0,,51.0,0,,0,No Waste,0.0,Low
+2025-11-04,Cafeteria,Meat,76,71,5,4.0,4.3,71.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-04,Cafeteria,Prepared Food,65,65,0,1.0,16.3,67.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-04,Supermarket,Vegetables,152,152,0,3.0,6.8,171.0,0,Cloudy,0,No Waste,0.0,High
+2025-11-04,Restaurant,Vegetables,107,75,32,6.0,7.1,75.0,0,Cloudy,8,Overproduction,0.0,Medium
+2025-11-04,Supermarket,Vegetables,178,178,0,5.0,1.8,190.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-04,Supermarket,Dairy,199,134,65,6.0,2.1,,0,Sunny,9,Overproduction,1.0,High
+2025-11-04,Restaurant,Vegetables,77,61,16,,4.2,61.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-11-04,Supermarket,Dairy,505,135,370,8.0,1.7,135.0,0,Hot,90,Overproduction,0.0,High
+2025-11-04,Supermarket,Prepared Food,166,100,66,2.0,17.6,100.0,0,Rainy,17,Expired,0.0,High
+2025-11-04,Supermarket,Bakery,175,175,0,3.0,30.3,184.0,0,Hot,0,No Waste,0.0,Low
+2025-11-04,Cafeteria,Meat,53,37,16,3.0,1.8,37.0,0,Rainy,3,Low Demand,0.0,Medium
+2025-11-04,Restaurant,Fruits,132,86,46,5.0,8.3,86.0,1,Sunny,13,Overproduction,1.0,High
+2025-11-04,Restaurant,Dairy,79,50,29,5.0,0.9,50.0,0,,5,Overproduction,0.0,Medium
+2025-11-04,Supermarket,Bakery,148,128,20,5.0,22.6,128.0,0,Cloudy,3,Overproduction,0.0,Low
+2025-11-04,Cafeteria,Fruits,67,62,5,6.0,11.1,62.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-04,Cafeteria,Fruits,69,61,8,7.0,12.4,61.0,0,Hot,1,Low Demand,1.0,Low
+2025-11-04,Restaurant,Prepared Food,82,68,14,1.0,28.9,68.0,0,Sunny,6,Storage Issue,,Medium
+2025-11-04,Cloud Kitchen,Vegetables,130,87,43,9.0,6.5,87.0,0,Cloudy,9,Overproduction,0.0,Medium
+2025-11-05,Cafeteria,Meat,56,49,7,5.0,2.6,49.0,0,Sunny,1,Low Demand,0.0,Low
+2025-11-05,Restaurant,Vegetables,89,89,0,10.0,6.2,103.0,0,Hot,0,No Waste,0.0,Low
+2025-11-05,Supermarket,Dairy,175,97,78,2.0,5.1,97.0,0,Rainy,23,Overproduction,1.0,High
+2025-11-05,Supermarket,Vegetables,135,130,5,8.0,7.3,130.0,0,Sunny,1,Low Demand,0.0,Low
+2025-11-05,Cloud Kitchen,Bakery,85,85,0,2.0,23.8,99.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-05,Restaurant,Vegetables,88,75,13,7.0,4.3,,0,Cloudy,2,Low Demand,0.0,Medium
+2025-11-05,Supermarket,Fruits,137,137,0,7.0,9.3,140.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-05,Cloud Kitchen,Bakery,68,68,0,4.0,19.2,88.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-05,Restaurant,Dairy,79,74,5,1.0,6.1,74.0,0,Cloudy,2,Expired,0.0,Medium
+2025-11-05,Restaurant,Fruits,64,64,0,6.0,4.7,83.0,0,Hot,0,No Waste,0.0,Low
+2025-11-05,Cafeteria,Dairy,83,73,10,12.0,5.2,73.0,0,Hot,0,No Waste,0.0,Low
+2025-11-05,Cafeteria,Prepared Food,77,37,40,,21.4,37.0,0,Rainy,15,Overproduction,0.0,High
+2025-11-05,Cafeteria,Fruits,75,75,0,7.0,6.4,75.0,1,Sunny,0,No Waste,0.0,Low
+2025-11-05,Restaurant,Dairy,92,44,48,5.0,7.5,44.0,0,Rainy,13,Overproduction,1.0,High
+2025-11-05,Supermarket,Prepared Food,153,153,0,1.0,22.1,160.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-05,Restaurant,Prepared Food,94,93,1,2.0,14.1,93.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-05,Cloud Kitchen,Bakery,139,117,22,5.0,18.1,117.0,1,Rainy,3,Low Demand,0.0,Medium
+2025-11-05,Cloud Kitchen,Bakery,142,119,23,2.0,25.1,119.0,1,Sunny,6,Expired,0.0,Medium
+2025-11-05,Restaurant,Fruits,99,86,13,4.0,5.2,86.0,0,Sunny,2,Low Demand,0.0,Low
+2025-11-05,Restaurant,Fruits,88,76,12,5.0,10.7,76.0,0,Hot,2,Low Demand,0.0,Medium
+2025-11-05,Supermarket,Vegetables,181,163,18,6.0,9.9,163.0,0,Hot,3,Storage Issue,0.0,Low
+2025-11-05,Supermarket,Prepared Food,214,214,0,2.0,20.7,217.0,1,Sunny,0,No Waste,0.0,Low
+2025-11-05,Supermarket,Vegetables,120,120,0,4.0,3.0,132.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-05,Supermarket,Prepared Food,143,143,0,1.0,20.3,149.0,0,Sunny,0,No Waste,0.0,Low
+2025-11-05,Cafeteria,Fruits,70,58,12,5.0,7.5,58.0,0,Cloudy,2,Low Demand,0.0,Medium
+2025-11-06,Cafeteria,Vegetables,75,48,27,5.0,3.5,48.0,0,Cloudy,4,Overproduction,0.0,Medium
+2025-11-06,Restaurant,Meat,102,86,16,4.0,3.1,86.0,0,Cloudy,2,Expired,0.0,Low
+2025-11-06,Supermarket,Fruits,216,124,92,5.0,13.0,124.0,0,Rainy,23,Overproduction,1.0,High
+2025-11-06,Cafeteria,Vegetables,73,44,29,6.0,5.6,44.0,0,Cloudy,6,Low Demand,0.0,Low
+2025-11-06,Restaurant,Fruits,102,58,44,,12.3,58.0,0,Rainy,15,Overproduction,1.0,High
+2025-11-06,Cafeteria,Vegetables,67,63,4,6.0,10.2,63.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-06,Cloud Kitchen,Fruits,123,100,23,5.0,8.1,100.0,0,Hot,3,Low Demand,0.0,Medium
+2025-11-06,Supermarket,Vegetables,156,153,3,4.0,5.6,153.0,0,Cloudy,0,No Waste,0.0,Low
+2025-11-06,Cafeteria,Vegetables,66,66,0,7.0,0.9,69.0,0,Hot,0,No Waste,0.0,Low
+2025-11-06,Cafeteria,Fruits,69,53,16,7.0,6.6,53.0,0,Rainy,2,Low Demand,0.0,Medium
+2025-11-06,Supermarket,Meat,140,112,28,5.0,4.3,112.0,0,Rainy,5,Expired,0.0,Medium
+2025-11-06,Cloud Kitchen,Fruits,100,100,0,7.0,8.2,,0,Sunny,0,No Waste,0.0,Low
+2025-11-06,Restaurant,Bakery,88,71,17,3.0,29.1,71.0,0,Rainy,5,Storage Issue,0.0,Medium
+2025-11-06,Supermarket,Fruits,203,114,89,4.0,5.6,114.0,0,Cloudy,23,Overproduction,1.0,High
+2025-11-06,Cloud Kitchen,Vegetables,108,62,46,3.0,4.7,62.0,0,Rainy,12,Overproduction,1.0,High
+2025-11-06,Supermarket,Prepared Food,204,204,0,1.0,21.4,211.0,1,Hot,0,No Waste,0.0,Low
