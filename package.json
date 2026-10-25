@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test:parity": "npx -y tsx scripts/parity.ts",
     "vercel-build": "tsx scripts/init-db.ts && next build",
-    "db:init": "tsx scripts/init-db.ts"
+    "db:init": "tsx scripts/init-db.ts",
+    "warehouse": "python3 ml/warehouse/build_warehouse.py"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

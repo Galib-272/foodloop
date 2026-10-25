@@ -35,6 +35,7 @@ On first start the app creates `data/foodsphere-v2.db` and seeds demo data. The 
 | Database | `lib/db.ts` (schema), `lib/seed.ts` (demo data) |
 | ML pipeline | `ml/waste/01_waste_model.ipynb`, `ml/matching/02_matching_model.ipynb` (Python, offline) → `lib/model/waste-models.json`, `lib/model/matching-model.json` |
 | ML inference | `lib/ml/runtime.ts` (tree/linear/KNN evaluator), `lib/ml/waste.ts`, `lib/ml/matching.ts` |
+| Data warehouse | `ml/warehouse/` — DuckDB star schema for waste and rescue analytics (offline, `npm run warehouse`) |
 
 **Donation workflow:** Available → Requested → Accepted → Scheduled → Collected → Delivered, plus Cancelled / Expired / Rejected / Failed Collection. Transitions are validated on the server, every change records actor and time, and acceptance runs in a transaction so only one recipient can claim a donation.
 
@@ -62,6 +63,27 @@ On first start the app creates `data/foodsphere-v2.db` and seeds demo data. The 
 Models are trained in the notebooks, exported to JSON and evaluated in TypeScript (no Python at runtime). `npm run test:parity` checks that TypeScript reproduces scikit-learn's outputs (`lib/model/*-golden.json`); the current max difference is below 0.00001.
 
 Retrain: open the two notebooks in Jupyter (`pip install pandas numpy scikit-learn imbalanced-learn xgboost lightgbm matplotlib seaborn nbformat nbclient`) and run all cells.
+
+## Data warehouse (DuckDB)
+
+An analytics warehouse, separate from the app's transactional SQLite database, built with **DuckDB** as a star schema:
+
+| Table | Grain / content | Source |
+|---|---|---|
+| `fact_inventory_waste` | one inventory item per day: bought, sold, wasted, waste level | Kaggle CSV (8,000 rows) |
+| `fact_donation_match` | one donation offered to one organization: distance, accepted, delivered | synthetic CSV (12,272 rows after cleaning) |
+| `fact_app_donation` | one donation listed in the app, with its delivery | the app's database `data/foodsphere-v2.db` (optional) |
+| `dim_date`, `dim_food_category`, `dim_business_type`, `dim_weather`, `dim_waste_reason`, `dim_area`, `dim_organization` | shared dimensions | all sources |
+
+```bash
+pip install -r ml/warehouse/requirements.txt
+npm run warehouse        # builds data/foodsphere_warehouse.duckdb and ml/warehouse/reports/*.csv
+```
+
+- Schema with primary and foreign keys: `ml/warehouse/schema.sql`. Analytics queries: `ml/warehouse/analytics.sql` (each result is saved as a CSV in `ml/warehouse/reports/`).
+- The synthetic data is cleaned with the same function the matching model uses, so the warehouse and the model see identical data. Every fix is counted in `reports/summary.json`.
+- The app database is read from a temporary copy, so the warehouse never changes it.
+- Example findings: overall waste rate 4.88%; Prepared Food wastes the most (7.61%); food banks complete 69.9% of offers vs 25.1% for shelters; pickups under 2 km succeed 42.4% of the time vs 25.0% at 10 km or more (synthetic data).
 
 ## Deploy (Vercel + Turso)
 
