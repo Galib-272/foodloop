@@ -36,6 +36,8 @@ On first start the app creates `data/foodsphere-v2.db` and seeds demo data. The 
 | ML pipeline | `ml/waste/01_waste_model.ipynb`, `ml/matching/02_matching_model.ipynb` (Python, offline) → `lib/model/waste-models.json`, `lib/model/matching-model.json` |
 | ML inference | `lib/ml/runtime.ts` (tree/linear/KNN evaluator), `lib/ml/waste.ts`, `lib/ml/matching.ts` |
 | Data warehouse | `ml/warehouse/` — DuckDB star schema for waste and rescue analytics (offline, `npm run warehouse`) |
+| AI assistant | `rag/` (Python: knowledge base, sqlite-vec + FTS5, LangGraph agent, local-model eval), `lib/rag/search.ts` + `app/app/assistant` (web) |
+| Automation | `lib/automation.ts` (events) → n8n workflow in `automation/n8n/` → `app/api/integrations/n8n` |
 
 **Donation workflow:** Available → Requested → Accepted → Scheduled → Collected → Delivered, plus Cancelled / Expired / Rejected / Failed Collection. Transitions are validated on the server, every change records actor and time, and acceptance runs in a transaction so only one recipient can claim a donation.
 
@@ -76,7 +78,7 @@ An analytics warehouse, separate from the app's transactional SQLite database, b
 | `dim_date`, `dim_food_category`, `dim_business_type`, `dim_weather`, `dim_waste_reason`, `dim_area`, `dim_organization` | shared dimensions | all sources |
 
 ```bash
-pip install -r ml/warehouse/requirements.txt
+npm run py:setup     # once: Python packages into .venv
 npm run warehouse        # builds data/foodsphere_warehouse.duckdb and ml/warehouse/reports/*.csv
 ```
 
@@ -84,6 +86,55 @@ npm run warehouse        # builds data/foodsphere_warehouse.duckdb and ml/wareho
 - The synthetic data is cleaned with the same function the matching model uses, so the warehouse and the model see identical data. Every fix is counted in `reports/summary.json`.
 - The app database is read from a temporary copy, so the warehouse never changes it.
 - Example findings: overall waste rate 4.88%; Prepared Food wastes the most (7.61%); food banks complete 69.9% of offers vs 25.1% for shelters; pickups under 2 km succeed 42.4% of the time vs 25.0% at 10 km or more (synthetic data).
+
+## Ask FoodSphere (RAG assistant, LangGraph, local models)
+
+Every role has **Ask FoodSphere** in the sidebar. It answers questions about donations, food safety, roles, privacy and the AI models **only from FoodSphere's own documents**, cites its sources, and says when the documents do not cover a question.
+
+| Technique | How it is done | Where |
+|---|---|---|
+| Knowledge base | 11 documents generated from the app's own pages, FAQ, help guides, README, model results and warehouse findings | `rag/build_knowledge.py` → `rag/knowledge/` |
+| Naive RAG | heading-aware chunks (~700 characters, 1-sentence overlap) → embeddings → nearest neighbours | `rag/common.py`, `rag/ingest.py` |
+| Contextual RAG | each chunk gets 1–2 sentences situating it in its document, written by a local LLM with Anthropic's contextual-retrieval prompt (cached in `rag/context_cache.json`; rule-based context without Ollama) | `rag/ingest.py` |
+| Vector database | **sqlite-vec** (`vec0` tables, cosine) in `data/rag.db` | `rag/ingest.py`, `rag/retrieve.py` |
+| Hybrid search | SQLite **FTS5** keyword search (BM25) + vector search, fused with Reciprocal Rank Fusion | `rag/retrieve.py`, `lib/rag/search.ts` |
+| Agent | **LangGraph**: retrieve → grade (are the question's words covered?) → generate, or widen the search once, then refuse | `rag/agent.py` |
+| Local models | **Qwen 2.5 1.5B, Llama 3.2 1B, DeepSeek-R1 1.5B, Mistral 7B** through Ollama; embeddings with nomic-embed-text | `rag/eval.py` |
+
+The live website cannot reach a model on your computer, so it uses the same flow in TypeScript with LSA embeddings (built from the corpus, no download) and answers by quoting the best sentences. `npm run test:rag` checks that the TypeScript search returns exactly the Python results. When `OLLAMA_URL` is set (local development), the web app uses a local model to write the answer.
+
+### Run it with the local models (Mac/Windows/Linux)
+
+1. Install [Ollama](https://ollama.com/download), open it once, then pull the models (about 8 GB):
+   ```bash
+   ollama pull qwen2.5:1.5b && ollama pull llama3.2:1b && ollama pull deepseek-r1:1.5b && ollama pull mistral:7b && ollama pull nomic-embed-text
+   ```
+2. Set up Python once (creates a private `.venv` folder in the project) and run everything:
+   ```bash
+   npm run py:setup
+   npm run rag:all      # rebuild the knowledge base, LLM contexts, embeddings, then evaluate retrieval + all 4 models
+   ```
+   Results: `rag/reports/eval_report.md` (retrieval hit@1/hit@3/MRR for naive vs contextual and vector vs keyword vs hybrid, then answer accuracy, citations, refusals and speed per model).
+3. Ask from the terminal: `npm run rag:ask -- "How cold must refrigerated food be kept?" --model mistral:7b`
+4. Use a local model in the web app: add `OLLAMA_URL=http://localhost:11434` and `OLLAMA_MODEL=qwen2.5:1.5b` to `.env.local`, then `npm run dev`.
+
+## Workflow automation (n8n)
+
+Important donation events are sent to a self-hosted **n8n** workflow (`automation/n8n/foodsphere-alerts.workflow.json`):
+
+```
+FoodSphere event (webhook) → Check secret & write alert (code) → Urgent? ─yes→ Notify admins in FoodSphere (HTTP → /api/integrations/n8n)
+                                                                        └no──→ Log only
+```
+
+- Events: `donation.created`, `donation.deadline_soon` (2 hours left), `donation.expired`, `collection.failed`, `donation.delivered`. They are sent only after the database change has been saved, and never block the app if n8n is down.
+- Urgent events come back as **[n8n] notifications for every administrator** and are recorded in the audit log. Both directions are protected with a shared secret.
+- Run it locally (no install needed, n8n is downloaded on first use):
+  ```bash
+  npm run n8n          # terminal 1: creates the secret in .env.local, imports + activates the workflow, starts n8n on http://localhost:5678
+  npm run dev          # terminal 2
+  ```
+  Then **Admin → Platform Settings → Workflow automation → Send test event**. The editor at http://localhost:5678 shows every run.
 
 ## Deploy (Vercel + Turso)
 
@@ -109,6 +160,8 @@ Files not needed online are listed in `.vercelignore`.
 - delivery confirmation and analytics updates
 - the volunteer flow
 - admin verification and audit logs
+
+`npm run test:parity` (ML models, TypeScript vs scikit-learn) and `npm run test:rag` (assistant search, TypeScript vs Python) check that the web app reproduces the Python results.
 
 ## Notes
 
