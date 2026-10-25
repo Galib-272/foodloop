@@ -1,0 +1,8 @@
+day_of_week,weekday_name,units_wasted,avg_waste_per_record,waste_rate_pct
+1,Monday,6418.0,5.68,4.86
+2,Tuesday,5825.0,5.41,4.57
+3,Wednesday,5862.0,4.89,4.2
+4,Thursday,7865.0,6.72,5.64
+5,Friday,6665.0,5.83,4.92
+6,Saturday,6870.0,5.87,4.88
+7,Sunday,6674.0,6.01,5.07

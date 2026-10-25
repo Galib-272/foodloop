@@ -1,0 +1,11 @@
+weather,promotion,records,avg_waste,waste_rate_pct
+Cloudy,False,1553,5.6,4.94
+Cloudy,True,378,4.98,3.76
+Hot,False,1292,3.23,2.83
+Hot,True,313,2.03,1.53
+Rainy,False,1256,12.08,10.58
+Rainy,True,312,12.09,8.93
+Sunny,False,2188,4.25,3.65
+Sunny,True,505,3.6,2.72
+Unknown,False,160,3.91,3.4
+Unknown,True,43,2.16,1.79

@@ -1,0 +1,6 @@
+distance_band,band_min_km,offers,success_rate_pct,avg_travel_min
+0-2 km,0.02,5037,42.4,10.0
+2-5 km,2.0,4729,42.1,16.6
+5-10 km,5.0,1577,36.1,31.9
+10+ km,10.01,516,25.0,58.5
+Unknown,999.0,413,40.2,17.2

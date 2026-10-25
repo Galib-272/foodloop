@@ -1,0 +1,5 @@
+waste_reason,records,units_wasted,share_of_waste_pct
+Overproduction,1550,30224.0,65.45
+Expired,1411,9630.0,20.85
+Low Demand,1295,4088.0,8.85
+Storage Issue,329,2237.0,4.84

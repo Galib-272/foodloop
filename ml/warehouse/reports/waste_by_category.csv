@@ -1,0 +1,7 @@
+food_category,is_perishable,records,units_purchased,units_wasted,waste_rate_pct,high_risk_days_pct
+Prepared Food,True,1479,175514.0,13362.0,7.61,25.5
+Fruits,True,1431,169050.0,7123.0,4.21,13.9
+Bakery,True,1247,145988.0,7055.0,4.83,19.8
+Vegetables,True,1429,168969.0,6684.0,3.96,10.7
+Meat,True,1252,148185.0,6654.0,4.49,14.5
+Dairy,True,1162,138604.0,5301.0,3.82,9.8

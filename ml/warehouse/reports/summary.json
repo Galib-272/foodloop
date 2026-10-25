@@ -1,0 +1,63 @@
+{
+  "built_at": "2026-10-25T19:43:05+00:00",
+  "warehouse_file": "data/foodsphere_warehouse.duckdb",
+  "duckdb_version": "2.0.0",
+  "app_database_loaded": true,
+  "row_counts": {
+    "dim_area": 17,
+    "dim_business_type": 4,
+    "dim_date": 389,
+    "dim_food_category": 6,
+    "dim_organization": 63,
+    "dim_waste_reason": 5,
+    "dim_weather": 5,
+    "fact_app_donation": 31,
+    "fact_donation_match": 12272,
+    "fact_inventory_waste": 8000
+  },
+  "data_quality_fixes": {
+    "waste_duplicate_ids_removed": 0,
+    "waste_missing_weather_set_unknown": 203,
+    "waste_missing_donation_flag_set_false": 233,
+    "match_cleaning_report": {
+      "rows_in": 12424,
+      "exact_duplicates_removed": 123,
+      "duplicate_match_ids_removed": 0,
+      "mixed_date_formats_fixed": 474,
+      "mixed_time_formats_fixed": 381,
+      "negative_distance_to_missing": 33,
+      "acceptance_rate_percent_fixed": 113,
+      "capacity_above_daily_to_missing": 46,
+      "impossible_expiry_to_missing": 20,
+      "rows_removed_invalid_quantity": 29,
+      "rows_removed_unrecoverable": 0,
+      "rows_out": 12272
+    },
+    "match_missing_org_type_filled": 147
+  },
+  "reports": {
+    "waste_by_category": 6,
+    "waste_by_weekday": 7,
+    "waste_by_business_type": 4,
+    "monthly_waste_trend": 12,
+    "waste_reasons": 4,
+    "waste_by_weather_and_promotion": 10,
+    "match_success_by_org_type": 5,
+    "match_success_by_distance": 5,
+    "match_failure_reasons": 11,
+    "rescue_by_area": 17,
+    "app_donation_status": 6
+  },
+  "headline": {
+    "kaggle_waste_rate_pct": 4.88,
+    "highest_waste_category": {
+      "category": "Prepared Food",
+      "waste_rate_pct": 7.61
+    },
+    "synthetic_match_success_rate_pct": 40.7,
+    "synthetic_units_delivered": 99167,
+    "success_rate_under_2km_pct": 42.4,
+    "success_rate_10km_plus_pct": 25.0
+  },
+  "build_seconds": 1.07
+}

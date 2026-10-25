@@ -1,0 +1,7 @@
+donation_status,donations,quantity_listed,quantity_delivered
+delivered,20,571.6,567.8
+expired,6,107.0,0.0
+available,2,38.0,0.0
+failed,1,12.0,0.0
+cancelled,1,14.0,0.0
+scheduled,1,35.0,0.0
