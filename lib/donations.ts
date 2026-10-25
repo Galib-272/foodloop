@@ -1,4 +1,5 @@
 import { getDb, nowIso, tx, type Database } from './db';
+import { donationPayload, emitEvent } from './automation';
 import { audit, notify } from './audit';
 import { ApiError, badRequest, conflict, forbidden, notFound } from './api';
 import type { SessionUser } from './auth';
@@ -100,13 +101,15 @@ export function sweepDeadlines(force = false) {
     .all(iso) as Donation[];
   for (const d of overdue) {
     try {
-      tx((t) => {
+      const expired = tx((t) => {
         const cur = mustGet(t, d.id);
-        if (!['available', 'requested', 'accepted', 'scheduled'].includes(cur.status)) return;
+        if (!['available', 'requested', 'accepted', 'scheduled'].includes(cur.status)) return false;
         setStatus(t, cur, 'expired', null, 'Safe-use deadline passed (system)');
         t.prepare(`UPDATE donation_requests SET status = 'rejected', decision_time = ? WHERE donation_id = ? AND status IN ('pending','offered')`).run(iso, d.id);
         notify(d.donor_id, 'Donation expired', `${d.item_name} passed its safe-use deadline and was marked Expired.`, `/app/donations/${d.id}`, { type: 'donation', id: d.id });
+        return true;
       });
+      if (expired) void emitEvent('donation.expired', { ...donationPayload(d), status: 'expired' });
     } catch {
       /* status changed concurrently; ignore */
     }
@@ -124,6 +127,7 @@ export function sweepDeadlines(force = false) {
     notify(d.donor_id, 'Deadline approaching', `${d.item_name} must be collected within 2 hours.`, `/app/donations/${d.id}`, { type: 'donation', id: d.id });
     const acc = db.prepare(`SELECT recipient_id FROM donation_requests WHERE donation_id = ? AND status = 'accepted'`).get(d.id);
     if (acc) notify(Number(acc.recipient_id), 'Deadline approaching', `${d.item_name} must be collected within 2 hours.`, `/app/donations/${d.id}`, { type: 'donation', id: d.id });
+    void emitEvent('donation.deadline_soon', donationPayload(d));
   }
 }
 
@@ -333,7 +337,7 @@ export function confirmDelivery(
   donationId: number,
   body: { quantity_received: number; delivery_time?: string; as_expected: boolean; discrepancy?: string; notes?: string }
 ) {
-  return tx((db) => {
+  const out = tx((db) => {
     const d = mustGet(db, donationId);
     const { acc, isRecipient } = partyCheck(db, user, d);
     if (!isRecipient && user.role !== 'admin') throw forbidden('Only the receiving organization can confirm receipt.');
@@ -349,13 +353,15 @@ export function confirmDelivery(
     notify(d.donor_id, 'Donation delivered', `${d.item_name} was delivered. ${q} ${d.unit} confirmed received.`, `/app/donations/${d.id}`, { type: 'donation', id: d.id });
     void acc;
     audit(user.id, 'donation.confirm_delivery', 'donation', d.id, null, { quantity: q, as_expected: body.as_expected });
-    return { ok: true };
+    return { d, q };
   });
+  void emitEvent('donation.delivered', { ...donationPayload(out.d), status: 'delivered', quantity_delivered: out.q, as_expected: body.as_expected });
+  return { ok: true };
 }
 
 export function markFailed(user: SessionUser, donationId: number, reason: string) {
   if (!reason?.trim()) throw badRequest('Please give a reason.', { reason: 'A reason is required.' });
-  return tx((db) => {
+  const failed = tx((db) => {
     const d = mustGet(db, donationId);
     const { acc } = partyCheck(db, user, d);
     if (!['accepted', 'scheduled', 'collected'].includes(d.status)) throw conflict('Only an active collection can be marked failed.');
@@ -365,8 +371,10 @@ export function markFailed(user: SessionUser, donationId: number, reason: string
     for (const uid of [d.donor_id, Number(acc?.recipient_id)].filter((x) => x && x !== user.id))
       notify(uid, 'Collection failed', `Collection of ${d.item_name} failed. Reason: ${reason}`, `/app/donations/${d.id}`, { type: 'donation', id: d.id });
     audit(user.id, 'collection.fail', 'donation', d.id, reason);
-    return { ok: true };
+    return d;
   });
+  void emitEvent('collection.failed', { ...donationPayload(failed), status: 'failed', reason });
+  return { ok: true };
 }
 
 /** Admin correction outside the normal workflow — always audited with a reason. */

@@ -1,3 +1,4 @@
+import { donationPayload, emitEvent } from '@/lib/automation';
 import { getDb, nowIso } from '@/lib/db';
 import { apiUser, handle, parseBody } from '@/lib/api';
 import { donationSchema } from '@/lib/validation';
@@ -52,5 +53,7 @@ export const POST = handle(async (req) => {
   for (const m of matches.slice(0, 3)) {
     notify(m.recipient_user_id, 'New suitable donation', `${d.item_name} (${d.quantity_available} ${d.unit}) is available in ${donation.area}. Match score ${m.score}/100.`, `/app/donations/${id}`, { type: 'donation', id });
   }
+  await emitEvent('donation.created', { ...donationPayload(donation), eligible_recipients: matches.length,
+    top_matches: matches.slice(0, 3).map((m) => ({ organization: m.org.organization_name, score: m.score })) });
   return { ok: true, id, matches: matches.length };
 });
