@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 import {
   BarChart3, Bell, BrainCircuit, Building2, CheckCheck, ClipboardList, FileClock, Flag, HandHeart, HelpCircle, History,
   Inbox, LayoutDashboard, LineChart, ListChecks, LogOut, Menu, MessageSquare, Network, Package, Settings, ShieldCheck,
-  SlidersHorizontal, Truck, Upload, Users, type LucideIcon,
+  SlidersHorizontal, Sparkles, Truck, Upload, Users, type LucideIcon,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -27,7 +27,7 @@ const ICONS: Record<string, LucideIcon> = {
   dashboard: LayoutDashboard, forecast: LineChart, inventory: Package, donations: HandHeart, matches: Network, history: History,
   analytics: BarChart3, upload: Upload, bell: Bell, messages: MessageSquare, settings: Settings, help: HelpCircle, requests: ClipboardList,
   truck: Truck, received: CheckCheck, org: Building2, tasks: ListChecks, users: Users, verify: ShieldCheck, flag: Flag, model: BrainCircuit,
-  audit: FileClock, sliders: SlidersHorizontal, inbox: Inbox,
+  audit: FileClock, sliders: SlidersHorizontal, inbox: Inbox, assistant: Sparkles,
 };
 
 export type ShellUser = { full_name: string; email: string; role: Role; org_name: string | null; verification_status: string | null };

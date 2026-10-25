@@ -4,6 +4,7 @@ export type NavItem = { label: string; href: string; icon: string };
 export type NavGroup = { title?: string; items: NavItem[] };
 
 const SHARED: NavItem[] = [
+  { label: 'Ask FoodSphere', href: '/app/assistant', icon: 'assistant' },
   { label: 'Notifications', href: '/app/notifications', icon: 'bell' },
   { label: 'Coordination Updates', href: '/app/messages', icon: 'messages' },
   { label: 'Profile & Settings', href: '/app/settings', icon: 'settings' },
