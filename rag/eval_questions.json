@@ -1,0 +1,20 @@
+[
+  {"q": "How cold must refrigerated food be kept until pickup?", "gold": [["page_guidelines", "Storage and handling"]], "expect": ["5"]},
+  {"q": "Does FoodSphere AI guarantee that donated food is safe?", "gold": [["page_food_safety", ""], ["faq_and_guides", "guarantee food safety"]], "expect": ["not"]},
+  {"q": "How can an organization become verified?", "gold": [["faq_and_guides", "become verified"]], "expect": ["administrator"]},
+  {"q": "What accuracy does the waste risk model reach?", "gold": [["ai_model_results", "waste risk"]], "expect": ["71.2"]},
+  {"q": "Which food category has the highest waste rate?", "gold": [["warehouse_findings", "Food waste by category"]], "expect": ["prepared food"]},
+  {"q": "What happens after a donor accepts a request?", "gold": [["faq_and_guides", "food collection"]], "expect": ["pickup"]},
+  {"q": "Which database does the live website use in production?", "gold": [["platform_readme", "Deploy"]], "expect": ["turso"]},
+  {"q": "How do I import my sales history as a donor?", "gold": [["faq_and_guides", "Donors"]], "expect": ["csv"]},
+  {"q": "What should a volunteer do if a pickup goes wrong?", "gold": [["faq_and_guides", "Volunteers"]], "expect": ["report failure"]},
+  {"q": "Who can see my contact details and pickup address?", "gold": [["page_privacy", "Who can see"]], "expect": ["authorized"]},
+  {"q": "Which type of organization completes donation offers most often?", "gold": [["warehouse_findings", "Which organizations complete"]], "expect": ["food bank"]},
+  {"q": "What data was the recipient matching model trained on?", "gold": [["ai_model_results", "recipient matching"]], "expect": ["synthetic"]},
+  {"q": "What is the mean absolute error of the leftover prediction model?", "gold": [["ai_model_results", "leftover amount"]], "expect": ["7.8"]},
+  {"q": "How are user passwords protected?", "gold": [["faq_and_guides", "protected"]], "expect": ["hash"]},
+  {"q": "Does pickup distance change the chance of a successful delivery?", "gold": [["warehouse_findings", "Distance"]], "expect": ["km"]},
+  {"q": "Which allergens should donors list?", "gold": [["page_guidelines", "Before you publish"]], "expect": ["nut"]},
+  {"q": "What is the capital of France?", "gold": [], "expect": []},
+  {"q": "Who won the football world cup in 2022?", "gold": [], "expect": []}
+]
