@@ -324,7 +324,8 @@ def main() -> None:
     for t, n in s['row_counts'].items():
         print(f'  {t:<24} {n:>6} rows')
     print(f"  app database loaded: {s['app_database_loaded']}")
-    print(f"[warehouse] {len(s['reports'])} reports written to ml/warehouse/reports/")
+    rep = a.reports.resolve()
+    print(f"[warehouse] {len(s['reports'])} reports written to {rep.relative_to(ROOT) if rep.is_relative_to(ROOT) else rep}/")
     h = s['headline']
     print(f"  waste rate {h['kaggle_waste_rate_pct']}% | worst category {h['highest_waste_category']['category']} "
           f"| match success {h['synthetic_match_success_rate_pct']}% "
