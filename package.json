@@ -11,7 +11,14 @@
     "test:parity": "npx -y tsx scripts/parity.ts",
     "vercel-build": "tsx scripts/init-db.ts && next build",
     "db:init": "tsx scripts/init-db.ts",
-    "warehouse": "python3 ml/warehouse/build_warehouse.py"
+    "warehouse": "node scripts/py.mjs ml/warehouse/build_warehouse.py",
+    "py:setup": "node scripts/py.mjs --setup",
+    "rag:ingest": "node scripts/py.mjs rag/build_knowledge.py && node scripts/py.mjs rag/ingest.py",
+    "rag:ask": "node scripts/py.mjs rag/agent.py",
+    "rag:eval": "node scripts/py.mjs rag/eval.py",
+    "rag:all": "npm run rag:ingest && npm run rag:eval",
+    "test:rag": "npx -y tsx scripts/rag-parity.ts",
+    "n8n": "node automation/n8n/start.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",

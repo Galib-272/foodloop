@@ -11,3 +11,5 @@
 /ml/waste/reports
 /ml/**/*.ipynb
 /ml/warehouse
+/rag
+/automation
