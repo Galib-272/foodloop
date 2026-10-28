@@ -45,3 +45,7 @@ __pycache__/
 *.pyc
 .venv/
 automation/n8n/.n8n-data/
+
+# design and pitch files (kept locally, not in the repo)
+/figma/
+/presentation/
