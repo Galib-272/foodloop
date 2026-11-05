@@ -32,7 +32,7 @@ export function Logo({
             light ? 'text-white' : 'text-foreground'
           )}
         >
-          FoodLoop <span className={light ? 'text-green-300' : 'text-secondary'}>AI</span>
+          Food<span className={light ? 'text-green-300' : 'text-secondary'}>Loop</span>
         </span>
         {tagline && (
           <span
