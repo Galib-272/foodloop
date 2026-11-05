@@ -147,7 +147,7 @@ export function ProblemSolution() {
         ))}
       </Stagger>
       <Reveal><p className="mx-auto mt-10 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
-        FoodSphere AI connects <strong className="text-foreground">forecasting</strong>,{' '}
+        FoodLoop connects <strong className="text-foreground">forecasting</strong>,{' '}
         <strong className="text-foreground">matching</strong> and{' '}
         <strong className="text-foreground">collection management</strong> in one
         place, so surplus is spotted early and reaches the right organization in time.
@@ -366,7 +366,7 @@ export function TrustSafety() {
           role="note"
           className="mx-auto mt-10 max-w-3xl rounded-xl border border-amber-300 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950"
         >
-          FoodSphere AI assists with coordination and prioritization. It does not
+          FoodLoop assists with coordination and prioritization. It does not
           certify food safety. Donors remain responsible for providing accurate
           food information and following applicable food-safety requirements.
         </p>
@@ -423,12 +423,12 @@ export function EarlyPartners() {
 
 /* 6.11 */
 export const FAQS = [
-  ['What is FoodSphere AI?', 'FoodSphere AI is a food rescue platform. It forecasts surplus from your historical data, helps you publish donations, recommends suitable recipient organizations and tracks collection through to confirmed delivery.'],
+  ['What is FoodLoop?', 'FoodLoop is a food rescue platform. It forecasts surplus from your historical data, helps you publish donations, recommends suitable recipient organizations and tracks collection through to confirmed delivery.'],
   ['Who can donate food?', 'Restaurants, grocery shops, markets, bakeries, caterers and event organizers can register as donors. Donation permissions follow the platform’s verification policy.'],
   ['Which organizations can receive donations?', 'NGOs, community kitchens, shelters, food banks and other organizations that complete the verification process. Only verified organizations are eligible for restricted donation workflows.'],
   ['How does AI predict surplus food?', 'A regression model trained on historical inventory and sales features (such as day of week, category, shelf life and sales) estimates likely surplus. Predictions are estimates, show the model version, and never create a donation automatically.'],
   ['How are recipients matched?', 'First, ineligible recipients are removed (unverified, wrong food category or storage, cannot collect before the deadline). The rest are ranked by an AI model that estimates the chance of a successful delivery, using distance, quantity, capacity, timing and past acceptance. If the model is unavailable, a transparent weighted score is used instead. A reason is shown for each match.'],
-  ['Does the system guarantee food safety?', 'No. FoodSphere AI does not certify food safety. Donors are responsible for accurate information and for following applicable food-safety requirements.'],
+  ['Does the system guarantee food safety?', 'No. FoodLoop does not certify food safety. Donors are responsible for accurate information and for following applicable food-safety requirements.'],
   ['How does food collection work?', 'After a donor accepts a request, the donor and recipient schedule a pickup. Status moves from Scheduled to Collected to Delivered, and the recipient confirms the quantity actually received.'],
   ['Can a small shop participate?', 'Yes. Any food business can join, from a neighborhood bakery to a large grocery store. You can enter inventory manually or import a CSV.'],
   ['How can an organization become verified?', 'Register as a recipient, complete the organization profile and submit verification information. An administrator reviews it and marks the account Verified or Rejected.'],

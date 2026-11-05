@@ -9,7 +9,7 @@ import { HISTORY_COLUMNS } from '@/lib/csv';
 import { fmtDateTime } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'CSV Data Import — FoodSphere AI' };
+export const metadata = { title: 'CSV Data Import — FoodLoop' };
 
 const DESCRIPTIONS: Record<string, string> = {
   date: 'YYYY-MM-DD (or DD/MM/YYYY)', food_category: 'Prepared Food, Bakery, Fruits, Vegetables, Dairy or Meat',

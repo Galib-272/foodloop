@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { InfoPage } from '@/components/site/info-page';
 
-export const metadata: Metadata = { title: "Food Donation Guidelines \u2014 FoodSphere AI" };
+export const metadata: Metadata = { title: "Food Donation Guidelines \u2014 FoodLoop" };
 
 const sections = [
   {

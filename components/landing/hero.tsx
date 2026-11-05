@@ -33,7 +33,7 @@ export function Hero() {
             <span className="text-secondary">Community Impact.</span>
           </motion.h1>
           <motion.p {...up(0.16)} className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            FoodSphere AI helps businesses predict surplus food, connect with
+            FoodLoop helps businesses predict surplus food, connect with
             suitable recipient organizations, and coordinate food rescue before
             edible food goes to waste.
           </motion.p>

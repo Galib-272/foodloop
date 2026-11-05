@@ -10,7 +10,7 @@ import { redact, viewerFor } from '@/lib/donations';
 import { Stagger } from '@/components/motion';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Recommended Matches — FoodSphere AI' };
+export const metadata = { title: 'Recommended Matches — FoodLoop' };
 
 export default function Recommended() {
   const user = requireUser(['recipient']);

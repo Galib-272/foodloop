@@ -12,7 +12,7 @@ import { FOOD_CATEGORIES, STORAGE_LABEL, type Storage } from '@/lib/constants';
 import { fmtDate, fmtDateTime, qty } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Inventory — FoodSphere AI' };
+export const metadata = { title: 'Inventory — FoodLoop' };
 
 const STATUS: Record<string, [string, 'green' | 'default' | 'amber' | 'red' | 'blue']> = {
   in_stock: ['In stock', 'green'], sold: ['Sold', 'default'], wasted: ['Wasted', 'red'], donation: ['For donation', 'blue'], archived: ['Archived', 'default'],

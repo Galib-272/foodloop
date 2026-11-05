@@ -7,7 +7,7 @@ import { ROLE_LABEL, ROLES, VERIFICATION, VERIFICATION_LABEL, type Role } from '
 import { fmtDate } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'User Management — FoodSphere AI' };
+export const metadata = { title: 'User Management — FoodLoop' };
 
 export default function Users({ searchParams }: { searchParams: { q?: string; role?: string; verification?: string } }) {
   const me = requireUser(['admin']);

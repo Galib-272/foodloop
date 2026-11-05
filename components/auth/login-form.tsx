@@ -61,7 +61,7 @@ export function LoginForm({ notice }: { notice?: string }) {
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Sign In
         </Button>
         <p className="text-center text-sm text-muted-foreground">
-          New to FoodSphere AI?{' '}
+          New to FoodLoop?{' '}
           <Link href="/register" className="font-semibold text-secondary hover:underline">Create Account</Link>
         </p>
       </form>

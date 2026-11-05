@@ -5,7 +5,7 @@ import { requireUser } from '@/lib/auth';
 import { getOrgByUser } from '@/lib/orgs';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Set up your profile — FoodSphere AI' };
+export const metadata = { title: 'Set up your profile — FoodLoop' };
 
 export default function OnboardingPage() {
   const user = requireUser();

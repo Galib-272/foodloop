@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { InfoPage } from '@/components/site/info-page';
 
-export const metadata: Metadata = { title: "Data Use Policy \u2014 FoodSphere AI" };
+export const metadata: Metadata = { title: "Data Use Policy \u2014 FoodLoop" };
 
 const sections = [
   {
@@ -39,7 +39,7 @@ export default function DataUsePage() {
     <InfoPage
       eyebrow="Legal"
       title="Data Use Policy"
-      intro="How operational data and uploaded files are used inside FoodSphere AI."
+      intro="How operational data and uploaded files are used inside FoodLoop."
       updated="October 2026"
       sections={sections}
     />

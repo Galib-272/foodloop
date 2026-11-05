@@ -16,7 +16,7 @@ export const POST = handle(async (req) => {
       .run(sha256(token), user.id, new Date(Date.now() + 3600_000).toISOString());
     // No email service is configured. In development the link is printed to the server terminal only.
     const origin = new URL(req.url).origin;
-    console.log(`\n[FoodSphere] Password reset link for ${email} (valid 1 hour):\n${origin}/reset-password?token=${token}\n`);
+    console.log(`\n[FoodLoop] Password reset link for ${email} (valid 1 hour):\n${origin}/reset-password?token=${token}\n`);
   }
   // Always respond the same way so the endpoint does not reveal which emails exist.
   return { ok: true, message: 'If an account exists for that email, a reset link has been sent.' };

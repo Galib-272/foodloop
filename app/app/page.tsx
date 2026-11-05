@@ -6,7 +6,7 @@ import { VolunteerDashboard } from '@/components/dashboards/volunteer';
 import { Notice } from '@/components/app/ui';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Dashboard — FoodSphere AI' };
+export const metadata = { title: 'Dashboard — FoodLoop' };
 
 export default function DashboardPage({ searchParams }: { searchParams: { denied?: string } }) {
   const user = requireUser();

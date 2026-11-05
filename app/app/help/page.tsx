@@ -5,7 +5,7 @@ import { FAQS } from '@/components/landing/sections';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Help & Support — FoodSphere AI' };
+export const metadata = { title: 'Help & Support — FoodLoop' };
 
 const GUIDES: Record<string, string[]> = {
   donor: ['Import history on CSV Data Import (download the template first).', 'Run AI Surplus Forecast, then use Create Donation to prefill a donation. Always confirm the real quantity.', 'Review Recipient Matches and accept a request or send an offer.', 'Schedule pickup, hand over the food, and the recipient confirms receipt.'],

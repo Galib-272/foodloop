@@ -1,7 +1,7 @@
 import { AuthShell } from '@/components/auth/auth-shell';
 import { ForgotForm } from '@/components/auth/password-forms';
 
-export const metadata = { title: 'Forgot Password — FoodSphere AI' };
+export const metadata = { title: 'Forgot Password — FoodLoop' };
 
 export default function ForgotPage() {
   return (

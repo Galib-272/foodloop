@@ -7,7 +7,7 @@ import { modelMonitoring } from '@/lib/admin';
 import { fmtDateTime } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'ML Model Monitoring — FoodSphere AI' };
+export const metadata = { title: 'ML Model Monitoring — FoodLoop' };
 
 const pct = (v: number | undefined) => (v == null ? '—' : `${(v * 100).toFixed(1)}%`);
 const n3 = (v: unknown) => (typeof v === 'number' ? v.toFixed(3) : String(v ?? '—'));

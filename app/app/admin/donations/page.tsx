@@ -5,7 +5,7 @@ import { listDonations } from '@/lib/donation-queries';
 import { DONATION_STATUSES, DONATION_STATUS_LABEL, FOOD_CATEGORIES } from '@/lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Donation Management — FoodSphere AI' };
+export const metadata = { title: 'Donation Management — FoodLoop' };
 
 export default function AdminDonations({ searchParams }: { searchParams: { q?: string; status?: string; category?: string } }) {
   const rows = listDonations({ status: searchParams.status ? [searchParams.status] : undefined, category: searchParams.category || undefined, q: searchParams.q || undefined });

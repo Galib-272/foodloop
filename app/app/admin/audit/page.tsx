@@ -4,7 +4,7 @@ import { auditLogs } from '@/lib/admin';
 import { fmtDateTime } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Audit Logs — FoodSphere AI' };
+export const metadata = { title: 'Audit Logs — FoodLoop' };
 
 const ENTITIES = ['user', 'organization', 'donation', 'inventory', 'csv_import', 'report', 'settings'];
 

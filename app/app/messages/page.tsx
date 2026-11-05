@@ -6,7 +6,7 @@ import { getDb } from '@/lib/db';
 import { did, fmtDateTime } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Coordination Updates — FoodSphere AI' };
+export const metadata = { title: 'Coordination Updates — FoodLoop' };
 
 // Status updates on donations you are involved in. Real-time chat is a future feature.
 export default function Messages() {

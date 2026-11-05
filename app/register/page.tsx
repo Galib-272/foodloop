@@ -4,7 +4,7 @@ import { RegisterForm } from '@/components/auth/register-form';
 import { getCurrentUser, homeFor } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Create Account — FoodSphere AI' };
+export const metadata = { title: 'Create Account — FoodLoop' };
 
 export default function RegisterPage({ searchParams }: { searchParams: { role?: string } }) {
   const user = getCurrentUser();

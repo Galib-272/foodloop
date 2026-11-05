@@ -8,7 +8,7 @@ import { formatTotals } from '@/lib/analytics';
 import { DONATION_STATUS_LABEL, type DonationStatus } from '@/lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Admin Overview — FoodSphere AI' };
+export const metadata = { title: 'Admin Overview — FoodLoop' };
 
 export default function AdminOverview() {
   const o = adminOverview();

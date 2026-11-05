@@ -7,7 +7,7 @@ import { did, fmtDateTime, qty } from '@/lib/format';
 import { Stagger } from '@/components/motion';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Active Collections — FoodSphere AI' };
+export const metadata = { title: 'Active Collections — FoodLoop' };
 
 const NEXT: Record<string, string> = { accepted: 'Schedule a pickup time', scheduled: 'Collect the food, then mark it collected', collected: 'Confirm the quantity received' };
 

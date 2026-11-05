@@ -2,7 +2,7 @@ import { AuthShell } from '@/components/auth/auth-shell';
 import { ResetForm } from '@/components/auth/password-forms';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Reset Password — FoodSphere AI' };
+export const metadata = { title: 'Reset Password — FoodLoop' };
 
 export default function ResetPage({ searchParams }: { searchParams: { token?: string } }) {
   return (

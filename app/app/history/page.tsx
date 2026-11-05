@@ -8,7 +8,7 @@ import { listDonations } from '@/lib/donation-queries';
 import { DONATION_STATUS_LABEL, FOOD_CATEGORIES, TERMINAL_STATUSES } from '@/lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Donation History — FoodSphere AI' };
+export const metadata = { title: 'Donation History — FoodLoop' };
 
 export default function History({ searchParams }: { searchParams: { q?: string; status?: string; category?: string } }) {
   const user = requireUser(['donor']);

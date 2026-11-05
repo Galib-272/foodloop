@@ -7,7 +7,7 @@ import { recipientRequests } from '@/lib/recipient-queries';
 import { did, fmtDateTime, qty } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Received Donations — FoodSphere AI' };
+export const metadata = { title: 'Received Donations — FoodLoop' };
 
 export default function Received() {
   const user = requireUser(['recipient']);

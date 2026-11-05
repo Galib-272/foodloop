@@ -4,7 +4,7 @@ import { requireUser } from '@/lib/auth';
 import { volunteerDashboard } from '@/lib/dashboard';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Assigned Collections — FoodSphere AI' };
+export const metadata = { title: 'Assigned Collections — FoodLoop' };
 
 export default function Page() {
   const user = requireUser(['volunteer']);

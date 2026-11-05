@@ -6,7 +6,7 @@ import { fmtDateTime } from '@/lib/format';
 import { STORAGE_LABEL, type Storage } from '@/lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Verification Requests — FoodSphere AI' };
+export const metadata = { title: 'Verification Requests — FoodLoop' };
 
 export default function Verifications() {
   const pending = listUsers({ verification: 'pending' });

@@ -1,5 +1,5 @@
 /**
- * Workflow automation: FoodSphere AI sends important events to an n8n webhook.
+ * Workflow automation: FoodLoop sends important events to an n8n webhook.
  * n8n (automation/n8n/foodsphere-alerts.workflow.json) checks the shared secret, writes the alert text and,
  * for urgent events, calls back /api/integrations/n8n so every administrator gets an in-app notification.
  *
@@ -9,7 +9,7 @@
  * When N8N_WEBHOOK_URL is not set, events are skipped and the app works as before.
  */
 
-export type FoodSphereEvent =
+export type FoodLoopEvent =
   | 'donation.created'
   | 'donation.deadline_soon'
   | 'donation.expired'
@@ -24,7 +24,7 @@ export function automationConfigured() {
 }
 
 /** Send one event. Never throws: automation must not break the donation workflow. */
-export async function emitEvent(event: FoodSphereEvent, data: Record<string, unknown>): Promise<EmitResult> {
+export async function emitEvent(event: FoodLoopEvent, data: Record<string, unknown>): Promise<EmitResult> {
   const url = process.env.N8N_WEBHOOK_URL;
   if (!url) return { sent: false, error: 'N8N_WEBHOOK_URL is not set' };
   try {

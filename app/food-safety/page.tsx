@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { InfoPage } from '@/components/site/info-page';
 
-export const metadata: Metadata = { title: "Food Safety Disclaimer \u2014 FoodSphere AI" };
+export const metadata: Metadata = { title: "Food Safety Disclaimer \u2014 FoodLoop" };
 
 const sections = [
   {
@@ -27,7 +27,7 @@ export default function FoodSafetyPage() {
     <InfoPage
       eyebrow="Legal"
       title="Food Safety Disclaimer"
-      intro="FoodSphere AI assists with coordination and prioritization. It does not certify food safety. Donors remain responsible for providing accurate food information and following applicable food-safety requirements."
+      intro="FoodLoop assists with coordination and prioritization. It does not certify food safety. Donors remain responsible for providing accurate food information and following applicable food-safety requirements."
       sections={sections}
     />
   );

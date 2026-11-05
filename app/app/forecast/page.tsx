@@ -9,7 +9,7 @@ import { HORIZON_DAYS, addDays, defaultsFor, dhakaToday, donorCategories, loadMo
 import { fmtDate, fmtDateTime } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'AI Surplus Forecast — FoodSphere AI' };
+export const metadata = { title: 'AI Surplus Forecast — FoodLoop' };
 
 export default function ForecastPage() {
   const user = requireUser(['donor']);

@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils';
 import { Stagger } from '@/components/motion';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Available Donations — FoodSphere AI' };
+export const metadata = { title: 'Available Donations — FoodLoop' };
 
 type SP = { q?: string; category?: string; storage?: string; distance?: string; deadline?: string; verified?: string; minqty?: string; view?: string; eligible?: string };
 

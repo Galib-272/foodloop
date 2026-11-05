@@ -4,7 +4,7 @@ import { LoginForm } from '@/components/auth/login-form';
 import { getCurrentUser, homeFor } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Sign In — FoodSphere AI' };
+export const metadata = { title: 'Sign In — FoodLoop' };
 
 export default function LoginPage({ searchParams }: { searchParams: { suspended?: string; reset?: string } }) {
   const user = getCurrentUser();
@@ -15,7 +15,7 @@ export default function LoginPage({ searchParams }: { searchParams: { suspended?
       ? 'Your password has been reset. Please sign in.'
       : undefined;
   return (
-    <AuthShell title="Welcome back" subtitle="Sign in to your FoodSphere AI account.">
+    <AuthShell title="Welcome back" subtitle="Sign in to your FoodLoop account.">
       <LoginForm notice={notice} />
     </AuthShell>
   );

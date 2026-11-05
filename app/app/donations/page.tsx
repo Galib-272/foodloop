@@ -9,7 +9,7 @@ import { listDonations } from '@/lib/donation-queries';
 import { DONATION_STATUS_LABEL, FOOD_CATEGORIES } from '@/lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'My Donations — FoodSphere AI' };
+export const metadata = { title: 'My Donations — FoodLoop' };
 
 const ACTIVE = ['available', 'requested', 'accepted', 'scheduled', 'collected'];
 

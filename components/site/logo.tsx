@@ -15,7 +15,7 @@ export function Logo({
     <Link
       href="/"
       className={cn('flex items-center gap-2.5 rounded-md', className)}
-      aria-label="FoodSphere AI home"
+      aria-label="FoodLoop home"
     >
       <span
         className={cn(
@@ -32,7 +32,7 @@ export function Logo({
             light ? 'text-white' : 'text-foreground'
           )}
         >
-          FoodSphere <span className={light ? 'text-green-300' : 'text-secondary'}>AI</span>
+          FoodLoop <span className={light ? 'text-green-300' : 'text-secondary'}>AI</span>
         </span>
         {tagline && (
           <span

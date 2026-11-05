@@ -1,7 +1,7 @@
 import index from './index.json';
 
 /**
- * "Ask FoodSphere" for the web app: the same agent flow as rag/agent.py (LangGraph), in TypeScript.
+ * "Ask FoodLoop" for the web app: the same agent flow as rag/agent.py (LangGraph), in TypeScript.
  *   retrieve (hybrid: LSA vectors + BM25 keywords, fused with Reciprocal Rank Fusion, over contextual chunks)
  *   -> grade (are the question's words covered?) -> widen and retry once -> generate or refuse.
  * Generation uses a local Ollama model when OLLAMA_URL is set (local development); otherwise an extractive answer
@@ -125,12 +125,12 @@ function extractive(question: string, hits: Hit[]): { text: string; citations: n
   return { text: use.map(([, n, s]) => `${s} [${n}]`).join(' '), citations: Array.from(new Set(use.map(([, n]) => n))).sort((a, b) => a - b) };
 }
 
-const SYSTEM = `You are Ask FoodSphere, the help assistant of FoodSphere AI, a food rescue platform in Bangladesh.
+const SYSTEM = `You are Ask FoodLoop, the help assistant of FoodLoop, a food rescue platform in Bangladesh.
 Answer the question using ONLY the numbered sources. Keep the answer to 1-3 short sentences.
-Cite the sources you used like [1] or [2]. If the sources do not contain the answer, say "I don't know based on the FoodSphere documents." Do not invent facts.`;
+Cite the sources you used like [1] or [2]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts.`;
 
 export const REFUSAL =
-  "I couldn't find this in the FoodSphere AI knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data.";
+  "I couldn't find this in the FoodLoop knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data.";
 
 async function ollamaAnswer(question: string, hits: Hit[]): Promise<{ text: string; citations: number[]; model: string } | null> {
   const url = process.env.OLLAMA_URL;

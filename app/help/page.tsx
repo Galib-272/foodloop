@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { InfoPage } from '@/components/site/info-page';
 
-export const metadata: Metadata = { title: "Help Center \u2014 FoodSphere AI" };
+export const metadata: Metadata = { title: "Help Center \u2014 FoodLoop" };
 
 const sections = [
   {
@@ -47,7 +47,7 @@ export default function HelpPage() {
     <InfoPage
       eyebrow="Resources"
       title="Help Center"
-      intro="Answers to common questions about using FoodSphere AI. For anything else, contact the support team."
+      intro="Answers to common questions about using FoodLoop. For anything else, contact the support team."
       sections={sections}
     />
   );

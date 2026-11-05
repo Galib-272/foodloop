@@ -6,7 +6,7 @@ import { listReports } from '@/lib/admin';
 import { did, fmtDateTime } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Reported Issues — FoodSphere AI' };
+export const metadata = { title: 'Reported Issues — FoodLoop' };
 
 export default function Reports() {
   const reports = listReports();

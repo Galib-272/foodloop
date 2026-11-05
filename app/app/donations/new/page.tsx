@@ -8,7 +8,7 @@ import { toLocalInput } from '@/lib/format';
 import { redirect } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Create Donation — FoodSphere AI' };
+export const metadata = { title: 'Create Donation — FoodLoop' };
 
 export default function NewDonation({ searchParams }: { searchParams: { forecast?: string; inventory?: string; edit?: string } }) {
   const user = requireUser(['donor']);

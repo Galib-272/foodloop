@@ -96,7 +96,7 @@ export function AssistantChat({ suggestions, chunks }: { suggestions: string[]; 
               </button>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Searches {chunks} passages from the FoodSphere knowledge base with hybrid (meaning + keyword) search.</p>
+          <p className="mt-4 text-xs text-muted-foreground">Searches {chunks} passages from the FoodLoop knowledge base with hybrid (meaning + keyword) search.</p>
         </div>
       )}
       {turns.map((t, i) => (

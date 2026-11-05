@@ -4,7 +4,7 @@ import { ask } from '@/lib/rag/search';
 
 export const dynamic = 'force-dynamic';
 
-/** POST /api/assistant { question } -> answer with cited sources (RAG over the FoodSphere knowledge base). */
+/** POST /api/assistant { question } -> answer with cited sources (RAG over the FoodLoop knowledge base). */
 export const POST = handle(async (req) => {
   apiUser();
   rateLimit(req, 'assistant', 30, 60_000);

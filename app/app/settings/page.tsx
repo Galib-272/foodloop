@@ -6,7 +6,7 @@ import { getOrgByUser } from '@/lib/orgs';
 import { ROLE_LABEL } from '@/lib/constants';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Profile & Settings — FoodSphere AI' };
+export const metadata = { title: 'Profile & Settings — FoodLoop' };
 
 export default function Settings() {
   const user = requireUser();

@@ -8,7 +8,7 @@ import { requireUser } from '@/lib/auth';
 import { donorAnalytics, formatTotals, recipientAnalytics } from '@/lib/analytics';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Impact Analytics — FoodSphere AI' };
+export const metadata = { title: 'Impact Analytics — FoodLoop' };
 
 const pct = (r: number | null) => (r == null ? '—' : `${Math.round(r * 100)}%`);
 

@@ -9,7 +9,7 @@ import { did, qty } from '@/lib/format';
 import { Stagger } from '@/components/motion';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Recipient Matches — FoodSphere AI' };
+export const metadata = { title: 'Recipient Matches — FoodLoop' };
 
 export default function Matches() {
   const user = requireUser(['donor']);

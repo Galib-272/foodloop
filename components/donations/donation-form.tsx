@@ -132,7 +132,7 @@ export function DonationForm({ initial, editId, forecastNote }: { initial: Donat
 
       <section className="rounded-xl border border-amber-300 bg-amber-50/60 p-5 sm:p-6">
         <h2 className="text-lg font-semibold">Food-safety confirmation</h2>
-        <p className="mt-1 text-sm text-muted-foreground">FoodSphere AI does not certify food safety. Please confirm each statement.</p>
+        <p className="mt-1 text-sm text-muted-foreground">FoodLoop does not certify food safety. Please confirm each statement.</p>
         <div className="mt-4 space-y-3">
           {SAFETY_CHECKS.map((c) => (
             <label key={c} className="flex items-start gap-3 text-sm">

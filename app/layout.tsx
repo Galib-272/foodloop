@@ -7,9 +7,9 @@ import { MotionProvider } from '@/components/motion';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'FoodSphere AI — Food Waste Zero',
+  title: 'FoodLoop — Food Waste Zero',
   description:
-    'FoodSphere AI helps businesses predict surplus food, connect with suitable recipient organizations, and coordinate food rescue before edible food goes to waste.',
+    'FoodLoop helps businesses predict surplus food, connect with suitable recipient organizations, and coordinate food rescue before edible food goes to waste.',
 };
 
 export default function RootLayout({

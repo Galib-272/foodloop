@@ -6,7 +6,7 @@ import { recipientRequests } from '@/lib/recipient-queries';
 import { did, fmtDateTime, qty } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'My Requests — FoodSphere AI' };
+export const metadata = { title: 'My Requests — FoodLoop' };
 
 const REQ: Record<string, [string, 'blue' | 'amber' | 'green' | 'default' | 'red']> = {
   pending: ['Pending', 'blue'], offered: ['Offered to you', 'amber'], accepted: ['Accepted', 'green'], rejected: ['Not accepted', 'default'], withdrawn: ['Withdrawn', 'default'], cancelled: ['Cancelled', 'red'],

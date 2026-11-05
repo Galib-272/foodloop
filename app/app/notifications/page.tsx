@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 import { StaggerItem, StaggerList } from '@/components/motion';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Notifications — FoodSphere AI' };
+export const metadata = { title: 'Notifications — FoodLoop' };
 
 export default function Notifications() {
   const user = requireUser();

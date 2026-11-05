@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { InfoPage } from '@/components/site/info-page';
 
-export const metadata: Metadata = { title: "Privacy Policy \u2014 FoodSphere AI" };
+export const metadata: Metadata = { title: "Privacy Policy \u2014 FoodLoop" };
 
 const sections = [
   {
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
     <InfoPage
       eyebrow="Legal"
       title="Privacy Policy"
-      intro="This policy explains what personal information FoodSphere AI collects, why, and how it is protected."
+      intro="This policy explains what personal information FoodLoop collects, why, and how it is protected."
       updated="October 2026"
       sections={sections}
     />

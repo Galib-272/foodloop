@@ -244,7 +244,7 @@ export default function DonationDetail({ params }: { params: { id: string } }) {
           )}
 
           <Card title="Food safety">
-            <p className="flex gap-2 text-sm text-muted-foreground"><Info className="mt-0.5 h-4 w-4 shrink-0" />FoodSphere AI assists with coordination and prioritization. It does not certify food safety. Inspect food on receipt and decline anything that appears unsafe.</p>
+            <p className="flex gap-2 text-sm text-muted-foreground"><Info className="mt-0.5 h-4 w-4 shrink-0" />FoodLoop assists with coordination and prioritization. It does not certify food safety. Inspect food on receipt and decline anything that appears unsafe.</p>
           </Card>
           <ReportIssue donationId={d.id} />
           {d.status === 'failed' && <Notice tone="warning"><span className="flex gap-2"><AlertTriangle className="h-4 w-4" />This collection failed. Failed collections are tracked in analytics.</span></Notice>}

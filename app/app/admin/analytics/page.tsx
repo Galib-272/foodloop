@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Platform Analytics — FoodSphere AI' };
+export const metadata = { title: 'Platform Analytics — FoodLoop' };
 
 export default function PlatformAnalytics() {
   const p = platformAnalytics();

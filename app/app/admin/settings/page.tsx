@@ -8,7 +8,7 @@ import { ActionButton } from '@/components/app/action-button';
 import { automationConfigured } from '@/lib/automation';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Platform Settings — FoodSphere AI' };
+export const metadata = { title: 'Platform Settings — FoodLoop' };
 
 export default function AdminSettings() {
   const kb = Math.round(Number(getSetting('csv_max_bytes', String(CSV_MAX_BYTES))) / 1024);
