@@ -1,5 +1,5 @@
 """
-Shared pieces of the "Ask FoodSphere" RAG pipeline:
+Shared pieces of the "Ask FoodLoop" RAG pipeline:
 markdown chunking, contextual headers, tokenizer, LSA embeddings, an Ollama client and the SQLite connection
 (sqlite-vec for vectors + FTS5 for keywords).
 
@@ -137,7 +137,7 @@ def rule_context(c: Chunk, docs: Dict[str, str]) -> str:
     """Fallback context when no LLM is available: document title, section and the document's opening line."""
     intro = next((l.strip() for l in docs[c.doc].splitlines()[1:] if l.strip() and not l.startswith('#')), '')
     intro = re.split(r'(?<=[.!?])\s', intro)[0]
-    return f'From the FoodSphere AI document "{c.doc_title}", section "{c.section}". {intro}'.strip()
+    return f'From the FoodLoop document "{c.doc_title}", section "{c.section}". {intro}'.strip()
 
 
 CONTEXT_PROMPT = """<document>

@@ -7,7 +7,7 @@ md = lambda s: cells.append(nbf.v4.new_markdown_cell(s.strip()))
 code = lambda s: cells.append(nbf.v4.new_code_cell(s.strip()))
 
 md("""
-# FoodSphere AI — Feature 1: Predicting leftovers before they happen
+# FoodLoop — Feature 1: Predicting leftovers before they happen
 
 **Dataset:** Kaggle *Food Waste* dataset (8,000 daily inventory records, 2025). Raw file: `data/raw/food_waste_dataset.csv`.
 
@@ -472,7 +472,7 @@ md("""
 * **Version 3 (accuracy improvement):** spoilage features (how much leftover food usually spoils, by category × shelf life, temperature and weather), model choice by **accuracy over 5 rolling time periods** instead of one validation period, no oversampling, and a wider hyper-parameter search (XGBoost and LightGBM also tried). Day-to-day history (lag) features were tested and rejected: the data has no day-to-day pattern (autocorrelation ≈ 0).
 * **Leftover amount:** the AI model reaches the noise floor of this data; it is compared honestly against a strong historical-average rule.
 * **Waste level:** clearly better than guessing the majority class; most confusion is between neighbouring levels (Low↔Medium, Medium↔High), which is expected because the labels overlap in the raw data.
-* The models are exported to `lib/model/waste-models.json` and run inside the FoodSphere AI app. Predictions are always shown as **estimates**.
+* The models are exported to `lib/model/waste-models.json` and run inside the FoodLoop app. Predictions are always shown as **estimates**.
 """)
 
 nb = nbf.v4.new_notebook(); nb.cells = cells

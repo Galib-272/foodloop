@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// One command to run the FoodSphere n8n workflow locally:  npm run n8n
+// One command to run the FoodLoop n8n workflow locally:  npm run n8n
 //  1. makes sure .env.local has N8N_WEBHOOK_URL and N8N_SHARED_SECRET (creates a random secret the first time)
 //  2. imports automation/n8n/foodsphere-alerts.workflow.json into a project-local n8n and activates it
 //  3. starts n8n on http://localhost:5678 (editor) — keep this terminal open, and run `npm run dev` in another one
@@ -43,7 +43,7 @@ const bin = process.env.N8N_BIN ? [process.env.N8N_BIN] : ['npx', '-y', 'n8n@1']
 const n8n = (args, opts = {}) => spawnSync(bin[0], [...bin.slice(1), ...args], { stdio: 'inherit', env: n8nEnv, shell: process.platform === 'win32', ...opts });
 
 const wf = path.join(root, 'automation', 'n8n', 'foodsphere-alerts.workflow.json');
-console.log('[n8n] importing the FoodSphere workflow (the first run downloads n8n, this can take a few minutes)…');
+console.log('[n8n] importing the FoodLoop workflow (the first run downloads n8n, this can take a few minutes)…');
 if (n8n(['import:workflow', `--input=${wf}`]).status) process.exit(1);
 if (n8n(['update:workflow', '--id=foodsphereAlerts', '--active=true']).status) process.exit(1);
 console.log(`[n8n] workflow active. It calls the app at ${n8nEnv.FOODSPHERE_APP_URL}. Starting n8n on http://localhost:5678 …`);

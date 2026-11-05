@@ -1,5 +1,5 @@
 """
-FoodSphere AI data warehouse (DuckDB).
+FoodLoop data warehouse (DuckDB).
 
 Builds a star schema for waste and food-rescue analytics, then runs the analytics queries and
 saves each result as a CSV report.

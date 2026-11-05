@@ -1,5 +1,5 @@
 """
-SYNTHETIC donation-matching dataset generator for FoodSphere AI (Feature 2: finding the right organization).
+SYNTHETIC donation-matching dataset generator for FoodLoop (Feature 2: finding the right organization).
 
 WHY SYNTHETIC: no public dataset records which organizations accepted/received surplus-food donations.
 This script SIMULATES realistic offers so a matching model can be demonstrated. Every row is labelled

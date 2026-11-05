@@ -1,6 +1,6 @@
 {
   "id": "foodsphereAlerts",
-  "name": "FoodSphere AI – donation alerts",
+  "name": "FoodLoop – donation alerts",
   "nodes": [
     {
       "parameters": {
@@ -10,7 +10,7 @@
         "options": {}
       },
       "id": "6c0f2f0e-1b1a-4d43-9a0e-3d1f5a7b0a01",
-      "name": "FoodSphere event",
+      "name": "FoodLoop event",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
@@ -21,7 +21,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Check the shared secret, then turn the raw event into an alert.\nconst secret = $env.FOODSPHERE_N8N_SECRET;\nreturn $input.all().map((item) => {\n  const headers = item.json.headers || {};\n  if (!secret || headers['x-foodsphere-secret'] !== secret) {\n    throw new Error('Rejected: missing or wrong x-foodsphere-secret header');\n  }\n  const e = item.json.body || {};\n  const d = e.data || {};\n  const deadline = d.safe_until ? new Date(d.safe_until).toLocaleString('en-GB', { timeZone: 'Asia/Dhaka', dateStyle: 'medium', timeStyle: 'short' }) : 'soon';\n  const templates = {\n    'donation.deadline_soon': ['Donation about to expire', `${d.item_name} (${d.quantity} ${d.unit}, ${d.area || 'Dhaka'}) must be collected before ${deadline}. Current status: ${d.status}.`, true],\n    'donation.expired': ['Donation expired', `${d.item_name} expired before collection: ${d.quantity} ${d.unit} of ${d.food_category} was lost.`, true],\n    'collection.failed': ['Collection failed', `Pickup of ${d.item_name} (${d.quantity} ${d.unit}) failed. Reason: ${d.reason}.`, true],\n    'donation.created': ['New donation listed', `${d.item_name} (${d.quantity} ${d.unit}) is available in ${d.area || 'Dhaka'} with ${d.eligible_recipients ?? 0} eligible recipients.`, false],\n    'donation.delivered': ['Donation delivered', `${d.quantity_delivered} ${d.unit} of ${d.item_name} was delivered.`, false],\n    'automation.test': ['n8n connection test', `FoodSphere AI reached n8n and n8n reached FoodSphere AI (requested by ${d.requested_by || 'an administrator'}).`, true],\n  };\n  const [title, message, urgent] = templates[e.event] || ['FoodSphere event', `Unhandled event: ${e.event}`, false];\n  return {\n    json: {\n      event: e.event,\n      urgent,\n      occurredAt: e.occurredAt,\n      alert: { event: e.event, title, message, link: d.id ? `/app/donations/${d.id}` : '/app/admin', donationId: d.id ?? null },\n    },\n  };\n});"
+        "jsCode": "// Check the shared secret, then turn the raw event into an alert.\nconst secret = $env.FOODSPHERE_N8N_SECRET;\nreturn $input.all().map((item) => {\n  const headers = item.json.headers || {};\n  if (!secret || headers['x-foodsphere-secret'] !== secret) {\n    throw new Error('Rejected: missing or wrong x-foodsphere-secret header');\n  }\n  const e = item.json.body || {};\n  const d = e.data || {};\n  const deadline = d.safe_until ? new Date(d.safe_until).toLocaleString('en-GB', { timeZone: 'Asia/Dhaka', dateStyle: 'medium', timeStyle: 'short' }) : 'soon';\n  const templates = {\n    'donation.deadline_soon': ['Donation about to expire', `${d.item_name} (${d.quantity} ${d.unit}, ${d.area || 'Dhaka'}) must be collected before ${deadline}. Current status: ${d.status}.`, true],\n    'donation.expired': ['Donation expired', `${d.item_name} expired before collection: ${d.quantity} ${d.unit} of ${d.food_category} was lost.`, true],\n    'collection.failed': ['Collection failed', `Pickup of ${d.item_name} (${d.quantity} ${d.unit}) failed. Reason: ${d.reason}.`, true],\n    'donation.created': ['New donation listed', `${d.item_name} (${d.quantity} ${d.unit}) is available in ${d.area || 'Dhaka'} with ${d.eligible_recipients ?? 0} eligible recipients.`, false],\n    'donation.delivered': ['Donation delivered', `${d.quantity_delivered} ${d.unit} of ${d.item_name} was delivered.`, false],\n    'automation.test': ['n8n connection test', `FoodLoop reached n8n and n8n reached FoodLoop (requested by ${d.requested_by || 'an administrator'}).`, true],\n  };\n  const [title, message, urgent] = templates[e.event] || ['FoodLoop event', `Unhandled event: ${e.event}`, false];\n  return {\n    json: {\n      event: e.event,\n      urgent,\n      occurredAt: e.occurredAt,\n      alert: { event: e.event, title, message, link: d.id ? `/app/donations/${d.id}` : '/app/admin', donationId: d.id ?? null },\n    },\n  };\n});"
       },
       "id": "6c0f2f0e-1b1a-4d43-9a0e-3d1f5a7b0a02",
       "name": "Check secret & write alert",
@@ -73,7 +73,7 @@
         }
       },
       "id": "6c0f2f0e-1b1a-4d43-9a0e-3d1f5a7b0a04",
-      "name": "Notify admins in FoodSphere",
+      "name": "Notify admins in FoodLoop",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -94,7 +94,7 @@
     }
   ],
   "connections": {
-    "FoodSphere event": {
+    "FoodLoop event": {
       "main": [
         [
           {
@@ -120,7 +120,7 @@
       "main": [
         [
           {
-            "node": "Notify admins in FoodSphere",
+            "node": "Notify admins in FoodLoop",
             "type": "main",
             "index": 0
           }

@@ -7,7 +7,7 @@ md = lambda s: cells.append(nbf.v4.new_markdown_cell(s.strip()))
 code = lambda s: cells.append(nbf.v4.new_code_cell(s.strip()))
 
 md("""
-# FoodSphere AI — Feature 2: Finding the right organization for the food
+# FoodLoop — Feature 2: Finding the right organization for the food
 
 > ⚠️ **This notebook uses a SYNTHETIC dataset.** No public dataset records which organizations accepted/received surplus-food
 > donations, so `generate_matching_dataset.py` simulates realistic offers (anchored on the Kaggle food-waste data, real Dhaka

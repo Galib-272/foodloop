@@ -1,5 +1,5 @@
 """
-Builds the knowledge base for "Ask FoodSphere" (rag/knowledge/*.md) from the project's own content,
+Builds the knowledge base for "Ask FoodLoop" (rag/knowledge/*.md) from the project's own content,
 so the assistant always answers from the same text the app shows:
 
   app/<info page>/page.tsx     About, Guidelines, Food Safety, Privacy, Data Use, Terms, Help Center
@@ -80,7 +80,7 @@ def readme() -> str:
     text = (ROOT / 'README.md').read_text()
     keep = ['Architecture', 'Machine learning', 'Data warehouse (DuckDB)', 'Deploy (Vercel + Turso)']
     parts = re.split(r'^## ', text, flags=re.M)
-    md = ['# FoodSphere AI platform and technology (from the README)', '']
+    md = ['# FoodLoop platform and technology (from the README)', '']
     for p in parts[1:]:
         title = p.split('\n', 1)[0].strip()
         if title in keep:
@@ -98,7 +98,7 @@ def model_results() -> str:
     rank = m['ranking_top_pick']
     return f"""# AI model results
 
-FoodSphere AI uses two machine-learning models. Both are trained offline in Python notebooks, exported to JSON and run inside the web app in TypeScript.
+FoodLoop uses two machine-learning models. Both are trained offline in Python notebooks, exported to JSON and run inside the web app in TypeScript.
 
 ## AI model 1: leftover amount (regression)
 

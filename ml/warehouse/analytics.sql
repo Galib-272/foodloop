@@ -1,4 +1,4 @@
--- FoodSphere AI warehouse: analytics queries.
+-- FoodLoop warehouse: analytics queries.
 -- Each block starts with "-- name: <report>" and is saved to ml/warehouse/reports/<report>.csv
 
 -- name: waste_by_category

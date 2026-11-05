@@ -1,6 +1,6 @@
 # AI model results
 
-FoodSphere AI uses two machine-learning models. Both are trained offline in Python notebooks, exported to JSON and run inside the web app in TypeScript.
+FoodLoop uses two machine-learning models. Both are trained offline in Python notebooks, exported to JSON and run inside the web app in TypeScript.
 
 ## AI model 1: leftover amount (regression)
 

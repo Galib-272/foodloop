@@ -1,4 +1,4 @@
-# FoodSphere AI platform and technology (from the README)
+# FoodLoop platform and technology (from the README)
 
 ## Architecture
 
@@ -12,6 +12,8 @@
 | ML pipeline | `ml/waste/01_waste_model.ipynb`, `ml/matching/02_matching_model.ipynb` (Python, offline) → `lib/model/waste-models.json`, `lib/model/matching-model.json` |
 | ML inference | `lib/ml/runtime.ts` (tree/linear/KNN evaluator), `lib/ml/waste.ts`, `lib/ml/matching.ts` |
 | Data warehouse | `ml/warehouse/` — DuckDB star schema for waste and rescue analytics (offline, `npm run warehouse`) |
+| AI assistant | `rag/` (Python: knowledge base, sqlite-vec + FTS5, LangGraph agent, local-model eval), `lib/rag/search.ts` + `app/app/assistant` (web) |
+| Automation | `lib/automation.ts` (events) → n8n workflow in `automation/n8n/` → `app/api/integrations/n8n` |
 
 **Donation workflow:** Available → Requested → Accepted → Scheduled → Collected → Delivered, plus Cancelled / Expired / Rejected / Failed Collection. Transitions are validated on the server, every change records actor and time, and acceptance runs in a transaction so only one recipient can claim a donation.
 

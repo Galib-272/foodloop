@@ -1,6 +1,6 @@
 # Privacy Policy
 
-This policy explains what personal information FoodSphere AI collects, why, and how it is protected.
+This policy explains what personal information FoodLoop collects, why, and how it is protected.
 
 ## Information we collect
 

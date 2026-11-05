@@ -1,8 +1,8 @@
 # Frequently asked questions and getting-started guides
 
-## What is FoodSphere AI?
+## What is FoodLoop?
 
-FoodSphere AI is a food rescue platform. It forecasts surplus from your historical data, helps you publish donations, recommends suitable recipient organizations and tracks collection through to confirmed delivery.
+FoodLoop is a food rescue platform. It forecasts surplus from your historical data, helps you publish donations, recommends suitable recipient organizations and tracks collection through to confirmed delivery.
 
 ## Who can donate food?
 
@@ -22,7 +22,7 @@ First, ineligible recipients are removed (unverified, wrong food category or sto
 
 ## Does the system guarantee food safety?
 
-No. FoodSphere AI does not certify food safety. Donors are responsible for accurate information and for following applicable food-safety requirements.
+No. FoodLoop does not certify food safety. Donors are responsible for accurate information and for following applicable food-safety requirements.
 
 ## How does food collection work?
 

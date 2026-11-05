@@ -1,5 +1,5 @@
 """
-Evaluate "Ask FoodSphere".
+Evaluate "Ask FoodLoop".
 
 Part 1, retrieval (always runs): for each test question with a known source, is the right section found?
   Compares naive vs contextual chunks and vector vs keyword (FTS5/BM25) vs hybrid search.
@@ -61,7 +61,7 @@ def eval_models(r: Retriever, models: list) -> list:
     out = []
     for model in models:
         print(f'[eval] {model}', flush=True)
-        ask(graph, 'What is FoodSphere AI?', model)  # warm-up: loads the model into memory
+        ask(graph, 'What is FoodLoop?', model)  # warm-up: loads the model into memory
         rows = []
         for q in QUESTIONS:
             res = ask(graph, q['q'], model)
@@ -91,7 +91,7 @@ def write_report(result: dict) -> None:
     REPORTS.mkdir(parents=True, exist_ok=True)
     (REPORTS / 'eval_results.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
     m = result['index']
-    md = ['# Ask FoodSphere: RAG evaluation', '',
+    md = ['# Ask FoodLoop: RAG evaluation', '',
           f"Run {result['run_at']} on {result['machine']}. Index: {m['chunks']} chunks, embeddings `{m['embedding']}`, "
           f"vector store `{m['vector_backend']}`, keyword search SQLite FTS5 (BM25), chunk contexts: {m['contexts']}.", '',
           f"## Retrieval ({result['answerable_questions']} questions with a known source section)", '',

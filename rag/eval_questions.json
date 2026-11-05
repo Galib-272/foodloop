@@ -1,6 +1,6 @@
 [
   {"q": "How cold must refrigerated food be kept until pickup?", "gold": [["page_guidelines", "Storage and handling"]], "expect": ["5"]},
-  {"q": "Does FoodSphere AI guarantee that donated food is safe?", "gold": [["page_food_safety", ""], ["faq_and_guides", "guarantee food safety"]], "expect": ["not"]},
+  {"q": "Does FoodLoop guarantee that donated food is safe?", "gold": [["page_food_safety", ""], ["faq_and_guides", "guarantee food safety"]], "expect": ["not"]},
   {"q": "How can an organization become verified?", "gold": [["faq_and_guides", "become verified"]], "expect": ["administrator"]},
   {"q": "What accuracy does the waste risk model reach?", "gold": [["ai_model_results", "waste risk"]], "expect": ["71.2"]},
   {"q": "Which food category has the highest waste rate?", "gold": [["warehouse_findings", "Food waste by category"]], "expect": ["prepared food"]},

@@ -1,6 +1,6 @@
 # Food Safety Disclaimer
 
-FoodSphere AI assists with coordination and prioritization. It does not certify food safety. Donors remain responsible for providing accurate food information and following applicable food-safety requirements.
+FoodLoop assists with coordination and prioritization. It does not certify food safety. Donors remain responsible for providing accurate food information and following applicable food-safety requirements.
 
 ## What the platform checks
 

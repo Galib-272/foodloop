@@ -1,6 +1,6 @@
 # Help Center
 
-Answers to common questions about using FoodSphere AI. For anything else, contact the support team.
+Answers to common questions about using FoodLoop. For anything else, contact the support team.
 
 ## Getting started
 

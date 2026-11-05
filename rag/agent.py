@@ -1,5 +1,5 @@
 """
-"Ask FoodSphere" agent built with LangGraph.
+"Ask FoodLoop" agent built with LangGraph.
 
     START -> retrieve -> grade --relevant--------> generate -> END
                            |--not relevant, 1st try--> widen -> retrieve (again, more results)
@@ -30,11 +30,11 @@ from retrieve import Retriever  # noqa: E402
 
 from langgraph.graph import END, START, StateGraph  # noqa: E402
 
-SYSTEM = """You are Ask FoodSphere, the help assistant of FoodSphere AI, a food rescue platform in Bangladesh.
+SYSTEM = """You are Ask FoodLoop, the help assistant of FoodLoop, a food rescue platform in Bangladesh.
 Answer the question using ONLY the numbered sources. Keep the answer to 1-3 short sentences.
-Cite the sources you used like [1] or [2]. If the sources do not contain the answer, say "I don't know based on the FoodSphere documents." Do not invent facts."""
+Cite the sources you used like [1] or [2]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts."""
 
-REFUSAL = "I couldn't find this in the FoodSphere AI knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data."
+REFUSAL = "I couldn't find this in the FoodLoop knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data."
 
 
 class AgentState(TypedDict, total=False):

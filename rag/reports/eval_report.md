@@ -1,6 +1,6 @@
-# Ask FoodSphere: RAG evaluation
+# Ask FoodLoop: RAG evaluation
 
-Run 2026-10-25T20:17:35+00:00 on Linux x86_64, Python 3.13.16. Index: 72 chunks, embeddings `lsa`, vector store `sqlite-vec v0.1.9`, keyword search SQLite FTS5 (BM25), chunk contexts: {'llm_new': 0, 'llm_cached': 0, 'rules': 72, 'seconds': 0.0}.
+Run 2026-11-05T03:44:42+00:00 on Linux x86_64, Python 3.13.16. Index: 72 chunks, embeddings `lsa`, vector store `sqlite-vec v0.1.9`, keyword search SQLite FTS5 (BM25), chunk contexts: {'llm_new': 0, 'llm_cached': 0, 'rules': 72, 'seconds': 0.0}.
 
 ## Retrieval (16 questions with a known source section)
 

@@ -1,6 +1,6 @@
 # Data Use Policy
 
-How operational data and uploaded files are used inside FoodSphere AI.
+How operational data and uploaded files are used inside FoodLoop.
 
 ## Uploaded CSV files
 

@@ -1,4 +1,4 @@
--- FoodSphere AI data warehouse (DuckDB)
+-- FoodLoop data warehouse (DuckDB)
 -- Star schema for waste and food-rescue analytics.
 -- Built by ml/warehouse/build_warehouse.py from:
 --   1. ml/waste/data/raw/food_waste_dataset.csv            (Kaggle, real data)
