@@ -1,4 +1,4 @@
-# FoodSphere AI — Food Waste Zero
+# FoodLoop — Food Waste Zero
 
 AI-assisted food rescue platform: surplus forecasting, donation management, recipient matching, collection tracking and impact analytics.
 
@@ -87,9 +87,9 @@ npm run warehouse        # builds data/foodsphere_warehouse.duckdb and ml/wareho
 - The app database is read from a temporary copy, so the warehouse never changes it.
 - Example findings: overall waste rate 4.88%; Prepared Food wastes the most (7.61%); food banks complete 69.9% of offers vs 25.1% for shelters; pickups under 2 km succeed 42.4% of the time vs 25.0% at 10 km or more (synthetic data).
 
-## Ask FoodSphere (RAG assistant, LangGraph, local models)
+## Ask FoodLoop (RAG assistant, LangGraph, local models)
 
-Every role has **Ask FoodSphere** in the sidebar. It answers questions about donations, food safety, roles, privacy and the AI models **only from FoodSphere's own documents**, cites its sources, and says when the documents do not cover a question.
+Every role has **Ask FoodLoop** in the sidebar. It answers questions about donations, food safety, roles, privacy and the AI models **only from FoodLoop's own documents**, cites its sources, and says when the documents do not cover a question.
 
 | Technique | How it is done | Where |
 |---|---|---|
@@ -123,7 +123,7 @@ The live website cannot reach a model on your computer, so it uses the same flow
 Important donation events are sent to a self-hosted **n8n** workflow (`automation/n8n/foodsphere-alerts.workflow.json`):
 
 ```
-FoodSphere event (webhook) → Check secret & write alert (code) → Urgent? ─yes→ Notify admins in FoodSphere (HTTP → /api/integrations/n8n)
+FoodLoop event (webhook) → Check secret & write alert (code) → Urgent? ─yes→ Notify admins in FoodLoop (HTTP → /api/integrations/n8n)
                                                                         └no──→ Log only
 ```
 
