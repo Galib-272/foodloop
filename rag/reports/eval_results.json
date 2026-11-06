@@ -1,14 +1,14 @@
 {
-  "run_at": "2026-11-05T03:44:42+00:00",
+  "run_at": "2026-11-06T05:31:14+00:00",
   "machine": "Linux x86_64, Python 3.13.16",
   "index": {
-    "chunks": 72,
+    "chunks": 76,
     "embedding": "lsa",
     "vector_backend": "sqlite-vec v0.1.9",
     "contexts": {
       "llm_new": 0,
       "llm_cached": 0,
-      "rules": 72,
+      "rules": 76,
       "seconds": 0.0
     }
   },
@@ -18,25 +18,25 @@
     {
       "chunks": "naive",
       "search": "vector",
-      "hit@1": 0.688,
+      "hit@1": 0.75,
       "hit@3": 1.0,
-      "mrr": 0.823,
+      "mrr": 0.865,
       "missed_top3": []
     },
     {
       "chunks": "naive",
       "search": "keyword",
-      "hit@1": 0.812,
+      "hit@1": 0.875,
       "hit@3": 1.0,
-      "mrr": 0.896,
+      "mrr": 0.938,
       "missed_top3": []
     },
     {
       "chunks": "naive",
       "search": "hybrid",
-      "hit@1": 0.688,
+      "hit@1": 0.75,
       "hit@3": 1.0,
-      "mrr": 0.833,
+      "mrr": 0.875,
       "missed_top3": []
     },
     {
@@ -44,15 +44,15 @@
       "search": "vector",
       "hit@1": 0.688,
       "hit@3": 1.0,
-      "mrr": 0.833,
+      "mrr": 0.844,
       "missed_top3": []
     },
     {
       "chunks": "contextual",
       "search": "keyword",
-      "hit@1": 0.688,
+      "hit@1": 0.75,
       "hit@3": 1.0,
-      "mrr": 0.844,
+      "mrr": 0.865,
       "missed_top3": []
     },
     {
@@ -60,7 +60,7 @@
       "search": "hybrid",
       "hit@1": 0.688,
       "hit@3": 1.0,
-      "mrr": 0.833,
+      "mrr": 0.844,
       "missed_top3": []
     }
   ],

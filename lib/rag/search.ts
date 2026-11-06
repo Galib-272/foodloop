@@ -132,11 +132,48 @@ Cite the sources you used like [1] or [2]. If the sources do not contain the ans
 export const REFUSAL =
   "I couldn't find this in the FoodLoop knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data.";
 
-async function ollamaAnswer(question: string, hits: Hit[]): Promise<{ text: string; citations: number[]; model: string } | null> {
+export const SOURCE_BUDGET = 1800;
+const HARD_WORDS = new Set(['why', 'compare', 'difference', 'explain', 'versus', 'vs', 'between', 'better', 'should']);
+
+/** Context trimming (mirrors rag/common.py trim_sources): fit the chunks into a fixed character budget. */
+export function trimSources(texts: string[], budget = SOURCE_BUDGET): string[] {
+  const out: string[] = [];
+  let left = budget;
+  texts.forEach((t, i) => {
+    const share = Math.floor(left / (texts.length - i));
+    if (t.length > share) {
+      const cut = t.slice(0, share);
+      const end = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('\n'));
+      t = (end > Math.floor(share / 2) ? cut.slice(0, end + 1) : cut).trimEnd() + ' …';
+    }
+    out.push(t);
+    left -= t.length;
+  });
+  return out;
+}
+
+/** Cheap-model routing (mirrors rag/common.py route_model). */
+export function routeModel(question: string, coverage: number): { tier: 'small' | 'large'; reason: string } {
+  const words = question.toLowerCase().match(/[a-z0-9]+/g) ?? [];
+  const hard = Array.from(new Set(words.filter((w) => HARD_WORDS.has(w)))).sort();
+  if (hard.length) return { tier: 'large', reason: `reasoning words: ${hard.join(', ')}` };
+  if (words.length > 14) return { tier: 'large', reason: `long question (${words.length} words)` };
+  if (coverage < 0.75) return { tier: 'large', reason: `partial source coverage (${coverage.toFixed(2)})` };
+  return { tier: 'small', reason: 'short factual question with good source coverage' };
+}
+
+async function ollamaAnswer(question: string, hits: Hit[], coverage: number, trace: string[]): Promise<{ text: string; citations: number[]; model: string } | null> {
   const url = process.env.OLLAMA_URL;
   if (!url) return null;
-  const model = process.env.OLLAMA_MODEL || 'qwen2.5:1.5b';
-  const sources = hits.map((h, i) => `[${i + 1}] (${h.docTitle} > ${h.section})\n${h.text}`).join('\n\n');
+  let model = process.env.OLLAMA_MODEL || 'qwen2.5:1.5b';
+  if (model === 'auto') {
+    const r = routeModel(question, coverage);
+    model = r.tier === 'small' ? process.env.OLLAMA_SMALL_MODEL || 'qwen2.5:1.5b' : process.env.OLLAMA_LARGE_MODEL || 'mistral:7b';
+    trace.push(`route: ${r.tier} model ${model} (${r.reason})`);
+  }
+  const texts = trimSources(hits.map((h) => h.text));
+  trace.push(`trim: ${hits.reduce((n, h) => n + h.text.length, 0)} -> ${texts.reduce((n, t) => n + t.length, 0)} source chars`);
+  const sources = hits.map((h, i) => `[${i + 1}] (${h.docTitle} > ${h.section})\n${texts[i]}`).join('\n\n');
   try {
     const r = await fetch(`${url.replace(/\/$/, '')}/api/chat`, {
       method: 'POST',
@@ -172,7 +209,7 @@ export async function ask(question: string): Promise<AskResult> {
     const ok = cov >= 0.5;
     trace.push(`grade: coverage ${cov.toFixed(2)} -> ${ok ? 'relevant' : 'not relevant'}`);
     if (ok) {
-      const llm = await ollamaAnswer(question, hits);
+      const llm = await ollamaAnswer(question, hits, cov, trace);
       if (llm) {
         trace.push(`generate: ${llm.model}`);
         return { question, answer: llm.text, citations: llm.citations, generator: llm.model, hits, coverage: cov, trace, ms: Date.now() - t0 };
