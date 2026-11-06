@@ -1,0 +1,130 @@
+{
+  "built_at": "2026-11-06T05:42:17+00:00",
+  "batch_id": "b5f54ce42192",
+  "tables": {
+    "bronze/donation_matching_raw_synthetic": {
+      "rows": 12424,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 32,
+      "description": "Raw copy of synthetic_donation_matching_dataset.csv",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    },
+    "bronze/food_waste_raw": {
+      "rows": 8000,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 19,
+      "description": "Raw copy of food_waste_dataset.csv",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    },
+    "silver/app_donations": {
+      "rows": 31,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 17,
+      "description": "Donations from the FoodLoop app database",
+      "recent_operations": [
+        "MERGE",
+        "WRITE"
+      ]
+    },
+    "silver/donation_matches_synthetic": {
+      "rows": 12272,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 33,
+      "description": "Cleaned synthetic donation-matching offers (SYNTHETIC)",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    },
+    "silver/inventory_waste": {
+      "rows": 8000,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [
+        "year"
+      ],
+      "columns": 20,
+      "description": "Cleaned Kaggle inventory records (real data)",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    },
+    "gold/daily_waste_by_category": {
+      "rows": 2142,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 6,
+      "description": "Daily waste per food category (Kaggle)",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    },
+    "gold/match_success_by_org_type_synthetic": {
+      "rows": 5,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 7,
+      "description": "Delivery success by organization type (SYNTHETIC)",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    },
+    "gold/monthly_rescue_synthetic": {
+      "rows": 12,
+      "version": 1,
+      "files": 1,
+      "partition_columns": [],
+      "columns": 5,
+      "description": "Units rescued per month (SYNTHETIC)",
+      "recent_operations": [
+        "WRITE",
+        "WRITE"
+      ]
+    }
+  },
+  "app_donations_merge": {
+    "num_target_rows_updated": 31,
+    "num_target_rows_inserted": 0,
+    "num_source_rows": 31
+  },
+  "schema_enforcement": "rejected as expected (SchemaMismatchError)",
+  "data_quality_fixes": {
+    "waste_duplicate_ids_removed": 0,
+    "waste_missing_weather_set_unknown": 203,
+    "waste_missing_donation_flag_set_false": 233,
+    "match_cleaning_report": {
+      "rows_in": 12424,
+      "exact_duplicates_removed": 123,
+      "duplicate_match_ids_removed": 0,
+      "mixed_date_formats_fixed": 474,
+      "mixed_time_formats_fixed": 381,
+      "negative_distance_to_missing": 33,
+      "acceptance_rate_percent_fixed": 113,
+      "capacity_above_daily_to_missing": 46,
+      "impossible_expiry_to_missing": 20,
+      "rows_removed_invalid_quantity": 29,
+      "rows_removed_unrecoverable": 0,
+      "rows_out": 12272
+    },
+    "match_missing_org_type_filled": 147
+  }
+}
