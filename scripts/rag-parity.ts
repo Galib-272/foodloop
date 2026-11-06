@@ -3,9 +3,10 @@
 import fs from 'fs';
 import path from 'path';
 import { embed, search } from '../lib/rag/search';
+import { entities, facts } from '../lib/rag/graph';
 
 const golden = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'lib', 'rag', 'golden.json'), 'utf8')) as {
-  cases: { q: string; top: number[]; vec: number[] }[];
+  cases: { q: string; top: number[]; vec: number[]; entities: string[]; facts: string[] }[];
 };
 let worstVec = 0;
 const mismatches: string[] = [];
@@ -14,8 +15,12 @@ for (const c of golden.cases) {
   v.forEach((x, i) => (worstVec = Math.max(worstVec, Math.abs(x - c.vec[i]))));
   const top = search(c.q).map((h) => h.id);
   if (JSON.stringify(top) !== JSON.stringify(c.top)) mismatches.push(`${c.q}: ts ${top} vs py ${c.top}`);
+  const e = entities(c.q);
+  if (JSON.stringify(e) !== JSON.stringify(c.entities)) mismatches.push(`${c.q}: graph entities ts ${e} vs kuzu ${c.entities}`);
+  const f = facts(e);
+  if (JSON.stringify(f) !== JSON.stringify(c.facts)) mismatches.push(`${c.q}: graph facts differ\n    ts ${f}\n    kuzu ${c.facts}`);
 }
-console.log(`rag cases ${golden.cases.length}, max embedding diff ${worstVec.toExponential(2)}, ranking mismatches ${mismatches.length}`);
+console.log(`rag cases ${golden.cases.length} (search + graph entities + graph facts), max embedding diff ${worstVec.toExponential(2)}, ranking mismatches ${mismatches.length}`);
 mismatches.forEach((m) => console.log('  ' + m));
 const ok = worstVec < 1e-4 && mismatches.length === 0;
 console.log(ok ? 'RAG PARITY OK' : 'RAG PARITY FAILED');

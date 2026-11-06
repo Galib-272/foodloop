@@ -1,4 +1,5 @@
 import index from './index.json';
+import { entities as graphEntities, facts as graphFacts, graphChunks } from './graph';
 
 /**
  * "Ask FoodLoop" for the web app: the same agent flow as rag/agent.py (LangGraph), in TypeScript.
@@ -10,13 +11,15 @@ import index from './index.json';
  */
 
 type IndexChunk = (typeof index.chunks)[number];
-export type Hit = Omit<IndexChunk, 'vec'> & { score: number; vectorRank: number | null; keywordRank: number | null };
+export type Hit = Omit<IndexChunk, 'vec'> & { score: number; vectorRank: number | null; keywordRank: number | null; graphRank: number | null };
 export type AskResult = {
   question: string;
   answer: string;
   citations: number[];
   generator: string;
   hits: Hit[];
+  entities: string[];
+  graphFacts: string[];
   coverage: number;
   trace: string[];
   ms: number;
@@ -80,7 +83,7 @@ function bm25(query: string[], k1 = 1.2, b = 0.75): number[] {
   });
 }
 
-/** Hybrid search: top `pool` by cosine similarity and by BM25, fused with RRF (k = 60). */
+/** Hybrid + graph search: top `pool` by cosine similarity, by BM25 and by knowledge-graph mentions, fused with RRF (k = 60). */
 export function search(question: string, k = 4, pool = 20): Hit[] {
   const q = embed(question);
   const hasVec = q.some((x) => x !== 0);
@@ -92,25 +95,28 @@ export function search(question: string, k = 4, pool = 20): Hit[] {
   const scores = new Map<number, number>();
   const vRank = new Map<number, number>();
   const kRank = new Map<number, number>();
+  const gRank = new Map<number, number>();
+  const byGraph = graphChunks(graphEntities(question), pool).map((id) => id - 1);
   byVec.forEach(([i], r) => { vRank.set(i, r + 1); scores.set(i, (scores.get(i) ?? 0) + 1 / (60 + r + 1)); });
   byKw.forEach(([i], r) => { kRank.set(i, r + 1); scores.set(i, (scores.get(i) ?? 0) + 1 / (60 + r + 1)); });
+  byGraph.forEach((i, r) => { gRank.set(i, r + 1); scores.set(i, (scores.get(i) ?? 0) + 1 / (60 + r + 1)); });
   return Array.from(scores)
     .sort((a, b) => b[1] - a[1] || a[0] - b[0])
     .slice(0, k)
     .map(([i, score]) => {
       const { vec: _vec, ...c } = index.chunks[i];
-      return { ...c, score: Math.round(score * 1e5) / 1e5, vectorRank: vRank.get(i) ?? null, keywordRank: kRank.get(i) ?? null };
+      return { ...c, score: Math.round(score * 1e5) / 1e5, vectorRank: vRank.get(i) ?? null, keywordRank: kRank.get(i) ?? null, graphRank: gRank.get(i) ?? null };
     });
 }
 
-export function coverage(question: string, hits: Hit[]): number {
+export function coverage(question: string, hits: Hit[], facts: string[] = []): number {
   const q = new Set(tokenize(question));
   if (!q.size || !hits.length) return 0;
-  const seen = new Set(tokenize(hits.slice(0, 3).map((h) => `${h.context} ${h.text}`).join(' ')));
+  const seen = new Set(tokenize(hits.slice(0, 3).map((h) => `${h.context} ${h.text}`).join(' ') + ' ' + facts.join(' ')));
   return Array.from(q).filter((w) => seen.has(w)).length / q.size;
 }
 
-function extractive(question: string, hits: Hit[]): { text: string; citations: number[] } {
+function extractive(question: string, hits: Hit[], facts: string[] = [], ents: string[] = []): { text: string; citations: number[] } {
   const q = new Set(tokenize(question));
   const best: [number, number, string][] = [];
   hits.slice(0, 3).forEach((h, idx) => {
@@ -121,13 +127,20 @@ function extractive(question: string, hits: Hit[]): { text: string; citations: n
   });
   best.sort((a, b) => b[0] - a[0]);
   const picked = best.slice(0, 2).filter((b) => b[0] > 0);
-  const use = picked.length ? picked : best.slice(0, 1);
-  return { text: use.map(([, n, s]) => `${s} [${n}]`).join(' '), citations: Array.from(new Set(use.map(([, n]) => n))).sort((a, b) => a - b) };
+  let use = picked.length ? picked : best.slice(0, 1);
+  let text = use.map(([, n, s]) => `${s} [${n}]`).join(' ');
+  if (facts.length && ents.length && GRAPH_FIRST.has(ents[0].split(':')[0])) {
+    use = use.slice(0, 1).filter((u) => u[0] >= 2);
+    text = `${facts[0]} [G]` + use.map(([, n, s]) => ` ${s} [${n}]`).join('');
+  }
+  return { text, citations: Array.from(new Set(use.map(([, n]) => n))).sort((a, b) => a - b) };
 }
+
+const GRAPH_FIRST = new Set(['action', 'status', 'concept']);
 
 const SYSTEM = `You are Ask FoodLoop, the help assistant of FoodLoop, a food rescue platform in Bangladesh.
 Answer the question using ONLY the numbered sources. Keep the answer to 1-3 short sentences.
-Cite the sources you used like [1] or [2]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts.`;
+Cite the sources you used like [1] or [2], and cite the knowledge-graph facts as [G]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts.`;
 
 export const REFUSAL =
   "I couldn't find this in the FoodLoop knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data.";
@@ -162,7 +175,7 @@ export function routeModel(question: string, coverage: number): { tier: 'small' 
   return { tier: 'small', reason: 'short factual question with good source coverage' };
 }
 
-async function ollamaAnswer(question: string, hits: Hit[], coverage: number, trace: string[]): Promise<{ text: string; citations: number[]; model: string } | null> {
+async function ollamaAnswer(question: string, hits: Hit[], coverage: number, trace: string[], facts: string[] = []): Promise<{ text: string; citations: number[]; model: string } | null> {
   const url = process.env.OLLAMA_URL;
   if (!url) return null;
   let model = process.env.OLLAMA_MODEL || 'qwen2.5:1.5b';
@@ -173,7 +186,8 @@ async function ollamaAnswer(question: string, hits: Hit[], coverage: number, tra
   }
   const texts = trimSources(hits.map((h) => h.text));
   trace.push(`trim: ${hits.reduce((n, h) => n + h.text.length, 0)} -> ${texts.reduce((n, t) => n + t.length, 0)} source chars`);
-  const sources = hits.map((h, i) => `[${i + 1}] (${h.docTitle} > ${h.section})\n${texts[i]}`).join('\n\n');
+  let sources = hits.map((h, i) => `[${i + 1}] (${h.docTitle} > ${h.section})\n${texts[i]}`).join('\n\n');
+  if (facts.length) sources += '\n\nKnowledge-graph facts [G]:\n' + facts.join('\n');
   try {
     const r = await fetch(`${url.replace(/\/$/, '')}/api/chat`, {
       method: 'POST',
@@ -198,30 +212,33 @@ async function ollamaAnswer(question: string, hits: Hit[], coverage: number, tra
 
 export async function ask(question: string): Promise<AskResult> {
   const t0 = Date.now();
+  const ents = graphEntities(question);
+  const gFacts = graphFacts(ents);
   const trace: string[] = [];
   let k = 4;
   let hits: Hit[] = [];
   let cov = 0;
   for (let attempt = 1; attempt <= 2; attempt++) {
     hits = search(question, k);
-    trace.push(`retrieve: ${hits.length} chunks (k=${k})`);
-    cov = coverage(question, hits);
+    trace.push(`retrieve: ${hits.length} chunks (k=${k}, hybrid + graph)`);
+    if (ents.length) trace.push(`graph: ${ents.join(', ')} -> ${gFacts.length} facts`);
+    cov = coverage(question, hits, gFacts);
     const ok = cov >= 0.5;
     trace.push(`grade: coverage ${cov.toFixed(2)} -> ${ok ? 'relevant' : 'not relevant'}`);
     if (ok) {
-      const llm = await ollamaAnswer(question, hits, cov, trace);
+      const llm = await ollamaAnswer(question, hits, cov, trace, gFacts);
       if (llm) {
         trace.push(`generate: ${llm.model}`);
-        return { question, answer: llm.text, citations: llm.citations, generator: llm.model, hits, coverage: cov, trace, ms: Date.now() - t0 };
+        return { question, answer: llm.text, citations: llm.citations, generator: llm.model, hits, entities: ents, graphFacts: gFacts, coverage: cov, trace, ms: Date.now() - t0 };
       }
-      const ex = extractive(question, hits);
+      const ex = extractive(question, hits, gFacts, ents);
       trace.push('generate: extractive');
-      return { question, answer: ex.text, citations: ex.citations, generator: 'extractive', hits, coverage: cov, trace, ms: Date.now() - t0 };
+      return { question, answer: ex.text, citations: ex.citations, generator: 'extractive', hits, entities: ents, graphFacts: gFacts, coverage: cov, trace, ms: Date.now() - t0 };
     }
     if (attempt === 1) { k = 8; trace.push('widen: search again with more results'); }
   }
   trace.push('refuse: not covered');
-  return { question, answer: REFUSAL, citations: [], generator: 'refusal', hits: [], coverage: cov, trace, ms: Date.now() - t0 };
+  return { question, answer: REFUSAL, citations: [], generator: 'refusal', hits: [], entities: [], graphFacts: [], coverage: cov, trace, ms: Date.now() - t0 };
 }
 
 export const INDEX_INFO = { builtAt: index.builtAt, chunks: index.chunks.length, dims: index.dims };
