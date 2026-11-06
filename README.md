@@ -87,6 +87,18 @@ npm run warehouse        # builds data/foodsphere_warehouse.duckdb and ml/wareho
 - The app database is read from a temporary copy, so the warehouse never changes it.
 - Example findings: overall waste rate 4.88%; Prepared Food wastes the most (7.61%); food banks complete 69.9% of offers vs 25.1% for shelters; pickups under 2 km succeed 42.4% of the time vs 25.0% at 10 km or more (synthetic data).
 
+## Lakehouse (Delta Lake)
+
+`npm run lakehouse` writes a medallion lakehouse to `data/lakehouse/` with **Delta Lake** (delta-rs, no Spark or cloud needed):
+
+| Layer | Tables | What happens |
+|---|---|---|
+| Bronze | `food_waste_raw`, `donation_matching_raw_synthetic` | raw CSVs kept exactly as received, plus `_source`, `_ingested_at`, `_batch_id` |
+| Silver | `inventory_waste` (partitioned by year), `donation_matches_synthetic`, `app_donations` | cleaned and typed with the same code as the warehouse and models; `app_donations` is updated with a Delta **MERGE** (upsert) |
+| Gold | `daily_waste_by_category`, `match_success_by_org_type_synthetic`, `monthly_rescue_synthetic` | analysis-ready aggregates |
+
+Every run creates a new table version (time travel), appending a row with the wrong schema is rejected, and `ml/lakehouse/reports/lakehouse_summary.json` lists rows, versions, partitions and operation history for every table.
+
 ## Ask FoodLoop (RAG assistant, LangGraph, local models)
 
 Every role has **Ask FoodLoop** in the sidebar. It answers questions about donations, food safety, roles, privacy and the AI models **only from FoodLoop's own documents**, cites its sources, and says when the documents do not cover a question.
