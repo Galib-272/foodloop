@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { Loader2, Sparkles } from 'lucide-react';
+import { Loader2, Sparkles, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -29,6 +29,30 @@ export function DonationForm({ initial, editId, forecastNote }: { initial: Donat
   const [formError, setFormError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const set = (k: keyof DonationFormValues, val: string) => setV((s) => ({ ...s, [k]: val }));
+  const [quick, setQuick] = useState('');
+  const [extracting, setExtracting] = useState(false);
+  const [extractInfo, setExtractInfo] = useState<{ source: string; filled: string[]; notes: string[] } | null>(null);
+  const [extractError, setExtractError] = useState<string | null>(null);
+
+  async function fillFromText() {
+    setExtracting(true);
+    setExtractError(null);
+    const { data, error } = await apiFetch<{ fields: Record<string, string | number>; source: string; missing: string[]; notes: string[] }>(
+      '/api/donations/extract', { body: { text: quick } });
+    setExtracting(false);
+    if (error || !data) { setExtractError(error?.fields?.text ?? error?.message ?? 'Could not read that text.'); return; }
+    const f = data.fields;
+    const next: Partial<DonationFormValues> = {};
+    for (const k of ['item_name', 'food_category', 'unit', 'storage_requirement', 'allergens', 'packaging'] as const) if (f[k]) next[k] = String(f[k]);
+    if (f.quantity_available) next.quantity_available = String(f.quantity_available);
+    if (f.available_from) next.available_from = toLocalInput(String(f.available_from));
+    if (f.safe_until) next.safe_until = toLocalInput(String(f.safe_until));
+    if (f.description && !v.description) next.description = String(f.description);
+    setV((s) => ({ ...s, ...next }));
+    const LABEL: Record<string, string> = { item_name: 'name', food_category: 'category', quantity_available: 'quantity', unit: 'unit',
+      storage_requirement: 'storage', available_from: 'available from', safe_until: 'safe-use deadline', allergens: 'allergens', packaging: 'packaging', description: 'description' };
+    setExtractInfo({ source: data.source, filled: Object.keys(next).map((k) => LABEL[k] ?? k), notes: data.notes });
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -71,6 +95,29 @@ export function DonationForm({ initial, editId, forecastNote }: { initial: Donat
           <Sparkles className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
           <p>{forecastNote} <strong>Please check and enter the actual quantity you have available</strong> — an AI forecast never publishes a donation on its own.</p>
         </div>
+      )}
+
+      {!editId && (
+        <section className="rounded-xl border border-secondary/40 bg-accent/30 p-5 sm:p-6" aria-labelledby="quick-fill">
+          <h2 id="quick-fill" className="flex items-center gap-2 text-lg font-semibold"><Wand2 className="h-5 w-5 text-secondary" aria-hidden /> Quick fill with AI</h2>
+          <p className="mt-1 text-sm text-muted-foreground">Describe the food in one sentence and AI fills in the form below. You check and correct every field before publishing.</p>
+          <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+            <label htmlFor="quick-text" className="sr-only">Describe the food</label>
+            <Textarea id="quick-text" rows={2} maxLength={500} value={quick} onChange={(e) => setQuick(e.target.value)}
+              placeholder="e.g. 20 boxes of chicken biryani, ready at 8pm, good until 11pm, contains nuts" />
+            <Button type="button" variant="secondary" className="sm:self-end" onClick={fillFromText} disabled={extracting || quick.trim().length < 5}>
+              {extracting ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Wand2 className="h-4 w-4" aria-hidden />} Fill the form
+            </Button>
+          </div>
+          {extractError && <p className="mt-2 text-sm text-destructive">{extractError}</p>}
+          {extractInfo && (
+            <div className="mt-3 rounded-lg border bg-card p-3 text-sm" role="status">
+              <p><strong>Filled:</strong> {extractInfo.filled.length ? extractInfo.filled.join(', ') : 'nothing recognised'}{' '}
+                <span className="text-muted-foreground">({extractInfo.source.startsWith('ollama:') ? `local AI model ${extractInfo.source.slice(7)}, structured JSON` : 'rule-based reader'})</span></p>
+              <ul className="mt-1 list-disc pl-5 text-muted-foreground">{extractInfo.notes.map((n) => <li key={n}>{n}</li>)}</ul>
+            </div>
+          )}
+        </section>
       )}
 
       <section className="rounded-xl border bg-card p-5 sm:p-6">
