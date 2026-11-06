@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-11-06T05:50:20.207Z",
+  "waste": {
+    "leftover_model": "Gradient Boosting",
+    "waste_model": "Random Forest",
+    "mae": 7.818,
+    "r2": 0.915,
+    "baseline_mae": 22.733,
+    "interval_80": 0.814,
+    "accuracy": 0.712,
+    "f1_macro": 0.66,
+    "roc_auc": 0.859,
+    "baseline_accuracy": 0.533
+  },
+  "matching": {
+    "model": "Gradient Boosting",
+    "accuracy": 0.811,
+    "precision": 0.733,
+    "recall": 0.842,
+    "f1": 0.784,
+    "roc_auc": 0.877,
+    "baseline_accuracy": 0.593,
+    "top_pick": {
+      "AI model (top probability)": 0.753,
+      "Rule-based weighted score": 0.756,
+      "Nearest organization": 0.732,
+      "Random eligible organization": 0.702
+    }
+  },
+  "rag": {
+    "chunks": 76,
+    "embedding": "lsa",
+    "vector_backend": "sqlite-vec v0.1.9",
+    "questions": 16,
+    "out_of_scope": 2,
+    "retrieval": [
+      {
+        "chunks": "naive",
+        "search": "vector",
+        "hit1": 0.75,
+        "hit3": 1,
+        "mrr": 0.865
+      },
+      {
+        "chunks": "naive",
+        "search": "keyword",
+        "hit1": 0.875,
+        "hit3": 1,
+        "mrr": 0.938
+      },
+      {
+        "chunks": "naive",
+        "search": "hybrid",
+        "hit1": 0.75,
+        "hit3": 1,
+        "mrr": 0.875
+      },
+      {
+        "chunks": "contextual",
+        "search": "vector",
+        "hit1": 0.688,
+        "hit3": 1,
+        "mrr": 0.844
+      },
+      {
+        "chunks": "contextual",
+        "search": "keyword",
+        "hit1": 0.75,
+        "hit3": 1,
+        "mrr": 0.865
+      },
+      {
+        "chunks": "contextual",
+        "search": "hybrid",
+        "hit1": 0.688,
+        "hit3": 1,
+        "mrr": 0.844
+      },
+      {
+        "chunks": "contextual",
+        "search": "graph",
+        "hit1": 0.812,
+        "hit3": 0.938,
+        "mrr": 0.875
+      }
+    ],
+    "graph_fact_accuracy": 1,
+    "graph_questions": 8,
+    "models": []
+  },
+  "graph": {
+    "entities": 59,
+    "relationships": 110,
+    "mentions": 155
+  },
+  "index_chunking": {
+    "semantic_threshold": -0.0058,
+    "chunking": "semantic",
+    "chunks": 76,
+    "duplicates_removed": 0,
+    "avg_chars": 263
+  },
+  "warehouse": {
+    "rows": {
+      "dim_area": 17,
+      "dim_business_type": 4,
+      "dim_date": 389,
+      "dim_food_category": 6,
+      "dim_organization": 63,
+      "dim_waste_reason": 5,
+      "dim_weather": 5,
+      "fact_app_donation": 31,
+      "fact_donation_match": 12272,
+      "fact_inventory_waste": 8000
+    },
+    "headline": {
+      "kaggle_waste_rate_pct": 4.88,
+      "highest_waste_category": {
+        "category": "Prepared Food",
+        "waste_rate_pct": 7.61
+      },
+      "synthetic_match_success_rate_pct": 40.7,
+      "synthetic_units_delivered": 99167,
+      "success_rate_under_2km_pct": 42.4,
+      "success_rate_10km_plus_pct": 25
+    }
+  },
+  "lakehouse": {
+    "bronze/donation_matching_raw_synthetic": {
+      "rows": 12424,
+      "version": 1,
+      "partitions": []
+    },
+    "bronze/food_waste_raw": {
+      "rows": 8000,
+      "version": 1,
+      "partitions": []
+    },
+    "silver/app_donations": {
+      "rows": 31,
+      "version": 1,
+      "partitions": []
+    },
+    "silver/donation_matches_synthetic": {
+      "rows": 12272,
+      "version": 1,
+      "partitions": []
+    },
+    "silver/inventory_waste": {
+      "rows": 8000,
+      "version": 1,
+      "partitions": [
+        "year"
+      ]
+    },
+    "gold/daily_waste_by_category": {
+      "rows": 2142,
+      "version": 1,
+      "partitions": []
+    },
+    "gold/match_success_by_org_type_synthetic": {
+      "rows": 5,
+      "version": 1,
+      "partitions": []
+    },
+    "gold/monthly_rescue_synthetic": {
+      "rows": 12,
+      "version": 1,
+      "partitions": []
+    }
+  }
+}
