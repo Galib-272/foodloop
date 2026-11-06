@@ -33,6 +33,10 @@ OLLAMA_URL = os.environ.get('OLLAMA_URL', 'http://localhost:11434').rstrip('/')
 EMBED_MODEL = os.environ.get('RAG_EMBED_MODEL', 'nomic-embed-text')
 CONTEXT_MODEL = os.environ.get('RAG_CONTEXT_MODEL', 'qwen2.5:1.5b')
 LOCAL_MODELS = ['qwen2.5:1.5b', 'llama3.2:1b', 'deepseek-r1:1.5b', 'mistral:7b']
+SMALL_MODEL = os.environ.get('RAG_SMALL_MODEL', 'qwen2.5:1.5b')   # cheap-model routing: easy questions
+LARGE_MODEL = os.environ.get('RAG_LARGE_MODEL', 'mistral:7b')     # hard questions
+SOURCE_BUDGET = 1800  # characters of source text sent to the model (context trimming)
+HARD_WORDS = {'why', 'compare', 'difference', 'explain', 'versus', 'vs', 'between', 'better', 'should'}
 LSA_DIMS = 64
 CHUNK_CHARS = 700
 
@@ -120,16 +124,93 @@ def window(text: str, size: int = CHUNK_CHARS) -> List[str]:
     return out
 
 
-def load_chunks() -> tuple[List[Chunk], Dict[str, str]]:
-    chunks: List[Chunk] = []
+def sentences(text: str) -> List[str]:
+    """Sentences and list items of a section, in order."""
+    out: List[str] = []
+    for para in re.split(r'\n\s*\n', text):
+        lines = [l.strip() for l in para.splitlines() if l.strip()]
+        if lines and all(re.match(r'^([-*]|\d+\.)\s', l) or l.startswith('|') for l in lines):
+            out += lines                                   # list or table: one item per unit
+        else:
+            out += [s.strip() for s in re.split(r'(?<=[.!?])\s+', ' '.join(lines)) if s.strip()]
+    return out
+
+
+def semantic_split(sents: List[str], vecs: np.ndarray, threshold: float,
+                   max_chars: int = CHUNK_CHARS, min_chars: int = 180) -> List[str]:
+    """Variable-size chunks: start a new chunk where the meaning of consecutive sentences changes
+    (cosine similarity below the corpus threshold), within a min/max size."""
+    chunks, cur = [], ''
+    for i, s in enumerate(sents):
+        if cur:
+            topic_shift = float(vecs[i - 1] @ vecs[i]) < threshold and len(cur) >= min_chars
+            if topic_shift or len(cur) + len(s) + 1 > max_chars:
+                chunks.append(cur)
+                cur = ''
+        cur = f'{cur}\n{s}' if cur else s
+    if cur:
+        if chunks and len(cur) < min_chars // 2 and len(chunks[-1]) + len(cur) <= max_chars * 1.3:
+            chunks[-1] += '\n' + cur                       # do not leave a tiny tail
+        else:
+            chunks.append(cur)
+    return chunks
+
+
+def dedupe(chunks: List['Chunk'], vecs: np.ndarray, threshold: float = 0.95) -> tuple:
+    """Semantic chunk dedup: drop chunks that repeat an earlier chunk (exact text or cosine >= threshold)."""
+    keep: List[int] = []
+    seen: set = set()
+    for i, c in enumerate(chunks):
+        key = ' '.join(tokenize(c.text))
+        if key in seen or any(float(vecs[i] @ vecs[j]) >= threshold for j in keep):
+            continue
+        seen.add(key)
+        keep.append(i)
+    kept = [chunks[i] for i in keep]
+    for n, c in enumerate(kept, 1):
+        c.id = n
+    return kept, len(chunks) - len(kept)
+
+
+def load_chunks(mode: str = 'semantic', embed_fn=None, stats: Optional[dict] = None) -> tuple[List[Chunk], Dict[str, str]]:
+    """mode='fixed': ~700-character windows. mode='semantic': variable chunks split where the topic changes.
+    embed_fn(texts) -> normalised vectors, used for semantic splitting and dedup (LSA when not given)."""
     docs: Dict[str, str] = {}
+    sections_all: List[tuple] = []
     for f in sorted(KNOWLEDGE.glob('*.md')):
         md = f.read_text()
         docs[f.stem] = md
         title, sections = split_markdown(f.stem, md)
-        for section, text in sections:
-            for piece in window(text):
-                chunks.append(Chunk(len(chunks) + 1, f.stem, title, section, piece))
+        sections_all += [(f.stem, title, sec, text) for sec, text in sections]
+
+    chunks: List[Chunk] = []
+    if mode == 'fixed':
+        for doc, title, sec, text in sections_all:
+            chunks += [Chunk(0, doc, title, sec, piece) for piece in window(text)]
+    else:
+        sec_sents = [sentences(text) for *_, text in sections_all]
+        flat = [s for ss in sec_sents for s in ss]
+        if embed_fn is None:
+            lsa = LSA().fit(flat)
+            embed_fn = lsa.embed
+        vecs = embed_fn(flat)
+        sims = [float(vecs[i] @ vecs[i + 1]) for i in range(len(flat) - 1)]
+        threshold = float(np.percentile(sims, 30)) if sims else 0.0   # the 30% weakest links are topic shifts
+        pos = 0
+        for (doc, title, sec, _), ss in zip(sections_all, sec_sents):
+            for piece in semantic_split(ss, vecs[pos:pos + len(ss)], threshold):
+                chunks.append(Chunk(0, doc, title, sec, piece))
+            pos += len(ss)
+        if stats is not None:
+            stats['semantic_threshold'] = round(threshold, 4)
+    for n, c in enumerate(chunks, 1):
+        c.id = n
+    texts = [f'{c.section}. {c.text}' for c in chunks]
+    vec_fn = embed_fn or LSA().fit(texts).embed
+    chunks, dropped = dedupe(chunks, vec_fn(texts))
+    if stats is not None:
+        stats.update({'chunking': mode, 'chunks': len(chunks), 'duplicates_removed': dropped,
+                      'avg_chars': round(sum(len(c.text) for c in chunks) / max(len(chunks), 1))})
     return chunks, docs
 
 
@@ -297,3 +378,33 @@ def bm25_scores(docs_tokens: List[List[str]], query: List[str], k1: float = 1.2,
                 idf = math.log(1 + (n - df[w] + 0.5) / (df[w] + 0.5))
                 out[i] += idf * tf[w] * (k1 + 1) / (tf[w] + k1 * (1 - b + b * len(d) / avg))
     return out
+
+
+def trim_sources(texts: List[str], budget: int = SOURCE_BUDGET) -> List[str]:
+    """Context trimming: fit the retrieved chunks into a fixed character budget, cutting at sentence ends.
+    Earlier (better-ranked) chunks keep any budget that later ones do not need. Mirrored in lib/rag/search.ts."""
+    out: List[str] = []
+    left = budget
+    for i, t in enumerate(texts):
+        share = left // (len(texts) - i)
+        if len(t) > share:
+            cut = t[:share]
+            end = max(cut.rfind('. '), cut.rfind('\n'))
+            t = (cut[:end + 1] if end > share // 2 else cut).rstrip() + ' …'
+        out.append(t)
+        left -= len(t)
+    return out
+
+
+def route_model(question: str, coverage: float) -> tuple:
+    """Cheap-model routing: short, well-covered factual questions go to the small model; long, comparative or
+    poorly covered ones go to the large model. Returns (tier, reason). Mirrored in lib/rag/search.ts."""
+    words = re.findall(r'[a-z0-9]+', question.lower())
+    hard = sorted(HARD_WORDS & set(words))
+    if hard:
+        return 'large', f'reasoning words: {", ".join(hard)}'
+    if len(words) > 14:
+        return 'large', f'long question ({len(words)} words)'
+    if coverage < 0.75:
+        return 'large', f'partial source coverage ({coverage:.2f})'
+    return 'small', 'short factual question with good source coverage'

@@ -29,7 +29,7 @@ class Retriever:
                               'context_source': r[6]} for r in self.con.execute('SELECT * FROM chunks')}
         self.embedding = self.meta['embedding']
         if self.embedding == 'lsa':
-            idx = json.loads(LIVE_INDEX.read_text())
+            idx = json.loads(self.meta['lsa']) if 'lsa' in self.meta else json.loads(LIVE_INDEX.read_text())
             self.lsa = LSA(vocab={w: i for i, w in enumerate(idx['vocab'])}, idf=idx['idf'],
                            components=np.array(idx['components'], dtype=np.float64))
         else:

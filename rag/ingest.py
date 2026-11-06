@@ -15,6 +15,7 @@ Run: python3 rag/ingest.py [--contexts auto|llm|rules] [--embed auto|ollama|lsa]
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 import hashlib
 import json
 import sys
@@ -89,11 +90,20 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--contexts', choices=['auto', 'llm', 'rules'], default='auto')
     ap.add_argument('--embed', choices=['auto', 'ollama', 'lsa'], default='auto')
+    ap.add_argument('--chunking', choices=['semantic', 'fixed'], default='semantic')
+    ap.add_argument('--db', type=Path, default=DB_PATH, help='output database (default data/rag.db)')
+    ap.add_argument('--no-export', action='store_true', help='do not rewrite lib/rag/index.json (for experiments)')
     a = ap.parse_args()
     ollama = Ollama()
+    use_ollama = a.embed == 'ollama' or (a.embed == 'auto' and ollama.has(EMBED_MODEL))
+    if a.embed == 'ollama' and not use_ollama:
+        raise SystemExit(f'[ingest] Ollama model {EMBED_MODEL} not found. Run: ollama pull {EMBED_MODEL}')
 
-    chunks, docs = load_chunks()
-    print(f'[ingest] {len(docs)} documents -> {len(chunks)} chunks')
+    chunk_stats: dict = {}
+    sent_embed = (lambda t: ollama.embed(['clustering: ' + x for x in t])) if use_ollama else None
+    chunks, docs = load_chunks(a.chunking, sent_embed, chunk_stats)
+    print(f'[ingest] {len(docs)} documents -> {len(chunks)} {a.chunking} chunks '
+          f'(avg {chunk_stats["avg_chars"]} chars, {chunk_stats["duplicates_removed"]} duplicates removed)')
     ctx_stats = add_contexts(chunks, docs, a.contexts, ollama)
     print(f'[ingest] contexts: {ctx_stats}')
 
@@ -101,9 +111,6 @@ def main() -> None:
     ctx_texts = [c.contextual_text for c in chunks]
     lsa = LSA().fit(ctx_texts + naive_texts)
 
-    use_ollama = a.embed == 'ollama' or (a.embed == 'auto' and ollama.has(EMBED_MODEL))
-    if a.embed == 'ollama' and not use_ollama:
-        raise SystemExit(f'[ingest] Ollama model {EMBED_MODEL} not found. Run: ollama pull {EMBED_MODEL}')
     if use_ollama:
         embedding = f'ollama:{EMBED_MODEL}'
         vec_naive = ollama.embed(['search_document: ' + t for t in naive_texts])
@@ -113,8 +120,8 @@ def main() -> None:
         vec_naive, vec_ctx = lsa.embed(naive_texts), lsa.embed(ctx_texts)
     dims = vec_ctx.shape[1]
 
-    DB_PATH.unlink(missing_ok=True)
-    con, backend = connect()
+    a.db.unlink(missing_ok=True)
+    con, backend = connect(a.db)
     con.executescript("""
         CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
         CREATE TABLE chunks (id INTEGER PRIMARY KEY, doc TEXT NOT NULL, doc_title TEXT NOT NULL, section TEXT NOT NULL,
@@ -138,17 +145,23 @@ def main() -> None:
             con.execute('INSERT INTO vec_ctx (rowid, embedding) VALUES (?,?)', (c.id, f32(vc)))
     built = datetime.now(timezone.utc).isoformat(timespec='seconds')
     meta = {'embedding': embedding, 'dims': str(dims), 'vector_backend': backend, 'built_at': built,
-            'chunks': str(len(chunks)), 'contexts': json.dumps(ctx_stats)}
+            'chunks': str(len(chunks)), 'contexts': json.dumps(ctx_stats), 'chunking': json.dumps(chunk_stats),
+            'lsa': json.dumps({'vocab': sorted(lsa.vocab, key=lsa.vocab.get), 'idf': [float(x) for x in lsa.idf],
+                               'components': lsa.components.tolist()})}
     con.executemany('INSERT INTO meta VALUES (?,?)', meta.items())
     con.commit()
     con.close()
+    if a.no_export:
+        print(f'[ingest] {a.db}: {len(chunks)} chunks ({embedding}, {backend})')
+        return
 
     # Live website index: LSA embeddings of the contextual chunks (no model needed at runtime).
     live_vecs = lsa.embed(ctx_texts)
     LIVE_INDEX.parent.mkdir(parents=True, exist_ok=True)
     LIVE_INDEX.write_text(json.dumps({
-        'version': 1,
+        'version': 2,
         'builtAt': built,
+        'chunking': chunk_stats,
         'embedding': 'lsa',
         'dims': int(lsa.components.shape[0]),
         'stopwords': sorted(STOPWORDS),
