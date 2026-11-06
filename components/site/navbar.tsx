@@ -20,6 +20,7 @@ export const NAV_LINKS = [
   { label: 'For NGOs', href: '/#users' },
   { label: 'Impact', href: '/#impact' },
   { label: 'About', href: '/about' },
+  { label: 'Docs', href: '/docs' },
 ];
 
 export function Navbar() {

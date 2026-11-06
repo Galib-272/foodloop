@@ -16,6 +16,7 @@ const COLUMNS = [
     links: [
       { label: 'Food Donation Guidelines', href: '/guidelines' },
       { label: 'Frequently Asked Questions', href: '/#faq' },
+      { label: 'Documentation', href: '/docs' },
       { label: 'Help Center', href: '/help' },
       { label: 'Contact', href: '/contact' },
     ],
