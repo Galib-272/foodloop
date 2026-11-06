@@ -1,7 +1,7 @@
 {
-  "built_at": "2026-10-25T19:43:05+00:00",
+  "built_at": "2026-11-06T07:29:06+00:00",
   "warehouse_file": "data/foodsphere_warehouse.duckdb",
-  "duckdb_version": "2.0.0",
+  "duckdb_version": "1.4.5",
   "app_database_loaded": true,
   "row_counts": {
     "dim_area": 17,
@@ -59,5 +59,5 @@
     "success_rate_under_2km_pct": 42.4,
     "success_rate_10km_plus_pct": 25.0
   },
-  "build_seconds": 1.07
+  "build_seconds": 0.37
 }

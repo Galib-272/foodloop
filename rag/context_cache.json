@@ -1,0 +1,446 @@
+{
+ "7896cd2fcf08abfa": {
+  "context": "The document discusses the two machine-learning models used by FoodLoop, which are trained offline in Python notebooks and exported to JSON for use in the web app written in TypeScript.",
+  "source": "qwen2.5:1.5b",
+  "doc": "ai_model_results",
+  "section": "Introduction"
+ },
+ "d2f0bbce1ce48343": {
+  "context": "The chunk describes the performance metrics of the AI model 1, which is trained on the real Kaggle food waste dataset and uses Gradient Boosting as the selected model. It provides details on the model's accuracy, error metrics, and prediction coverage, highlighting its superior performance compared to a simple average baseline.",
+  "source": "qwen2.5:1.5b",
+  "doc": "ai_model_results",
+  "section": "AI model 1: leftover amount (regression)"
+ },
+ "7b35276d683c2dcc": {
+  "context": "The chunk discusses the performance metrics of the Random Forest model used in the AI model 1 for predicting waste risk levels, including accuracy, precision, recall, F1 score, and ROC-AUC, which are compared against a baseline of 53.3% accuracy.",
+  "source": "qwen2.5:1.5b",
+  "doc": "ai_model_results",
+  "section": "AI model 1: waste risk Low, Medium or High (classification)"
+ },
+ "1c944da4dee26fe2": {
+  "context": "The chunk describes the training dataset and model used for the recipient matching AI model, which is based on a synthetic dataset of donation offers to organizations and uses Gradient Boosting for prediction.",
+  "source": "qwen2.5:1.5b",
+  "doc": "ai_model_results",
+  "section": "AI model 2: recipient matching (classification)"
+ },
+ "5cdeff20179605d6": {
+  "context": "The AI model 2's classification model achieves an accuracy of 81.1% compared to a baseline of 59.3%, with precision, recall, F1 score, and ROC-AUC of 0.733, 0.842, 0.784, and 0.877 respectively.",
+  "source": "qwen2.5:1.5b",
+  "doc": "ai_model_results",
+  "section": "AI model 2: recipient matching (classification)"
+ },
+ "b15f633385d37e4b": {
+  "context": "The chunk discusses the performance of different matching methods in a synthetic dataset used for testing, highlighting that the AI model's top-ranked organization has the highest success rate among the options provided.",
+  "source": "qwen2.5:1.5b",
+  "doc": "ai_model_results",
+  "section": "How the matching ranking compares"
+ },
+ "6c5c781df8d90eca": {
+  "context": "The chunk introduces the main features of FoodLoop, emphasizing its ability to forecast surplus, publish donations, recommend recipients, and track deliveries.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "What is FoodLoop?"
+ },
+ "fb73b71f6e67f469": {
+  "context": "The chunk pertains to the registration requirements and donation permissions for FoodLoop, specifically mentioning that restaurants, grocery shops, markets, bakeries, caterers, and event organizers can register as donors and that donation permissions are governed by the platform's verification policy.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Who can donate food?"
+ },
+ "32a5085908c7edeb": {
+  "context": "The chunk specifies that only organizations that have completed verification can receive restricted donations through FoodLoop.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Which organizations can receive donations?"
+ },
+ "83762705379ad117": {
+  "context": "The chunk provides information about how the AI predicts surplus food based on historical data, emphasizing that predictions are estimates and do not create donations automatically.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "How does AI predict surplus food?"
+ },
+ "3967100bb5b365e3": {
+  "context": "The chunk provides a detailed explanation of the matching process for recipients, including criteria for eligibility and the ranking system used by the AI model to match donors with appropriate recipients.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "How are recipients matched?"
+ },
+ "f0d0f67ae8a0a122": {
+  "context": "The chunk discusses the responsibility of donors for food safety, which is a crucial point in the document's content.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Does the system guarantee food safety?"
+ },
+ "dfcb79621c21b160": {
+  "context": "The chunk describes the process of food collection and confirmation for donors and recipients, including the status changes and the recipient's confirmation of received food.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "How does food collection work?"
+ },
+ "600fac31aa529b17": {
+  "context": "The chunk provides information on how any food business can participate in FoodLoop, including options for manual inventory entry or CSV import.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Can a small shop participate?"
+ },
+ "cd306534359f8522": {
+  "context": "The chunk describes the process for organizations to become verified as recipients on FoodLoop, including registering as a recipient, completing the organization profile, submitting verification information, and having it reviewed by an administrator who marks the account as either Verified or Rejected.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "How can an organization become verified?"
+ },
+ "8ab52a074fb9df95": {
+  "context": "This chunk pertains to the security and accountability measures implemented by FoodLoop to ensure the privacy and integrity of user data and donation transactions.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "How is donation data protected?"
+ },
+ "53d1edccde16d6df": {
+  "context": "This chunk outlines the steps for a donor to start using FoodLoop, focusing on the initial setup and the process of accepting donations.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Getting started for Donors (restaurants, shops, event organizers)"
+ },
+ "1210c29f36645149": {
+  "context": "This chunk outlines the steps for a recipient organization to become verified and start receiving donations.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Getting started for Recipient organizations (NGOs, kitchens, shelters, food banks)"
+ },
+ "78146c3b9198b847": {
+  "context": "This chunk outlines the steps for volunteers to complete tasks, mark pickup status, confirm receipt, and report issues, which is part of the \"Getting started for Volunteers\" section.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Getting started for Volunteers"
+ },
+ "b5862ef2e34f6a45": {
+  "context": "The chunk provides guidance on how administrators can manage verification requests, resolve reported issues, and monitor model performance and prediction failures in the ML Model Monitoring section.",
+  "source": "qwen2.5:1.5b",
+  "doc": "faq_and_guides",
+  "section": "Getting started for Administrators"
+ },
+ "288fc01a84838747": {
+  "context": "FoodLoop is a food rescue platform designed to address food waste issues in Bangladesh by integrating surplus forecasting, donation management, recipient matching, and delivery tracking functionalities.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_about",
+  "section": "Introduction"
+ },
+ "280fbd1ca4242f40": {
+  "context": "FoodLoop addresses the challenge of surplus food in restaurants, grocery shops, markets, and events by connecting them with NGOs and community kitchens that need it, ensuring food safety before it spoils.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_about",
+  "section": "Why we exist"
+ },
+ "5b79eef58c7fe33e": {
+  "context": "FoodLoop's platform combines surplus forecasting, donation management, recipient matching, and delivery tracking to connect surplus food from donors to recipient organizations efficiently.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_about",
+  "section": "What the platform does"
+ },
+ "ac6ec60ffe2277d3": {
+  "context": "FoodLoop is a food rescue platform designed to connect surplus food from various sources with organizations that need it, ensuring that food is not wasted and is distributed efficiently.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_about",
+  "section": "What the platform does not do"
+ },
+ "b285216f33471369": {
+  "context": "The context for the chunk is to provide an overview of how operational data and uploaded files are utilized within FoodLoop, including validation, limits on file size and row counts, protection against spreadsheet formula injection, and the generation of forecasts for individual accounts.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_data_use",
+  "section": "Introduction"
+ },
+ "fd68b8b56aa34a32": {
+  "context": "This chunk outlines the security measures taken with uploaded CSV files, emphasizing validation, size limits, and protection against formula injection to ensure data integrity and prevent unauthorized execution.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_data_use",
+  "section": "Uploaded CSV files"
+ },
+ "eddf9af1c5ebd8d0": {
+  "context": "The chunk discusses how imported records are utilized for generating forecasts for individual accounts, with logging of model version and timestamp for performance monitoring.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_data_use",
+  "section": "Forecasting"
+ },
+ "2015aa87be31b49e": {
+  "context": "The chunk discusses how public impact figures and Food rescued counts are handled to ensure they do not reveal individual organization's records or quantities that have not been confirmed as delivered.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_data_use",
+  "section": "Analytics"
+ },
+ "95a8d0d4531eaeea": {
+  "context": "The chunk discusses the retention of import validation reports and the ability to request the deletion of account data, both of which are important points for users to know.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_data_use",
+  "section": "Retention"
+ },
+ "c94aee42480b1cb8": {
+  "context": "Food safety disclaimer: FoodLoop assists with coordination and prioritization, but does not certify food safety. Donors must ensure accurate food information and follow applicable food-safety requirements.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_food_safety",
+  "section": "Introduction"
+ },
+ "124c4b00c0b82fb1": {
+  "context": "The chunk outlines the specific checks that FoodLoop performs to ensure food safety before a donation is published.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_food_safety",
+  "section": "What the platform checks"
+ },
+ "2089484eb272f727": {
+  "context": "Food safety disclaimer: The platform does not inspect food, verify temperature, freshness, contamination, or allergen content. Recipients must inspect food upon arrival and reject any items deemed unsafe.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_food_safety",
+  "section": "What the platform does not check"
+ },
+ "1eb67c46ec26de5a": {
+  "context": "The guidelines provide support for handling surplus food responsibly, ensuring it complies with applicable food-safety laws and professional advice.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_guidelines",
+  "section": "Introduction"
+ },
+ "9b9530d6cff3074d": {
+  "context": "These guidelines provide specific instructions on what food to donate and how to verify its safe use before publication.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_guidelines",
+  "section": "Before you publish"
+ },
+ "01bf29d475444017": {
+  "context": "These guidelines provide specific instructions on how to accurately describe the food and list known allergens, which are important details that should be included when donating surplus food.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_guidelines",
+  "section": "Before you publish"
+ },
+ "647219949671a64a": {
+  "context": "These guidelines provide specific instructions on how to properly store and handle donated food to ensure it remains safe for consumption.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_guidelines",
+  "section": "Storage and handling"
+ },
+ "dfb04a48a977053b": {
+  "context": "The chunk outlines the steps for successful food donation, emphasizing communication with the recipient and verifying the food's condition before and after delivery.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_guidelines",
+  "section": "Collection"
+ },
+ "73552528b9213dbc": {
+  "context": "These guidelines provide specific examples of food that should not be donated, including items that have been served to customers, have damaged packaging, or have exceeded their use-by date.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_guidelines",
+  "section": "When not to donate"
+ },
+ "605e3a7c1279b4d3": {
+  "context": "The chunk provides a brief summary of the main topics covered in the Help Center, specifically focusing on common questions related to using FoodLoop and the support team for any other inquiries.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_help",
+  "section": "Introduction"
+ },
+ "06d6dd336fd0a2e7": {
+  "context": "This chunk provides the initial steps for creating an account and setting up an organization profile, which is the first section of the document guiding users through the process of using FoodLoop.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_help",
+  "section": "Getting started"
+ },
+ "bfa890215c9454a0": {
+  "context": "This chunk provides instructions for donors on how to use FoodLoop's features, specifically focusing on importing historical data, using AI Surplus Forecast to get an estimate, and reviewing and accepting/rejecting donation requests.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_help",
+  "section": "For donors"
+ },
+ "80f58f3510354385": {
+  "context": "The chunk provides instructions for recipient organizations on how to browse available donations, request a donation, and confirm receipt to ensure accurate impact reports.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_help",
+  "section": "For recipient organizations"
+ },
+ "0fed2e864a3f5473": {
+  "context": "The chunk provides troubleshooting steps for account issues, including forgotten passwords and suspended accounts, which should be placed in the \"Account problems\" section of the document.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_help",
+  "section": "Account problems"
+ },
+ "5a6761e73733fb59": {
+  "context": "The chunk introduces the Privacy Policy, which explains what personal information FoodLoop collects, why, and how it is protected.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_privacy",
+  "section": "Introduction"
+ },
+ "607695a802527ad2": {
+  "context": "This chunk outlines the specific types of personal information FoodLoop collects, which aligns with the document's focus on privacy and data protection.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_privacy",
+  "section": "Information we collect"
+ },
+ "c88d0b093255d986": {
+  "context": "The chunk provides a brief summary of the primary purposes for which personal information is collected and used by FoodLoop.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_privacy",
+  "section": "How we use it"
+ },
+ "21a3e5d89768f6b8": {
+  "context": "This chunk discusses the visibility of contact and pickup details and the actions administrators can take on their records, which are important for understanding the platform's security and user management practices.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_privacy",
+  "section": "Who can see your information"
+ },
+ "0641fa2ff33432ba": {
+  "context": "This chunk discusses the security measures taken to protect user data, including password storage and file handling.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_privacy",
+  "section": "Security"
+ },
+ "da4ebf5f08c4c474": {
+  "context": "The chunk provides information on how to update personal profile details and contact support for data access or account deletion.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_privacy",
+  "section": "Your choices"
+ },
+ "996dd372a7fa675c": {
+  "context": "The chunk \"By creating an account you agree to these terms.\" is the introductory statement that outlines the agreement between the user and the platform, setting the stage for the terms of service.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_terms",
+  "section": "Introduction"
+ },
+ "e2cfc0cea5dba425": {
+  "context": "The chunk outlines the responsibilities of users regarding food information, platform usage, and data access.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_terms",
+  "section": "Using the platform"
+ },
+ "73d1eac0e11a05cd": {
+  "context": "The context is discussing the responsibilities of donors regarding the accuracy of food information and adherence to food safety requirements.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_terms",
+  "section": "Donor responsibilities"
+ },
+ "962c9b3c91c27253": {
+  "context": "The chunk pertains to the responsibilities of recipients regarding the inspection, storage, and confirmation of received food quantities.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_terms",
+  "section": "Recipient responsibilities"
+ },
+ "96cff27732b1b94f": {
+  "context": "The chunk discusses AI forecasts and match scores, which are provided to support decisions but not guarantees of demand, quantity, safety, or successful delivery.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_terms",
+  "section": "Forecasts and recommendations"
+ },
+ "4f6a27943fb2f869": {
+  "context": "The chunk pertains to the section discussing the consequences of violating the terms of service, specifically mentioning the possibility of account suspension due to false information or misuse of the platform.",
+  "source": "qwen2.5:1.5b",
+  "doc": "page_terms",
+  "section": "Suspension"
+ },
+ "de74fb85d4d71d0d": {
+  "context": "This chunk outlines the layers and locations of the app, specifically mentioning the public site, role dashboards, and REST API.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "fd097ac798a473dc": {
+  "context": "The chunk provides a list of services, databases, machine learning pipelines, and data warehouses that are part of the FoodLoop platform.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "66e138ecadf89793": {
+  "context": "The AI assistant and automation sections describe additional components of the FoodLoop platform, including the RAG assistant and n8n workflow integration.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "5f7f3d075701f81e": {
+  "context": "The context for the chunk is the architecture and technology overview of the FoodLoop platform, specifically focusing on the donation workflow and matching process.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "ca25caf37c0607e4": {
+  "context": "This chunk provides details on the preprocessing steps taken for the food waste dataset used in the machine learning models.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
+ },
+ "44aa7fca4d00348d": {
+  "context": "This chunk discusses the model tuning process for predicting leftover amounts, focusing on accuracy over multiple time periods and comparing against a baseline rule. It highlights the use of Gradient Boosting with a test MAE of 7.82 units and R² of 0.915, demonstrating strong predictive power.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
+ },
+ "4998d2efca7c5521": {
+  "context": "This chunk provides insights into the waste risk classification model's performance, explaining why it was chosen over other models despite lower accuracy, and discussing the limitations of using historical data for predicting waste levels.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
+ },
+ "3d82a64894886e00": {
+  "context": "This chunk discusses the synthetic data used for the matching model, including its source, preprocessing, model selection, and performance metrics.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 2. Finding the right organization (SYNTHETIC data — labelled as such)"
+ },
+ "7690e1872b0c0f3a": {
+  "context": "This chunk describes the process of training machine learning models, exporting them to JSON, evaluating them in TypeScript, and ensuring reproducibility through parity checks. It emphasizes the importance of using Python at runtime and the use of `npm run test:parity` to validate the TypeScript outputs against scikit-learn's outputs.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > Serving and checks"
+ },
+ "08501059bb480584": {
+  "context": "This chunk introduces the data warehouse component of the FoodLoop platform, which is separate from the app's SQLite database and uses DuckDB for a star schema.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Data warehouse (DuckDB)"
+ },
+ "d6d9c46c13f11e0a": {
+  "context": "This chunk provides details on the schema and analytics queries for the data warehouse, explaining how it integrates with the matching model and ensures consistency between the warehouse and the app database.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Data warehouse (DuckDB)"
+ },
+ "db72c0819fcccbe7": {
+  "context": "This chunk provides specific examples of the app's analytics findings, focusing on waste rates and donation completion rates, which are relevant for understanding the app's performance and user experience.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Data warehouse (DuckDB)"
+ },
+ "7e40878a5699ab5d": {
+  "context": "This chunk provides instructions for setting up the app's database and environment variables for deployment on Vercel and Turso.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Deploy (Vercel + Turso)"
+ },
+ "99b46023ddc52541": {
+  "context": "The DuckDB data warehouse integrates multiple datasets including Kaggle food waste data, synthetic matching data, and app database into a star schema structure.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Introduction"
+ },
+ "3f46729ced02e432": {
+  "context": "The chunk provides specific waste rates and quantities for different food categories in the Kaggle data, highlighting Prepared Food as the most wasteful category with a 7.61% waste rate.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Food waste by category"
+ },
+ "76be8c8d967ea331": {
+  "context": "The chunk provides specific details about the causes of food waste, emphasizing the significant role of overproduction and expiration in waste generation.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Why food is wasted"
+ },
+ "749dbf1a6af1a998": {
+  "context": "The document discusses various aspects of food waste, including waste rates by category, reasons for waste, and donation completion rates.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Waste by day of the week"
+ },
+ "a0f305eddb5049ec": {
+  "context": "The chunk provides specific data on successful donations made by various organizations, including Food Bank, Community Kitchen, NGO, Orphanage, and Shelter, highlighting their delivery success rates and the corresponding number of units delivered.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Which organizations complete donations (synthetic data)"
+ },
+ "618ea578090d2f0e": {
+  "context": "The chunk discusses the success rates and average travel times for different pickup distances in the synthetic matching data, highlighting that shorter distances increase the likelihood of successful pickups, emphasizing the importance of distance as a key input in the matching model.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Distance and pickup success (synthetic data)"
+ }
+}

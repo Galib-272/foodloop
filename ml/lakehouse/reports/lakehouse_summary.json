@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-11-06T05:42:17+00:00",
-  "batch_id": "b5f54ce42192",
+  "built_at": "2026-11-06T07:29:07+00:00",
+  "batch_id": "da8eee90268e",
   "tables": {
     "bronze/donation_matching_raw_synthetic": {
       "rows": 12424,
