@@ -23,7 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import LOCAL_MODELS, REPORTS, ROOT, Ollama  # noqa: E402
+from common import LARGE_MODEL, LOCAL_MODELS, REPORTS, ROOT, SMALL_MODEL, Ollama  # noqa: E402
 from retrieve import Retriever  # noqa: E402
 
 QUESTIONS = json.loads((ROOT / 'rag/eval_questions.json').read_text())
@@ -68,16 +68,19 @@ def eval_models(r: Retriever, models: list) -> list:
             ans = res['answer'].lower()
             in_scope = bool(q['gold'])
             correct = all(e in ans for e in q['expect']) if in_scope else res['generator'] == 'refusal' or "don't know" in ans
-            rows.append({'question': q['q'], 'in_scope': in_scope, 'answer': res['answer'], 'generator': res['generator'],
+            route = next((t.split()[1] for t in res['trace'] if t.startswith('route:')), None)
+            rows.append({'question': q['q'], 'in_scope': in_scope, 'answer': res['answer'], 'generator': res['generator'], 'route': route,
                          'correct': bool(correct), 'cited': bool(res.get('citations')), 'seconds': res['seconds'],
                          'tokens_per_second': (res.get('llm') or {}).get('tokens_per_second'),
                          'reasoning_chars': len((res.get('llm') or {}).get('thinking', ''))})
             print(f"   {'ok ' if correct else 'MISS'} {res['seconds']:>5}s  {q['q'][:60]}", flush=True)
         ins = [x for x in rows if x['in_scope']]
         outs = [x for x in rows if not x['in_scope']]
-        llm_rows = [x for x in rows if x['generator'] == model]
+        llm_rows = [x for x in rows if x['generator'] not in ('extractive', 'refusal')]
         tps = [x['tokens_per_second'] for x in llm_rows if x['tokens_per_second']]
-        out.append({'model': model,
+        routed = [x['route'] for x in rows if x['route']]
+        out.append({'model': model if model != 'auto' else f'auto (routing {SMALL_MODEL} / {LARGE_MODEL})',
+                    'small_model_share': round(routed.count('small') / len(routed), 2) if routed else None,
                     'answer_accuracy': round(sum(x['correct'] for x in ins) / len(ins), 3),
                     'citation_rate': round(sum(x['cited'] for x in ins) / len(ins), 3),
                     'refusal_accuracy': round(sum(x['correct'] for x in outs) / len(outs), 3) if outs else None,
@@ -113,7 +116,7 @@ def write_report(result: dict) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument('--models', nargs='*', default=LOCAL_MODELS)
+    ap.add_argument('--models', nargs='*', default=LOCAL_MODELS + ['auto'])
     ap.add_argument('--retrieval-only', action='store_true')
     a = ap.parse_args()
     r = Retriever()
@@ -121,7 +124,8 @@ def main() -> None:
     for x in retrieval:
         print(f"[eval] retrieval {x['chunks']:<10} {x['search']:<7} hit@1 {x['hit@1']:.0%}  hit@3 {x['hit@3']:.0%}  MRR {x['mrr']:.3f}")
     ollama = Ollama()
-    available = [] if a.retrieval_only else [m for m in a.models if ollama.has(m)]
+    can = lambda m: ollama.has(SMALL_MODEL) and ollama.has(LARGE_MODEL) if m == 'auto' else ollama.has(m)  # noqa: E731
+    available = [] if a.retrieval_only else [m for m in a.models if can(m)]
     skipped = [] if a.retrieval_only else [m for m in a.models if m not in available]
     models = eval_models(r, available) if available else []
     result = {'run_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),

@@ -25,7 +25,7 @@ from typing import Any, Dict, List, Optional
 from typing_extensions import TypedDict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import Ollama, tokenize  # noqa: E402
+from common import LARGE_MODEL, SMALL_MODEL, Ollama, route_model, tokenize, trim_sources  # noqa: E402
 from retrieve import Retriever  # noqa: E402
 
 from langgraph.graph import END, START, StateGraph  # noqa: E402
@@ -93,17 +93,24 @@ def build_graph(retriever: Retriever, ollama: Optional[Ollama] = None):
     def generate(s: AgentState) -> AgentState:
         hits = s['hits']
         model = s.get('model')
+        trace = list(s['trace'])
+        if model == 'auto':
+            tier, why = route_model(s['question'], s.get('coverage', 1.0))
+            model = SMALL_MODEL if tier == 'small' else LARGE_MODEL
+            trace.append(f'route: {tier} model {model} ({why})')
         if model and ollama.has(model):
-            sources = '\n\n'.join(f"[{i}] ({h['doc_title']} > {h['section']})\n{h['text']}" for i, h in enumerate(hits, 1))
+            texts = trim_sources([h['text'] for h in hits])
+            sources = '\n\n'.join(f"[{i}] ({h['doc_title']} > {h['section']})\n{t}" for i, (h, t) in enumerate(zip(hits, texts), 1))
+            trace.append(f"trim: {sum(len(h['text']) for h in hits)} -> {sum(len(t) for t in texts)} source chars")
             r = ollama.chat(model, [{'role': 'system', 'content': SYSTEM},
                                     {'role': 'user', 'content': f'Sources:\n{sources}\n\nQuestion: {s["question"]}'}])
             cites = sorted({int(n) for n in re.findall(r'\[(\d+)\]', r['text']) if 0 < int(n) <= len(hits)})
             return {'answer': r['text'], 'citations': cites, 'generator': model, 'llm': r,
-                    'trace': s['trace'] + [f"generate: {model} in {r['seconds']}s"]}
+                    'trace': trace + [f"generate: {model} in {r['seconds']}s"]}
         text, cites = extractive_answer(s['question'], hits)
         why = f'{model} not available in Ollama' if model else 'no model requested'
         return {'answer': text, 'citations': cites, 'generator': 'extractive',
-                'trace': s['trace'] + [f'generate: extractive ({why})']}
+                'trace': trace + [f'generate: extractive ({why})']}
 
     def refuse(s: AgentState) -> AgentState:
         return {'answer': REFUSAL, 'citations': [], 'generator': 'refusal', 'trace': s['trace'] + ['refuse: not covered']}
@@ -135,7 +142,7 @@ def ask(graph, question: str, model: Optional[str] = None) -> AgentState:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('question', nargs='+')
-    ap.add_argument('--model', default=None, help='Ollama model, e.g. qwen2.5:1.5b, llama3.2:1b, deepseek-r1:1.5b, mistral:7b')
+    ap.add_argument('--model', default=None, help='Ollama model (qwen2.5:1.5b, llama3.2:1b, deepseek-r1:1.5b, mistral:7b) or auto = cheap-model routing')
     a = ap.parse_args()
     graph = build_graph(Retriever())
     out = ask(graph, ' '.join(a.question), a.model)
