@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { BookOpen, ChevronDown, Loader2, SendHorizontal, Sparkles } from 'lucide-react';
+import { BookOpen, ChevronDown, Loader2, Network, SendHorizontal, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { apiFetch } from '@/lib/client';
@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils';
 
 type Hit = {
   id: number; doc: string; docTitle: string; section: string; text: string; context: string; contextSource: string;
-  score: number; vectorRank: number | null; keywordRank: number | null;
+  score: number; vectorRank: number | null; keywordRank: number | null; graphRank: number | null;
 };
-type Result = { question: string; answer: string; citations: number[]; generator: string; hits: Hit[]; coverage: number; trace: string[]; ms: number };
+type Result = { question: string; answer: string; citations: number[]; generator: string; hits: Hit[]; entities: string[]; graphFacts: string[]; coverage: number; trace: string[]; ms: number };
 type Turn = { q: string; r?: Result; error?: string };
 
 function generatorLabel(g: string) {
@@ -22,12 +22,12 @@ function generatorLabel(g: string) {
 
 function Answer({ r }: { r: Result }) {
   const [open, setOpen] = useState(false);
-  const parts = r.answer.split(/(\[\d+\])/g);
+  const parts = r.answer.split(/(\[\d+\]|\[G\])/g);
   return (
     <div className="rounded-xl border bg-card p-4">
       <p className="whitespace-pre-line text-sm leading-relaxed">
         {parts.map((p, i) =>
-          /^\[\d+\]$/.test(p) ? (
+          /^\[(\d+|G)\]$/.test(p) ? (
             <span key={i} className="mx-0.5 rounded bg-accent px-1 text-xs font-semibold text-primary">{p}</span>
           ) : (
             <span key={i}>{p}</span>
@@ -39,14 +39,22 @@ function Answer({ r }: { r: Result }) {
           r.generator === 'refusal' ? 'bg-amber-100 text-amber-800' : 'bg-accent text-primary')}>
           <Sparkles className="h-3 w-3" aria-hidden /> {generatorLabel(r.generator)}
         </span>
-        <span>Hybrid search · {r.hits.length} sources · {r.ms} ms</span>
-        {r.hits.length > 0 && (
+        <span>Hybrid + graph search · {r.hits.length} sources{r.graphFacts.length ? ` · ${r.graphFacts.length} graph facts` : ''} · {r.ms} ms</span>
+        {(r.hits.length > 0 || r.graphFacts.length > 0) && (
           <button type="button" onClick={() => setOpen((o) => !o)} className="inline-flex items-center gap-1 font-medium text-secondary hover:underline" aria-expanded={open}>
             <BookOpen className="h-3.5 w-3.5" aria-hidden /> {open ? 'Hide sources' : 'Show sources'}
             <ChevronDown className={cn('h-3.5 w-3.5 transition-transform', open && 'rotate-180')} aria-hidden />
           </button>
         )}
       </div>
+      {open && r.graphFacts.length > 0 && (
+        <div className="mt-3 rounded-lg border border-secondary/40 bg-accent/30 p-3 text-sm">
+          <p className="flex items-center gap-1.5 font-medium"><Network className="h-4 w-4 text-secondary" aria-hidden /> [G] From the FoodLoop knowledge graph</p>
+          <ul className="mt-1.5 list-disc space-y-1 pl-5 text-muted-foreground">
+            {r.graphFacts.map((f) => <li key={f}>{f}</li>)}
+          </ul>
+        </div>
+      )}
       {open && (
         <ol className="mt-3 space-y-2">
           {r.hits.map((h, i) => (
@@ -54,7 +62,7 @@ function Answer({ r }: { r: Result }) {
               <p className="font-medium">[{i + 1}] {h.docTitle} <span className="text-muted-foreground">› {h.section}</span></p>
               <p className="mt-1 line-clamp-4 text-muted-foreground">{h.text}</p>
               <p className="mt-2 text-xs text-muted-foreground">
-                Vector rank {h.vectorRank ?? '–'} · keyword rank {h.keywordRank ?? '–'} · fused score {h.score.toFixed(4)}
+                Vector rank {h.vectorRank ?? '–'} · keyword rank {h.keywordRank ?? '–'} · graph rank {h.graphRank ?? '–'} · fused score {h.score.toFixed(4)}
               </p>
               <p className="mt-1 text-xs italic text-muted-foreground">Context: {h.context}</p>
             </li>
@@ -96,7 +104,7 @@ export function AssistantChat({ suggestions, chunks }: { suggestions: string[]; 
               </button>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Searches {chunks} passages from the FoodLoop knowledge base with hybrid (meaning + keyword) search.</p>
+          <p className="mt-4 text-xs text-muted-foreground">Searches {chunks} passages from the FoodLoop knowledge base with hybrid (meaning + keyword) search and a knowledge graph of roles, donation steps and safety rules.</p>
         </div>
       )}
       {turns.map((t, i) => (

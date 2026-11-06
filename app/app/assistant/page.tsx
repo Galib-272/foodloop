@@ -7,10 +7,10 @@ export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Ask FoodLoop — FoodLoop' };
 
 const SUGGESTIONS: Record<string, string[]> = {
-  donor: ['How cold must refrigerated food be kept until pickup?', 'Which allergens should I list?', 'How do I import my sales history?', 'Which food category wastes the most?'],
-  recipient: ['How can an organization become verified?', 'What happens after a donor accepts a request?', 'Who can see my contact details?', 'Does FoodLoop guarantee food safety?'],
-  volunteer: ['What should a volunteer do if a pickup goes wrong?', 'How does food collection work?', 'How cold must refrigerated food be kept?', 'Who can see my phone number?'],
-  admin: ['What accuracy does the waste risk model reach?', 'What data was the matching model trained on?', 'Which organizations complete donations most often?', 'Does pickup distance change delivery success?'],
+  donor: ['How cold must refrigerated food be kept until pickup?', 'Which allergens should I list?', 'What happens after a donor accepts a request?', 'Which food category wastes the most?'],
+  recipient: ['How can an organization become verified?', 'What happens after a donor accepts a request?', 'Which rules must an organization pass before matching?', 'Does FoodLoop guarantee food safety?'],
+  volunteer: ['What should a volunteer do if a pickup goes wrong?', 'How does food collection work?', 'Can a volunteer cancel a donation?', 'Who can see my phone number?'],
+  admin: ['What accuracy does the waste risk model reach?', 'What data was the matching model trained on?', 'What can happen to a scheduled donation?', 'Does pickup distance change delivery success?'],
 };
 
 export default function AssistantPage() {
