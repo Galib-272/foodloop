@@ -32,7 +32,9 @@ from langgraph.graph import END, START, StateGraph  # noqa: E402
 
 SYSTEM = """You are Ask FoodLoop, the help assistant of FoodLoop, a food rescue platform in Bangladesh.
 Answer the question using ONLY the numbered sources. Keep the answer to 1-3 short sentences.
-Cite the sources you used like [1] or [2]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts."""
+Cite the sources you used like [1] or [2], and cite the knowledge-graph facts as [G]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts."""
+
+GRAPH_FIRST = {'action', 'status', 'concept'}
 
 REFUSAL = "I couldn't find this in the FoodLoop knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data."
 
@@ -43,6 +45,8 @@ class AgentState(TypedDict, total=False):
     k: int
     attempts: int
     hits: List[Dict[str, Any]]
+    entities: List[str]
+    graph_facts: List[str]
     coverage: float
     relevant: bool
     answer: str
@@ -52,16 +56,16 @@ class AgentState(TypedDict, total=False):
     trace: List[str]
 
 
-def coverage(question: str, hits: List[Dict[str, Any]]) -> float:
-    """Share of the question's content words that appear in the top retrieved chunks."""
+def coverage(question: str, hits: List[Dict[str, Any]], facts: Optional[List[str]] = None) -> float:
+    """Share of the question's content words that appear in the top retrieved chunks or graph facts."""
     q = set(tokenize(question))
     if not q or not hits:
         return 0.0
-    seen = set(tokenize(' '.join(h['context'] + ' ' + h['text'] for h in hits[:3])))
+    seen = set(tokenize(' '.join(h['context'] + ' ' + h['text'] for h in hits[:3]) + ' ' + ' '.join(facts or [])))
     return len(q & seen) / len(q)
 
 
-def extractive_answer(question: str, hits: List[Dict[str, Any]]) -> tuple:
+def extractive_answer(question: str, hits: List[Dict[str, Any]], facts: Optional[List[str]] = None, entities: Optional[List[str]] = None) -> tuple:
     q = set(tokenize(question))
     best = []
     for n, h in enumerate(hits[:3], 1):
@@ -71,19 +75,30 @@ def extractive_answer(question: str, hits: List[Dict[str, Any]]) -> tuple:
                 best.append((len(q & set(tokenize(s))) + (0.5 if n == 1 else 0), n, s))
     best.sort(key=lambda x: -x[0])
     picked = [b for b in best[:2] if b[0] > 0] or best[:1]
-    return ' '.join(f'{s} [{n}]' for _, n, s in picked), sorted({n for _, n, _ in picked})
+    text = ' '.join(f'{s} [{n}]' for _, n, s in picked)
+    if facts and entities and entities[0].split(':')[0] in GRAPH_FIRST:   # rules about actions/statuses: lead with the graph fact
+        strong = [p for p in picked[:1] if p[0] >= 2]
+        text = f'{facts[0]} [G]' + ''.join(f' {s} [{n}]' for _, n, s in strong)
+        picked = strong
+    return text, sorted({n for _, n, _ in picked})
 
 
 def build_graph(retriever: Retriever, ollama: Optional[Ollama] = None):
     ollama = ollama or Ollama()
 
     def retrieve(s: AgentState) -> AgentState:
-        hits = retriever.search(s['question'], mode='hybrid', contextual=True, k=s.get('k', 4))
-        return {'hits': hits, 'attempts': s.get('attempts', 0) + 1,
-                'trace': s.get('trace', []) + [f"retrieve: {len(hits)} chunks (k={s.get('k', 4)})"]}
+        g = retriever.graph
+        mode = 'graph' if g else 'hybrid'
+        hits = retriever.search(s['question'], mode=mode, contextual=True, k=s.get('k', 4))
+        ents = g.entities(s['question']) if g else []
+        facts = g.facts(ents) if g else []
+        trace = s.get('trace', []) + [f"retrieve: {len(hits)} chunks (k={s.get('k', 4)}, {'hybrid + graph' if g else 'hybrid'})"]
+        if ents:
+            trace.append(f"graph: {', '.join(ents)} -> {len(facts)} facts")
+        return {'hits': hits, 'entities': ents, 'graph_facts': facts, 'attempts': s.get('attempts', 0) + 1, 'trace': trace}
 
     def grade(s: AgentState) -> AgentState:
-        cov = coverage(s['question'], s['hits'])
+        cov = coverage(s['question'], s['hits'], s.get('graph_facts', []))
         ok = cov >= 0.5
         return {'coverage': round(cov, 2), 'relevant': ok, 'trace': s['trace'] + [f'grade: coverage {cov:.2f} -> {"relevant" if ok else "not relevant"}']}
 
@@ -102,12 +117,15 @@ def build_graph(retriever: Retriever, ollama: Optional[Ollama] = None):
             texts = trim_sources([h['text'] for h in hits])
             sources = '\n\n'.join(f"[{i}] ({h['doc_title']} > {h['section']})\n{t}" for i, (h, t) in enumerate(zip(hits, texts), 1))
             trace.append(f"trim: {sum(len(h['text']) for h in hits)} -> {sum(len(t) for t in texts)} source chars")
+            facts = s.get('graph_facts') or []
+            if facts:
+                sources += '\n\nKnowledge-graph facts [G]:\n' + '\n'.join(facts)
             r = ollama.chat(model, [{'role': 'system', 'content': SYSTEM},
                                     {'role': 'user', 'content': f'Sources:\n{sources}\n\nQuestion: {s["question"]}'}])
             cites = sorted({int(n) for n in re.findall(r'\[(\d+)\]', r['text']) if 0 < int(n) <= len(hits)})
             return {'answer': r['text'], 'citations': cites, 'generator': model, 'llm': r,
                     'trace': trace + [f"generate: {model} in {r['seconds']}s"]}
-        text, cites = extractive_answer(s['question'], hits)
+        text, cites = extractive_answer(s['question'], hits, s.get('graph_facts', []), s.get('entities', []))
         why = f'{model} not available in Ollama' if model else 'no model requested'
         return {'answer': text, 'citations': cites, 'generator': 'extractive',
                 'trace': trace + [f'generate: extractive ({why})']}

@@ -64,19 +64,30 @@ class Retriever:
                                 (fts_query(q), k)).fetchall()
         return [(r[0], -r[1]) for r in rows]  # FTS5 bm25 is lower-is-better
 
+    @property
+    def graph(self):
+        """Kùzu knowledge graph for Graph RAG (None if data/graph.kuzu has not been built)."""
+        if not hasattr(self, '_graph'):
+            from graph_rag import GRAPH_DB, Graph
+            self._graph = Graph() if GRAPH_DB.exists() else None
+        return self._graph
+
     def search(self, q: str, mode: str = 'hybrid', contextual: bool = True, k: int = 5, pool: int = 20) -> List[Dict]:
-        vec = self.vector(q, contextual, pool) if mode in ('vector', 'hybrid') else []
-        kw = self.keyword(q, contextual, pool) if mode in ('keyword', 'hybrid') else []
+        """mode: vector | keyword | hybrid | graph (hybrid + chunks linked to the question's entities in the graph)."""
+        vec = self.vector(q, contextual, pool) if mode in ('vector', 'hybrid', 'graph') else []
+        kw = self.keyword(q, contextual, pool) if mode in ('keyword', 'hybrid', 'graph') else []
+        gr = self.graph.chunks(self.graph.entities(q), pool) if mode == 'graph' and self.graph else []
         vrank = {cid: i + 1 for i, (cid, _) in enumerate(vec)}
         krank = {cid: i + 1 for i, (cid, _) in enumerate(kw)}
+        grank = {cid: i + 1 for i, cid in enumerate(gr)}
         vsim = dict(vec)
-        if mode == 'hybrid':
-            scores = rrf([[c for c, _ in vec], [c for c, _ in kw]])
+        if mode in ('hybrid', 'graph'):
+            scores = rrf([[c for c, _ in vec], [c for c, _ in kw]] + ([gr] if gr else []))
         else:
             scores = dict(vec or kw)
-        top = sorted(scores, key=lambda c: -scores[c])[:k]
+        top = sorted(scores, key=lambda c: (-scores[c], c))[:k]
         return [{**self.chunks[c], 'score': round(scores[c], 5), 'vector_rank': vrank.get(c), 'keyword_rank': krank.get(c),
-                 'similarity': round(float(vsim[c]), 4) if c in vsim else None} for c in top]
+                 'graph_rank': grank.get(c), 'similarity': round(float(vsim[c]), 4) if c in vsim else None} for c in top]
 
 
 if __name__ == '__main__':
