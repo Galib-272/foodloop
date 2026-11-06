@@ -19,7 +19,12 @@
     "rag:all": "npm run rag:ingest && npm run rag:eval",
     "test:rag": "npx -y tsx scripts/rag-parity.ts",
     "n8n": "node automation/n8n/start.mjs",
-    "lakehouse": "node scripts/py.mjs ml/lakehouse/build_lakehouse.py"
+    "lakehouse": "node scripts/py.mjs ml/lakehouse/build_lakehouse.py",
+    "mcp:forecast": "tsx mcp/forecast-server.ts",
+    "mcp:knowledge": "tsx mcp/knowledge-server.ts",
+    "mcp:warehouse": "tsx mcp/warehouse-server.ts",
+    "test:mcp": "tsx scripts/mcp-test.ts",
+    "typecheck:mcp": "node --max-old-space-size=6144 node_modules/typescript/bin/tsc -p mcp/tsconfig.json"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
@@ -51,9 +56,10 @@
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2",
-    "zod": "^3.23.8"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "tsx": "4.19.2"
   },
   "engines": {
