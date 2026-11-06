@@ -130,6 +130,14 @@ The live website cannot reach a model on your computer, so it uses the same flow
 3. Ask from the terminal: `npm run rag:ask -- "How cold must refrigerated food be kept?" --model mistral:7b`
 4. Use a local model in the web app: add `OLLAMA_URL=http://localhost:11434` and `OLLAMA_MODEL=qwen2.5:1.5b` to `.env.local`, then `npm run dev`.
 
+## MCP servers
+
+`mcp/` has three Model Context Protocol servers built with the official TypeScript SDK (stdio), reusing the app's code:
+**foodloop-forecast-mcp** (`predict_leftover`, `predict_waste_risk`, `rank_organizations`, `get_model_metrics`),
+**foodloop-knowledge-mcp** (`ask_foodloop`, `search_knowledge`, `query_knowledge_graph` in Cypher on Kùzu) and
+**foodloop-warehouse-mcp** (`list_reports`, `get_report`, `run_readonly_query` on DuckDB). All are read-only.
+`npm run test:mcp` starts them with the MCP client and checks every tool against the web app. Setup for Claude Desktop: `mcp/README.md`.
+
 ## Workflow automation (n8n)
 
 Important donation events are sent to a self-hosted **n8n** workflow (`automation/n8n/foodsphere-alerts.workflow.json`):

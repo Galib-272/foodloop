@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "foodloop-forecast": {
+      "command": "node",
+      "args": ["/Users/galib/Desktop/foodloop/node_modules/tsx/dist/cli.mjs", "/Users/galib/Desktop/foodloop/mcp/forecast-server.ts"]
+    },
+    "foodloop-knowledge": {
+      "command": "node",
+      "args": ["/Users/galib/Desktop/foodloop/node_modules/tsx/dist/cli.mjs", "/Users/galib/Desktop/foodloop/mcp/knowledge-server.ts"]
+    },
+    "foodloop-warehouse": {
+      "command": "node",
+      "args": ["/Users/galib/Desktop/foodloop/node_modules/tsx/dist/cli.mjs", "/Users/galib/Desktop/foodloop/mcp/warehouse-server.ts"]
+    }
+  }
+}
