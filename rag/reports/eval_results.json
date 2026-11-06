@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-11-06T05:31:14+00:00",
+  "run_at": "2026-11-06T05:37:44+00:00",
   "machine": "Linux x86_64, Python 3.13.16",
   "index": {
     "chunks": 76,
@@ -62,8 +62,84 @@
       "hit@3": 1.0,
       "mrr": 0.844,
       "missed_top3": []
+    },
+    {
+      "chunks": "contextual",
+      "search": "graph",
+      "hit@1": 0.812,
+      "hit@3": 0.938,
+      "mrr": 0.875,
+      "missed_top3": [
+        "Which allergens should donors list?"
+      ]
     }
   ],
+  "graph": {
+    "questions": 8,
+    "fact_accuracy": 1.0,
+    "rows": [
+      {
+        "question": "Who can confirm delivery?",
+        "correct": true,
+        "entities": [
+          "action:confirm_delivery"
+        ]
+      },
+      {
+        "question": "Can a volunteer cancel a donation?",
+        "correct": true,
+        "entities": [
+          "action:cancel_donation",
+          "role:volunteer"
+        ]
+      },
+      {
+        "question": "What happens after a donor accepts a request?",
+        "correct": true,
+        "entities": [
+          "action:accept_request",
+          "role:donor"
+        ]
+      },
+      {
+        "question": "What can happen to a scheduled donation?",
+        "correct": true,
+        "entities": [
+          "status:scheduled"
+        ]
+      },
+      {
+        "question": "Which rules must an organization pass before matching?",
+        "correct": true,
+        "entities": [
+          "concept:matching_rules",
+          "role:recipient"
+        ]
+      },
+      {
+        "question": "When can food be marked as collected?",
+        "correct": true,
+        "entities": [
+          "action:mark_collected",
+          "status:collected"
+        ]
+      },
+      {
+        "question": "What can a volunteer do?",
+        "correct": true,
+        "entities": [
+          "role:volunteer"
+        ]
+      },
+      {
+        "question": "Is a delivered donation final?",
+        "correct": true,
+        "entities": [
+          "status:delivered"
+        ]
+      }
+    ]
+  },
   "models": [],
   "skipped_models": []
 }

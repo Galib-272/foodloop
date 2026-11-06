@@ -28,7 +28,31 @@ from retrieve import Retriever  # noqa: E402
 
 QUESTIONS = json.loads((ROOT / 'rag/eval_questions.json').read_text())
 CONFIGS = [('naive', 'vector', False), ('naive', 'keyword', False), ('naive', 'hybrid', False),
-           ('contextual', 'vector', True), ('contextual', 'keyword', True), ('contextual', 'hybrid', True)]
+           ('contextual', 'vector', True), ('contextual', 'keyword', True), ('contextual', 'hybrid', True),
+           ('contextual', 'graph', True)]
+GRAPH_QUESTIONS = [
+    ('Who can confirm delivery?', ['Recipient Organization', 'Administrator']),
+    ('Can a volunteer cancel a donation?', ['done by Administrator, Donor']),
+    ('What happens after a donor accepts a request?', ['Afterwards the donation is Accepted']),
+    ('What can happen to a scheduled donation?', ['Cancelled, Collected, Expired, Failed Collection']),
+    ('Which rules must an organization pass before matching?', ['Only verified organizations', 'Has capacity today']),
+    ('When can food be marked as collected?', ['Allowed when the donation is Scheduled']),
+    ('What can a volunteer do?', ['Claim and carry out a volunteer task']),
+    ('Is a delivered donation final?', ['Delivered is a final status']),
+]
+
+
+def eval_graph() -> dict:
+    """Graph RAG: does the knowledge graph return the right facts for rule questions?"""
+    from graph_rag import GRAPH_DB, Graph
+    if not GRAPH_DB.exists():
+        return {}
+    g = Graph()
+    rows = []
+    for q, expect in GRAPH_QUESTIONS:
+        facts = ' '.join(g.facts(g.entities(q)))
+        rows.append({'question': q, 'correct': all(e in facts for e in expect), 'entities': g.entities(q)})
+    return {'questions': len(rows), 'fact_accuracy': round(sum(r['correct'] for r in rows) / len(rows), 3), 'rows': rows}
 
 
 def is_gold(hit, q) -> bool:
@@ -100,6 +124,12 @@ def write_report(result: dict) -> None:
           f"## Retrieval ({result['answerable_questions']} questions with a known source section)", '',
           '| Chunks | Search | Hit@1 | Hit@3 | MRR |', '|---|---|---|---|---|']
     md += [f"| {x['chunks']} | {x['search']} | {x['hit@1']:.0%} | {x['hit@3']:.0%} | {x['mrr']:.3f} |" for x in result['retrieval']]
+    if result.get('graph'):
+        g = result['graph']
+        md += ['', f"## Graph RAG (Kùzu knowledge graph, {g['questions']} rule questions)", '',
+               f"The graph returned the correct facts for **{g['fact_accuracy']:.0%}** of questions about who may do what and how a donation's status can change.", '',
+               '| Question | Entities found | Correct |', '|---|---|---|']
+        md += [f"| {r['question']} | {', '.join(r['entities'])} | {'yes' if r['correct'] else 'no'} |" for r in g['rows']]
     if result['models']:
         md += ['', f"## Local models through the LangGraph agent ({len(QUESTIONS)} questions, {result['out_of_scope_questions']} out of scope)", '',
                '| Model | Answer accuracy | Cites sources | Refuses out-of-scope | Median time | Tokens/s |', '|---|---|---|---|---|---|']
@@ -123,6 +153,9 @@ def main() -> None:
     retrieval = eval_retrieval(r)
     for x in retrieval:
         print(f"[eval] retrieval {x['chunks']:<10} {x['search']:<7} hit@1 {x['hit@1']:.0%}  hit@3 {x['hit@3']:.0%}  MRR {x['mrr']:.3f}")
+    graph = eval_graph()
+    if graph:
+        print(f"[eval] graph RAG facts correct for {graph['fact_accuracy']:.0%} of {graph['questions']} rule questions")
     ollama = Ollama()
     can = lambda m: ollama.has(SMALL_MODEL) and ollama.has(LARGE_MODEL) if m == 'auto' else ollama.has(m)  # noqa: E731
     available = [] if a.retrieval_only else [m for m in a.models if can(m)]
@@ -134,7 +167,7 @@ def main() -> None:
                         'contexts': json.loads(r.meta['contexts'])},
               'answerable_questions': sum(1 for q in QUESTIONS if q['gold']),
               'out_of_scope_questions': sum(1 for q in QUESTIONS if not q['gold']),
-              'retrieval': retrieval, 'models': models, 'skipped_models': skipped}
+              'retrieval': retrieval, 'graph': graph, 'models': models, 'skipped_models': skipped}
     write_report(result)
     for x in models:
         print(f"[eval] {x['model']:<18} answers {x['answer_accuracy']:.0%}  cites {x['citation_rate']:.0%}  "

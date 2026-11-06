@@ -72,15 +72,23 @@ def live_search(idx: dict, q: str, k: int = 4, pool: int = 20) -> list:
     toks = [tokenize(f"{c['context']}\n\n{c['text']}" if c['context'] else c['text']) for c in idx['chunks']]
     kw = bm25_scores(toks, tokenize(q))
     by_kw = [int(i) for i in np.argsort(-kw, kind='stable') if kw[i] > 0][:pool]
-    scores = rrf([by_vec, by_kw])
+    from graph_rag import Graph
+    g = Graph()
+    by_graph = [cid - 1 for cid in g.chunks(g.entities(q), pool)]
+    g.con.close()
+    scores = rrf([by_vec, by_kw] + ([by_graph] if by_graph else []))
     return [idx['chunks'][i]['id'] for i in sorted(scores, key=lambda i: (-scores[i], i))[:k]]
 
 
 def write_golden() -> None:
     idx = json.loads(LIVE_INDEX.read_text())
     qs = [q['q'] for q in json.loads((LIVE_INDEX.parents[2] / 'rag/eval_questions.json').read_text())]
-    qs += ['donor', 'how do volunteers deliver food', 'xyz qwerty']
-    golden = [{'q': q, 'top': live_search(idx, q), 'vec': [round(float(x), 6) for x in
+    qs += ['donor', 'how do volunteers deliver food', 'xyz qwerty', 'Who can confirm delivery?', 'Can a volunteer cancel a donation?',
+           'Which rules must an organization pass before matching?', 'What does a food bank need to receive frozen meat?',
+           'Is a delivered donation final?', 'What can happen to a scheduled donation?']
+    from graph_rag import Graph
+    g = Graph()
+    golden = [{'q': q, 'top': live_search(idx, q), 'entities': g.entities(q), 'facts': g.facts(g.entities(q)), 'vec': [round(float(x), 6) for x in
                LSA(vocab={w: i for i, w in enumerate(idx['vocab'])}, idf=idx['idf'], components=np.array(idx['components'])).embed([q])[0]]}
               for q in qs]
     (LIVE_INDEX.parent / 'golden.json').write_text(json.dumps({'builtAt': idx['builtAt'], 'cases': golden}, separators=(',', ':')))
@@ -172,7 +180,6 @@ def main() -> None:
                     'context': c.context, 'contextSource': c.context_source,
                     'vec': [round(float(x), 5) for x in v]} for c, v in zip(chunks, live_vecs)],
     }, ensure_ascii=False, separators=(',', ':')))
-    write_golden()
     size = LIVE_INDEX.stat().st_size / 1024
     print(f'[ingest] data/rag.db: {len(chunks)} chunks, {dims}-dim {embedding} vectors in {backend}, FTS5 keyword index')
     print(f'[ingest] lib/rag/index.json for the live site: {size:.0f} KB')
