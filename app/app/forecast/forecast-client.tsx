@@ -33,6 +33,8 @@ export function ForecastClient({ days, categories, defaults, shelfMedian, tempMe
   const [date, setDate] = useState(days[0]);
   const [category, setCategory] = useState('all');
   const [weather, setWeather] = useState('');
+  const [weatherAuto, setWeatherAuto] = useState(true);
+  const [weatherNote, setWeatherNote] = useState<string | null>(null);
   const [promotion, setPromotion] = useState(false);
   const [purchase, setPurchase] = useState<Record<string, string>>({});
   const [shelf, setShelf] = useState<Record<string, string>>({});
@@ -50,6 +52,19 @@ export function ForecastClient({ days, categories, defaults, shelfMedian, tempMe
     if (data) setSeries(data);
   }, [category]);
   useEffect(() => { loadSeries(); }, [loadSeries]);
+
+  // Weather API pull: Open-Meteo forecast for the chosen day, unless the donor picked the weather by hand.
+  useEffect(() => {
+    let live = true;
+    setWeatherNote(null);
+    apiFetch<{ ok: boolean; day: { weather: string; description: string } | null; location: string }>(`/api/weather?date=${date}`, { method: 'GET' })
+      .then(({ data }) => {
+        if (!live || !data?.ok || !data.day) return;
+        if (weatherAuto) setWeather(data.day.weather);
+        setWeatherNote(`Open-Meteo for ${data.location}: ${data.day.weather} (${data.day.description}).`);
+      });
+    return () => { live = false; };
+  }, [date, weatherAuto]);
 
   async function run(e?: React.FormEvent) {
     e?.preventDefault();
@@ -85,7 +100,7 @@ export function ForecastClient({ days, categories, defaults, shelfMedian, tempMe
             </select>
           </Field>
           <Field id="fc-weather" label="Weather forecast">
-            <select id="fc-weather" className={selectClass} value={weather} onChange={(e) => setWeather(e.target.value)}>
+            <select id="fc-weather" className={selectClass} value={weather} onChange={(e) => { setWeather(e.target.value); setWeatherAuto(false); }}>
               <option value="">Not sure (typical)</option>
               {['Sunny', 'Cloudy', 'Rainy', 'Hot'].map((w) => <option key={w}>{w}</option>)}
             </select>
@@ -95,6 +110,12 @@ export function ForecastClient({ days, categories, defaults, shelfMedian, tempMe
             <Switch checked={promotion} onCheckedChange={setPromotion} aria-label="Promotion planned" />
           </label>
         </div>
+        {weatherNote && (
+          <p className="-mt-2 text-xs text-muted-foreground">
+            {weatherAuto ? 'Weather filled automatically from ' : 'Forecast from '}{weatherNote.replace(/^Open-Meteo/, 'Open-Meteo')}
+            {!weatherAuto && <> <button type="button" className="font-medium text-secondary hover:underline" onClick={() => setWeatherAuto(true)}>Use it</button></>}
+          </p>
+        )}
         <fieldset className="space-y-2">
           <legend className="text-sm font-medium">Planned purchase / preparation (units)</legend>
           {cats.map((c) => (
