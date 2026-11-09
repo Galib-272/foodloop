@@ -91,6 +91,12 @@ RULES = [
     ('has_capacity', 'Has capacity today', 'The organization must have remaining receiving capacity today.'),
 ]
 
+# rules a donor follows when publishing (lib/validation.ts asks for allergens; page_guidelines lists examples)
+DONOR_RULES = [
+    ('list_allergens', 'Donors list known allergens',
+     'Before publishing, the donor lists the known allergens in the food, for example nuts, dairy, gluten, eggs and shellfish.'),
+]
+
 ALIASES = {
     'role:donor': ['donor', 'donors', 'restaurant', 'restaurants', 'business', 'businesses'],
     'role:recipient': ['recipient', 'recipients', 'organization', 'organizations', 'ngo', 'ngos', 'charity', 'charities'],
@@ -109,6 +115,7 @@ ALIASES = {
     'action:volunteer_task': ['task', 'tasks', 'claim'],
     'action:verify_organization': ['verify', 'verified', 'verification'],
     'action:expire_donation': ['expire', 'expires', 'expired', 'deadline passes'],
+    'rule:list_allergens': ['allergen', 'allergens', 'allergy', 'allergies'],
     'concept:matching_rules': ['match', 'matched', 'matching', 'eligible', 'eligibility', 'excluded', 'ranked', 'ranking'],
 }
 
@@ -143,6 +150,9 @@ def build() -> dict:
     for key, label, text in RULES:
         add('rule', key, label, description=text)
         edges.append({'type': 'HAS_RULE', 'from': 'concept:matching_rules', 'to': f'rule:{key}'})
+    for key, label, text in DONOR_RULES:
+        add('rule', key, label, description=text)
+        edges.append({'type': 'HAS_RULE', 'from': 'action:publish_donation', 'to': f'rule:{key}'})
     edges.append({'type': 'HAS_RULE', 'from': 'action:request_donation', 'to': 'rule:verified_only'})
     edges.append({'type': 'HAS_RULE', 'from': 'action:request_donation', 'to': 'rule:before_deadline'})
     edges.append({'type': 'HAS_RULE', 'from': 'action:request_donation', 'to': 'rule:has_storage'})

@@ -39,6 +39,7 @@ GRAPH_QUESTIONS = [
     ('When can food be marked as collected?', ['Allowed when the donation is Scheduled']),
     ('What can a volunteer do?', ['Claim and carry out a volunteer task']),
     ('Is a delivered donation final?', ['Delivered is a final status']),
+    ('Which allergens should donors list?', ['nuts, dairy, gluten, eggs and shellfish']),
 ]
 
 
