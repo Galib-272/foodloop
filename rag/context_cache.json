@@ -329,84 +329,6 @@
   "doc": "page_terms",
   "section": "Suspension"
  },
- "de74fb85d4d71d0d": {
-  "context": "This chunk outlines the layers and locations of the app, specifically mentioning the public site, role dashboards, and REST API.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Architecture"
- },
- "fd097ac798a473dc": {
-  "context": "The chunk provides a list of services, databases, machine learning pipelines, and data warehouses that are part of the FoodLoop platform.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Architecture"
- },
- "66e138ecadf89793": {
-  "context": "The AI assistant and automation sections describe additional components of the FoodLoop platform, including the RAG assistant and n8n workflow integration.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Architecture"
- },
- "5f7f3d075701f81e": {
-  "context": "The context for the chunk is the architecture and technology overview of the FoodLoop platform, specifically focusing on the donation workflow and matching process.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Architecture"
- },
- "ca25caf37c0607e4": {
-  "context": "This chunk provides details on the preprocessing steps taken for the food waste dataset used in the machine learning models.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
- },
- "44aa7fca4d00348d": {
-  "context": "This chunk discusses the model tuning process for predicting leftover amounts, focusing on accuracy over multiple time periods and comparing against a baseline rule. It highlights the use of Gradient Boosting with a test MAE of 7.82 units and R² of 0.915, demonstrating strong predictive power.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
- },
- "4998d2efca7c5521": {
-  "context": "This chunk provides insights into the waste risk classification model's performance, explaining why it was chosen over other models despite lower accuracy, and discussing the limitations of using historical data for predicting waste levels.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
- },
- "3d82a64894886e00": {
-  "context": "This chunk discusses the synthetic data used for the matching model, including its source, preprocessing, model selection, and performance metrics.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Machine learning > 2. Finding the right organization (SYNTHETIC data — labelled as such)"
- },
- "7690e1872b0c0f3a": {
-  "context": "This chunk describes the process of training machine learning models, exporting them to JSON, evaluating them in TypeScript, and ensuring reproducibility through parity checks. It emphasizes the importance of using Python at runtime and the use of `npm run test:parity` to validate the TypeScript outputs against scikit-learn's outputs.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Machine learning > Serving and checks"
- },
- "08501059bb480584": {
-  "context": "This chunk introduces the data warehouse component of the FoodLoop platform, which is separate from the app's SQLite database and uses DuckDB for a star schema.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Data warehouse (DuckDB)"
- },
- "d6d9c46c13f11e0a": {
-  "context": "This chunk provides details on the schema and analytics queries for the data warehouse, explaining how it integrates with the matching model and ensures consistency between the warehouse and the app database.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Data warehouse (DuckDB)"
- },
- "db72c0819fcccbe7": {
-  "context": "This chunk provides specific examples of the app's analytics findings, focusing on waste rates and donation completion rates, which are relevant for understanding the app's performance and user experience.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Data warehouse (DuckDB)"
- },
- "7e40878a5699ab5d": {
-  "context": "This chunk provides instructions for setting up the app's database and environment variables for deployment on Vercel and Turso.",
-  "source": "qwen2.5:1.5b",
-  "doc": "platform_readme",
-  "section": "Deploy (Vercel + Turso)"
- },
  "99b46023ddc52541": {
   "context": "The DuckDB data warehouse integrates multiple datasets including Kaggle food waste data, synthetic matching data, and app database into a star schema structure.",
   "source": "qwen2.5:1.5b",
@@ -442,5 +364,89 @@
   "source": "qwen2.5:1.5b",
   "doc": "warehouse_findings",
   "section": "Distance and pickup success (synthetic data)"
+ },
+ "07fb61ec9cae0f5f": {
+  "context": "This chunk provides a concise overview of the different layers and their corresponding locations within the FoodLoop platform, specifically focusing on the public site, app (role dashboards), and REST API.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "3a0929126df0f0d3": {
+  "context": "The chunk provides an overview of the various components of the FoodLoop platform, including the domain services, database schema, machine learning pipeline, and data warehouse.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "9d41f4b4d62d94f8": {
+  "context": "The AI assistant and automation sections describe additional components of the platform, including the RAG (Reinforcement Learning Agent) and N8N workflow integration. These are not directly related to the architecture or technology described in the rest of the document.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "0cef8d78d5464d25": {
+  "context": "The context for the chunk is the architecture and technology overview of the FoodLoop platform, specifically focusing on the donation and matching workflows and the machine learning models used for predicting leftovers and finding the right organization.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Architecture"
+ },
+ "c055be8380542780": {
+  "context": "This chunk provides details on the preprocessing steps taken for the food waste dataset used in the machine learning models.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
+ },
+ "172e16b3e56a8592": {
+  "context": "This chunk discusses the model tuning process for predicting leftover amounts, focusing on accuracy over multiple time periods and comparing against a baseline rule. It highlights the importance of validating models through multiple periods and the use of a historical average rule as a strong alternative.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
+ },
+ "bff1c1896ba9a6fc": {
+  "context": "This chunk provides insights into the waste risk classification model's performance, explaining why it was chosen over other models despite lower accuracy. It highlights the importance of historical patterns in predicting waste levels, emphasizing that the data's lack of daily patterns makes it challenging to improve the model's accuracy.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 1. Predicting leftovers (real Kaggle data)"
+ },
+ "e1310156034b2ad7": {
+  "context": "This chunk discusses the synthetic data used for the matching model, including its source, preprocessing, and performance metrics.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > 2. Finding the right organization (SYNTHETIC data — labelled as such)"
+ },
+ "721fcc6f76f06f57": {
+  "context": "This chunk describes the process of training machine learning models, exporting them to JSON, evaluating them in TypeScript, and ensuring reproducibility through parity checks. It emphasizes the importance of using Python at runtime and the use of `npm run test:parity` to validate the TypeScript outputs against scikit-learn's golden files.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Machine learning > Serving and checks"
+ },
+ "0b5502ec038a160b": {
+  "context": "This chunk describes the data warehouse built with DuckDB as a star schema, separate from the app's SQLite database.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Data warehouse (DuckDB)"
+ },
+ "5422e569b2591838": {
+  "context": "This chunk provides details on the schema and analytics queries for the data warehouse, which is separate from the app's SQLite database. It explains that the shared dimensions are sourced from all available sources and that the synthetic data used for the matching model is cleaned in the same way, ensuring consistency between the warehouse and the model. The app reads from a temporary copy of the",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Data warehouse (DuckDB)"
+ },
+ "8a052df789b755f4": {
+  "context": "This chunk provides specific examples of the waste rate, food category breakdown, and delivery success rates from the synthetic data used in the matching model, highlighting the model's performance in real-world scenarios.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Data warehouse (DuckDB)"
+ },
+ "cc9ad3eb7ff735bd": {
+  "context": "The chunk provides details on how the live website (production, on Vercel) uses **Turso** as its database, while locally the app uses a SQLite file in `data/`. Online, it uses **Turso** (hosted SQLite) whenever the environment variables `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` are set.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Deploy (Vercel + Turso)"
+ },
+ "de982ba28d96e161": {
+  "context": "This chunk provides information on the initial setup and maintenance of the live website, explaining that the first build creates the necessary tables and demo data in Turso, while subsequent builds keep the existing data.",
+  "source": "qwen2.5:1.5b",
+  "doc": "platform_readme",
+  "section": "Deploy (Vercel + Turso)"
  }
 }
