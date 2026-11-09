@@ -17,6 +17,7 @@
     "rag:ask": "node scripts/py.mjs rag/agent.py",
     "rag:eval": "node scripts/py.mjs rag/eval.py",
     "rag:all": "npm run rag:ingest && npm run rag:eval && npm run docs:metrics",
+    "rag:publish": "sh scripts/rag-publish.sh",
     "test:rag": "npx -y tsx scripts/rag-parity.ts",
     "n8n": "node automation/n8n/start.mjs",
     "lakehouse": "node scripts/py.mjs ml/lakehouse/build_lakehouse.py",
