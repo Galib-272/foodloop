@@ -26,6 +26,8 @@ Thursday has the highest waste rate (5.64%) and Wednesday the lowest (4.2%).
 
 ## Which organizations complete donations (synthetic data)
 
+The Food Bank is the type of organization that completes donation offers most often: 69.9% of its offers end in delivery. The Community Kitchen receives the most food in total (35,314 units delivered), but completes a smaller share of its offers (41.5%).
+
 - Food Bank: 69.9% of offers end in delivery, 20703 units delivered
 - Community Kitchen: 41.5% of offers end in delivery, 35314 units delivered
 - NGO: 40.0% of offers end in delivery, 27455 units delivered

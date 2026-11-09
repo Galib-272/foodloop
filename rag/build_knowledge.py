@@ -153,6 +153,12 @@ def warehouse() -> str:
     md += ['', '## Waste by day of the week', '',
            f'{worst["weekday_name"]} has the highest waste rate ({worst["waste_rate_pct"]}%) and {best["weekday_name"]} the lowest ({best["waste_rate_pct"]}%).', '',
            '## Which organizations complete donations (synthetic data)', '']
+    top_rate = max(org, key=lambda r: float(r['success_rate_pct']))
+    top_units = max(org, key=lambda r: float(r['units_delivered']))
+    md += [f'The {top_rate["org_type"]} is the type of organization that completes donation offers most often: '
+           f'{top_rate["success_rate_pct"]}% of its offers end in delivery.' +
+           (f' The {top_units["org_type"]} receives the most food in total ({int(float(top_units["units_delivered"])):,} units delivered), '
+            f'but completes a smaller share of its offers ({top_units["success_rate_pct"]}%).' if top_units is not top_rate else ''), '']
     md += [f'- {r["org_type"]}: {r["success_rate_pct"]}% of offers end in delivery, {int(float(r["units_delivered"]))} units delivered' for r in org]
     md += ['', '## Distance and pickup success (synthetic data)', '']
     md += [f'- {r["distance_band"]}: {r["success_rate_pct"]}% success, average travel {r["avg_travel_min"]} minutes' for r in dist]
