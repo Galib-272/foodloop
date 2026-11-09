@@ -233,6 +233,14 @@ Please give a short succinct context to situate this chunk within the overall do
 
 # ---------- Ollama ----------
 
+REASONING_NUM_PREDICT = 1536
+REASONING_MODELS = ('deepseek-r1', 'qwq', 'qwen3', 'magistral', 'phi4-reasoning')
+
+
+def is_reasoning_model(model: str) -> bool:
+    return any(model.startswith(p) for p in REASONING_MODELS)
+
+
 class Ollama:
     def __init__(self, url: str = OLLAMA_URL, timeout: float = 300):
         self.url, self.timeout = url, timeout
@@ -261,13 +269,15 @@ class Ollama:
 
     def chat(self, model: str, messages: List[dict], temperature: float = 0.0, num_predict: int = 400) -> dict:
         t0 = time.time()
+        if is_reasoning_model(model):   # reasoning models think first: give them room so the answer is not cut off
+            num_predict = max(num_predict, REASONING_NUM_PREDICT)
         r = self._post('/api/chat', {'model': model, 'messages': messages, 'stream': False,
                                      'options': {'temperature': temperature, 'num_predict': num_predict, 'seed': 7}})
-        text = r['message']['content']
-        thinking = ''
-        m = re.search(r'<think>(.*?)</think>', text, re.S)   # DeepSeek-R1 reasons inside <think> tags
+        text = r['message'].get('content') or ''
+        thinking = (r['message'].get('thinking') or '').strip()   # newer Ollama returns reasoning in its own field
+        m = re.search(r'<think>(.*?)(?:</think>|$)', text, re.S)   # older Ollama: DeepSeek-R1 reasons inside <think> tags
         if m:
-            thinking, text = m.group(1).strip(), (text[:m.start()] + text[m.end():]).strip()
+            thinking, text = (thinking + ' ' + m.group(1)).strip(), (text[:m.start()] + text[m.end():]).strip()
         return {'text': text.strip(), 'thinking': thinking, 'seconds': round(time.time() - t0, 2),
                 'eval_tokens': r.get('eval_count'), 'tokens_per_second':
                     round(r['eval_count'] / (r['eval_duration'] / 1e9), 1) if r.get('eval_count') and r.get('eval_duration') else None}
