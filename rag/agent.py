@@ -35,6 +35,8 @@ Answer the question using ONLY the numbered sources. Keep the answer to 1-3 shor
 Cite the sources you used like [1] or [2], and cite the knowledge-graph facts as [G]. If the sources do not contain the answer, say "I don't know based on the FoodLoop documents." Do not invent facts."""
 
 GRAPH_FIRST = {'action', 'status', 'concept'}
+# lead with a graph fact only for rule questions (who can / when / what happens / which status), not e.g. 'how cold ... until pickup'
+RULE_QUESTION = re.compile(r'^\s*(can|could|who|when|is|are|may|does|do|will)\b|\b(allowed|permitted|status|statuses|happens?|rules?|final|roles?)\b', re.I)
 
 REFUSAL = "I couldn't find this in the FoodLoop knowledge base, so I won't guess. Try asking about donations, food safety, roles, the AI models or the platform's data."
 
@@ -76,7 +78,7 @@ def extractive_answer(question: str, hits: List[Dict[str, Any]], facts: Optional
     best.sort(key=lambda x: -x[0])
     picked = [b for b in best[:2] if b[0] > 0] or best[:1]
     text = ' '.join(f'{s} [{n}]' for _, n, s in picked)
-    if facts and entities and entities[0].split(':')[0] in GRAPH_FIRST:   # rules about actions/statuses: lead with the graph fact
+    if facts and entities and entities[0].split(':')[0] in GRAPH_FIRST and RULE_QUESTION.search(question):   # rules about actions/statuses: lead with the graph fact
         strong = [p for p in picked[:1] if p[0] >= 2]
         text = f'{facts[0]} [G]' + ''.join(f' {s} [{n}]' for _, n, s in strong)
         picked = strong

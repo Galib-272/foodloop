@@ -102,7 +102,7 @@ ALIASES = {
     'action:accept_request': ['accept a request', 'accepts a request', 'accepted request', 'accept the request', 'accepts the request'],
     'action:reject_request': ['reject a request', 'decline a request', 'rejects a request'],
     'action:schedule_collection': ['schedule', 'pickup time', 'collection time'],
-    'action:mark_collected': ['collected', 'pick up', 'picked up', 'pickup'],
+    'action:mark_collected': ['collected', 'mark collected', 'picked up'],  # not 'pickup': too common in other questions
     'action:confirm_delivery': ['confirm delivery', 'confirm receipt', 'confirms delivery', 'delivery confirmed'],
     'action:report_failure': ['fail', 'fails', 'failed', 'failure', 'goes wrong', 'went wrong'],
     'action:cancel_donation': ['cancel', 'cancelled', 'canceled', 'withdraw'],

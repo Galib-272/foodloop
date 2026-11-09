@@ -129,14 +129,19 @@ function extractive(question: string, hits: Hit[], facts: string[] = [], ents: s
   const picked = best.slice(0, 2).filter((b) => b[0] > 0);
   let use = picked.length ? picked : best.slice(0, 1);
   let text = use.map(([, n, s]) => `${s} [${n}]`).join(' ');
-  if (facts.length && ents.length && GRAPH_FIRST.has(ents[0].split(':')[0])) {
+  if (facts.length && ents.length && GRAPH_FIRST.has(ents[0].split(':')[0]) && RULE_QUESTION.test(question)) {
     use = use.slice(0, 1).filter((u) => u[0] >= 2);
     text = `${facts[0]} [G]` + use.map(([, n, s]) => ` ${s} [${n}]`).join('');
   }
   return { text, citations: Array.from(new Set(use.map(([, n]) => n))).sort((a, b) => a - b) };
 }
 
+// reasoning models think before answering, so they get a bigger token budget (mirrors rag/common.py)
+const isReasoningModel = (m: string) => ['deepseek-r1', 'qwq', 'qwen3', 'magistral', 'phi4-reasoning'].some((p) => m.startsWith(p));
+
 const GRAPH_FIRST = new Set(['action', 'status', 'concept']);
+// lead with a graph fact only for rule questions (who can / when / what happens / which status); mirrors rag/agent.py
+const RULE_QUESTION = /^\s*(can|could|who|when|is|are|may|does|do|will)\b|\b(allowed|permitted|status|statuses|happens?|rules?|final|roles?)\b/i;
 
 const SYSTEM = `You are Ask FoodLoop, the help assistant of FoodLoop, a food rescue platform in Bangladesh.
 Answer the question using ONLY the numbered sources. Keep the answer to 1-3 short sentences.
@@ -193,14 +198,14 @@ async function ollamaAnswer(question: string, hits: Hit[], coverage: number, tra
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model, stream: false, options: { temperature: 0, num_predict: 400, seed: 7 },
+        model, stream: false, options: { temperature: 0, num_predict: isReasoningModel(model) ? 1536 : 400, seed: 7 },
         messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: `Sources:\n${sources}\n\nQuestion: ${question}` }],
       }),
       signal: AbortSignal.timeout(90_000),
     });
     if (!r.ok) return null;
     const j = (await r.json()) as { message?: { content?: string } };
-    const text = (j.message?.content ?? '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+    const text = (j.message?.content ?? '').replace(/<think>[\s\S]*?(<\/think>|$)/g, '').trim();
     if (!text) return null;
     const nums = (text.match(/\[(\d+)\]/g) ?? []).map((m) => Number(m.slice(1, -1))).filter((n) => n > 0 && n <= hits.length);
     const citations = Array.from(new Set(nums)).sort((a, b) => a - b);
