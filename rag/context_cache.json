@@ -329,42 +329,6 @@
   "doc": "page_terms",
   "section": "Suspension"
  },
- "99b46023ddc52541": {
-  "context": "The DuckDB data warehouse integrates multiple datasets including Kaggle food waste data, synthetic matching data, and app database into a star schema structure.",
-  "source": "qwen2.5:1.5b",
-  "doc": "warehouse_findings",
-  "section": "Introduction"
- },
- "3f46729ced02e432": {
-  "context": "The chunk provides specific waste rates and quantities for different food categories in the Kaggle data, highlighting Prepared Food as the most wasteful category with a 7.61% waste rate.",
-  "source": "qwen2.5:1.5b",
-  "doc": "warehouse_findings",
-  "section": "Food waste by category"
- },
- "76be8c8d967ea331": {
-  "context": "The chunk provides specific details about the causes of food waste, emphasizing the significant role of overproduction and expiration in waste generation.",
-  "source": "qwen2.5:1.5b",
-  "doc": "warehouse_findings",
-  "section": "Why food is wasted"
- },
- "749dbf1a6af1a998": {
-  "context": "The document discusses various aspects of food waste, including waste rates by category, reasons for waste, and donation completion rates.",
-  "source": "qwen2.5:1.5b",
-  "doc": "warehouse_findings",
-  "section": "Waste by day of the week"
- },
- "a0f305eddb5049ec": {
-  "context": "The chunk provides specific data on successful donations made by various organizations, including Food Bank, Community Kitchen, NGO, Orphanage, and Shelter, highlighting their delivery success rates and the corresponding number of units delivered.",
-  "source": "qwen2.5:1.5b",
-  "doc": "warehouse_findings",
-  "section": "Which organizations complete donations (synthetic data)"
- },
- "618ea578090d2f0e": {
-  "context": "The chunk discusses the success rates and average travel times for different pickup distances in the synthetic matching data, highlighting that shorter distances increase the likelihood of successful pickups, emphasizing the importance of distance as a key input in the matching model.",
-  "source": "qwen2.5:1.5b",
-  "doc": "warehouse_findings",
-  "section": "Distance and pickup success (synthetic data)"
- },
  "07fb61ec9cae0f5f": {
   "context": "This chunk provides a concise overview of the different layers and their corresponding locations within the FoodLoop platform, specifically focusing on the public site, app (role dashboards), and REST API.",
   "source": "qwen2.5:1.5b",
@@ -448,5 +412,41 @@
   "source": "qwen2.5:1.5b",
   "doc": "platform_readme",
   "section": "Deploy (Vercel + Turso)"
+ },
+ "e2430b51c3ebc5d6": {
+  "context": "The DuckDB data warehouse integrates the Kaggle food waste dataset, synthetic matching data, and app database into a star schema, including fact tables (inventory waste, donation matches, app donations) and dimension tables (date, food category, business type, weather, waste reason, area, organization).",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Introduction"
+ },
+ "e4b95a41ccf9e1a7": {
+  "context": "The chunk provides specific waste rates and quantities for different food categories in the Kaggle data, highlighting Prepared Food as the most wasted category at 7.61%.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Food waste by category"
+ },
+ "971af9a741a33fb3": {
+  "context": "The chunk provides specific details about the causes of food waste, emphasizing the significant role of overproduction and expiration in waste generation.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Why food is wasted"
+ },
+ "070fb49710225542": {
+  "context": "The document discusses various aspects of food waste, including waste rates by category, reasons for waste, and donation patterns. It mentions that Thursday has the highest waste rate (5.64%) and Wednesday the lowest (4.2%), which is noted in the context provided.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Waste by day of the week"
+ },
+ "eb05b486c5cff45c": {
+  "context": "The chunk provides specific details about the success rates of different organizations in completing donation offers, focusing on the Food Bank and Community Kitchen.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Which organizations complete donations (synthetic data)"
+ },
+ "495fac5f44717079": {
+  "context": "The chunk discusses the success rates and average travel times for different pickup distances in the synthetic matching data, highlighting that shorter distances increase the likelihood of successful pickups, emphasizing the importance of distance as a key input in the matching model.",
+  "source": "qwen2.5:1.5b",
+  "doc": "warehouse_findings",
+  "section": "Distance and pickup success (synthetic data)"
  }
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T11:46:58.921Z",
+  "generated_at": "2026-11-09T12:07:42.398Z",
   "waste": {
     "leftover_model": "Gradient Boosting",
     "waste_model": "Random Forest",
@@ -37,9 +37,9 @@
       {
         "chunks": "naive",
         "search": "vector",
-        "hit1": 0.812,
+        "hit1": 0.875,
         "hit3": 1,
-        "mrr": 0.906
+        "mrr": 0.938
       },
       {
         "chunks": "naive",
@@ -58,83 +58,83 @@
       {
         "chunks": "contextual",
         "search": "vector",
-        "hit1": 0.688,
+        "hit1": 0.625,
         "hit3": 0.875,
-        "mrr": 0.809
+        "mrr": 0.778
       },
       {
         "chunks": "contextual",
         "search": "keyword",
-        "hit1": 0.625,
+        "hit1": 0.688,
         "hit3": 1,
-        "mrr": 0.792
+        "mrr": 0.833
       },
       {
         "chunks": "contextual",
         "search": "hybrid",
-        "hit1": 0.75,
+        "hit1": 0.688,
         "hit3": 1,
-        "mrr": 0.865
+        "mrr": 0.833
       },
       {
         "chunks": "contextual",
         "search": "graph",
-        "hit1": 0.812,
-        "hit3": 0.938,
-        "mrr": 0.872
+        "hit1": 0.75,
+        "hit3": 1,
+        "mrr": 0.865
       }
     ],
     "graph_fact_accuracy": 1,
-    "graph_questions": 8,
+    "graph_questions": 9,
     "models": [
       {
         "model": "qwen2.5:1.5b",
-        "answer_accuracy": 0.875,
-        "citation_rate": 0.625,
+        "answer_accuracy": 0.938,
+        "citation_rate": 0.562,
         "refusal_accuracy": 1,
-        "median_seconds": 0.875
+        "median_seconds": 0.825
       },
       {
         "model": "llama3.2:1b",
-        "answer_accuracy": 0.688,
-        "citation_rate": 0.562,
+        "answer_accuracy": 0.75,
+        "citation_rate": 0.688,
         "refusal_accuracy": 1,
         "median_seconds": 0.815
       },
       {
         "model": "deepseek-r1:1.5b",
         "answer_accuracy": 0.75,
-        "citation_rate": 0.25,
+        "citation_rate": 0.375,
         "refusal_accuracy": 1,
-        "median_seconds": 10.280000000000001
+        "median_seconds": 10.73
       },
       {
         "model": "mistral:7b",
-        "answer_accuracy": 0.875,
+        "answer_accuracy": 1,
         "citation_rate": 0.75,
         "refusal_accuracy": 1,
-        "median_seconds": 4.245
+        "median_seconds": 4.29
       },
       {
         "model": "auto (routing qwen2.5:1.5b / mistral:7b)",
-        "answer_accuracy": 0.875,
-        "citation_rate": 0.5,
+        "answer_accuracy": 1,
+        "citation_rate": 0.438,
         "refusal_accuracy": 1,
-        "median_seconds": 1.895
+        "median_seconds": 1.8849999999999998
       }
     ]
   },
   "graph": {
-    "entities": 59,
-    "relationships": 110,
-    "mentions": 147
+    "entities": 60,
+    "relationships": 111,
+    "mentions": 150
   },
   "index_chunking": {
-    "semantic_threshold": 0.6922,
+    "semantic_threshold": 0.692,
     "chunking": "semantic",
     "chunks": 75,
     "duplicates_removed": 0,
-    "avg_chars": 267
+    "avg_chars": 271
   },
   "warehouse": {
     "rows": {
