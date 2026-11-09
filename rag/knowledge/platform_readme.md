@@ -62,7 +62,7 @@ An analytics warehouse, separate from the app's transactional SQLite database, b
 
 ## Deploy (Vercel + Turso)
 
-Locally the app uses a SQLite file in `data/`. Online it uses **Turso** (hosted SQLite) whenever these two environment variables are set: `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN`.
+The live website (production, on Vercel) uses **Turso** as its database. Locally the app uses a SQLite file in `data/`. Online it uses **Turso** (hosted SQLite) whenever these two environment variables are set: `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN`.
 
 1. **Turso:** create a database at turso.tech, then copy its URL (`libsql://…`) and create a database token.
 2. **Vercel:** in the project folder run `npx vercel` (sign in when asked), then add the two variables with `npx vercel env add TURSO_DATABASE_URL` and `npx vercel env add TURSO_AUTH_TOKEN` (choose Production, Preview and Development), then run `npx vercel --prod`.
