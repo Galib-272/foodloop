@@ -120,18 +120,5 @@ export const TASK_STATUS_LABEL: Record<TaskStatus, string> = {
   failed: 'Failed',
 };
 
-// Same structure as the Kaggle dataset (one row per day per food category).
-export const CSV_TEMPLATE_COLUMNS = [
-  'date',
-  'food_category',
-  'purchase_quantity',
-  'units_sold',
-  'waste_quantity',
-  'shelf_life_days',
-  'storage_temperature',
-  'promotion',
-  'weather',
-] as const;
-
 export const CSV_MAX_BYTES = 2 * 1024 * 1024; // 2 MB, admin-configurable via settings
 export const CSV_MAX_ROWS = 20000;

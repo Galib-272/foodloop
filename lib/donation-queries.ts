@@ -60,4 +60,3 @@ export function donationCollection(id: number) {
     .get(id) ?? null;
 }
 
-export const displayId = (id: number) => `D-${String(id).padStart(4, '0')}`;

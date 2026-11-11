@@ -233,8 +233,3 @@ export function DonationForm({ initial, editId, forecastNote }: { initial: Donat
     </form>
   );
 }
-
-export const defaultTimes = () => ({
-  available_from: toLocalInput(new Date()),
-  safe_until: toLocalInput(new Date(Date.now() + 6 * 3600_000)),
-});

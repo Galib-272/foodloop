@@ -95,4 +95,3 @@ export function graphChunks(ids: string[], k = 20): number[] {
   return Array.from(count).sort((a, b) => b[1] - a[1] || a[0] - b[0]).slice(0, k).map(([cid]) => cid);
 }
 
-export const GRAPH_INFO = { entities: graph.nodes.length, relationships: graph.edges.length, mentions: graph.mentions.length };

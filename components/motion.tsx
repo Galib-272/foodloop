@@ -75,15 +75,6 @@ export function StaggerItem({ children, className }: { children: React.ReactNode
   return <motion.li variants={fadeUp} className={className}>{children}</motion.li>;
 }
 
-/** Gentle lift on hover for interactive cards. */
-export function HoverLift({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <motion.div className={className} whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 300, damping: 22 }}>
-      {children}
-    </motion.div>
-  );
-}
-
 /** Counts up from 0 to `value` when it first becomes visible. */
 export function CountUp({ value, decimals = 0, suffix = '', className }: { value: number; decimals?: number; suffix?: string; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
