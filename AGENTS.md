@@ -16,6 +16,7 @@ This file tells any AI agent (Claude, Codex, Cursor…) how to work in this repo
 | `npm run test:parity` | TypeScript ML inference equals scikit-learn |
 | `npm run test:rag` | TypeScript assistant search equals the Python reference |
 | `npm run test:mcp` | the three MCP servers answer like the web app |
+| `npm run test:ocr` | photo OCR (Tesseract) + AI extraction fill a donation correctly |
 | `npm run build` | production build works |
 
 ## Project map
