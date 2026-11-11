@@ -74,7 +74,8 @@ function parseTime(s: string): [number, number] | null {
 export function ruleExtract(raw: string, now = new Date()): Extracted {
   const text = raw.replace(/\s+/g, ' ').trim();
   const out: Extracted = {};
-  const qty = text.match(/(\d+(?:\.\d+)?)\s*([a-zA-Z]+)?/);
+  // first number that is not a clock time ("8pm", "20:30") — a note may start with the ready time
+  const qty = text.match(/(\d+(?:\.\d+)?)(?!\d)(?!\s*(?:[:.]\d|am\b|pm\b|a\.m|p\.m))\s*([a-zA-Z]+)?/i);
   if (qty) {
     out.quantity_available = Number(qty[1]);
     const word = qty[2] ?? '';
@@ -105,14 +106,21 @@ export function ruleExtract(raw: string, now = new Date()): Extracted {
   const pack = text.match(/\b(boxes|box|containers?|foil (?:trays?|containers?)|trays?|bags?|packets?|bottles?|cartons?)\b/i);
   if (pack) out.packaging = pack[1][0].toUpperCase() + pack[1].slice(1).toLowerCase();
 
-  // item name: the food phrase after the quantity ("20 boxes of chicken biryani, ..." -> "Chicken biryani")
+  // item name: the food phrase after the quantity ("20 boxes of chicken biryani, ..." -> "Chicken biryani").
+  // Multi-line notes (typed or read from a photo) often start with a heading, so start at the quantity when there is one.
+  const fromQty = qty && qty.index! > 0 ? itemName(text.slice(qty.index)) : '';
+  const name = fromQty.length >= 2 ? fromQty : itemName(text);
+  if (name.length >= 2) out.item_name = name[0].toUpperCase() + name.slice(1, 120);
+  out.description = raw.trim().slice(0, 300);
+  return out;
+}
+
+function itemName(text: string): string {
   let name = text.replace(/^(we have|we've got|there (is|are)|i have|we can give|we can donate)\s+/i, '')
     .split(/[,;]|\.\s| ready | available | good until | until | before | pick ?up | contains? | has | in the (?:fridge|freezer)| for \d+ (?:people|persons)/i)[0];
   name = name.replace(/^\s*\d+(?:\.\d+)?\s*[a-zA-Z]*\s*(of\s+)?/, '').trim();
   if (UNIT_WORDS.some(([, re]) => re.test(name.split(' ')[0] ?? ''))) name = name.split(' ').slice(1).join(' ').replace(/^of\s+/i, '');
-  if (name.length >= 2) out.item_name = name[0].toUpperCase() + name.slice(1, 120);
-  out.description = raw.trim().slice(0, 300);
-  return out;
+  return name.replace(/\s+\d+(?:\.\d+)?\s*[a-zA-Z]*\s*$/, '').trim(); // "Chicken biryani 20 boxes" -> "Chicken biryani"
 }
 
 // ---------- LLM with structured output ----------
