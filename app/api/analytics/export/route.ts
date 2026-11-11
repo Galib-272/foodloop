@@ -23,7 +23,7 @@ export async function GET() {
       rows.map((r) => [`D-${String(r.id).padStart(4, '0')}`, r.item_name, r.food_category, r.unit, r.quantity_available, r.quantity_delivered, r.actual_delivery_time, r.donor, r.recipient])
     );
     return new Response(csv, {
-      headers: { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="foodsphere_impact_report.csv"` },
+      headers: { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="foodloop_impact_report.csv"` },
     });
   } catch (e) {
     return errorResponse(e);
