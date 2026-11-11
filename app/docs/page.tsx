@@ -117,7 +117,7 @@ export default function DocsPage() {
               <ol className="grid gap-3 md:grid-cols-3">
                 {[
                   ['1. Forecast', 'Each morning a donor sees how much of each food is likely to be left over and the waste risk, with the weather filled in automatically.'],
-                  ['2. Publish', 'Surplus is listed in a few clicks, or from one sentence with AI quick fill. The donor confirms a verified safe-use deadline.'],
+                  ['2. Publish', 'Surplus is listed in a few clicks, from one sentence, or from a photo of a note or label with AI quick fill. The donor confirms a verified safe-use deadline.'],
                   ['3. Safety rules', 'Organizations that are not verified, do not accept the food, lack the storage, cannot receive before the deadline or are full are excluded.'],
                   ['4. AI matching', 'The remaining organizations are ranked by a model that estimates the chance of a successful delivery, with a reason for each.'],
                   ['5. Collect & deliver', 'The donor accepts a request, a pickup is scheduled, a volunteer can collect, and the organization confirms what arrived.'],
@@ -137,7 +137,7 @@ export default function DocsPage() {
                 <Down />
                 <div className="grid gap-2 md:grid-cols-3">
                   <Box tone="accent" title="Next.js web app (Vercel)" items={['Role-based dashboards and donation workflow', 'REST API: session auth, Zod validation, rate limits', 'Audit log of every action']} />
-                  <Box tone="accent" title="AI inside the app (TypeScript)" items={['Leftover + waste-risk models (scikit-learn → JSON)', 'Matching model after safety rules', 'Ask FoodLoop: hybrid + graph search', 'AI quick fill, Open-Meteo weather']} />
+                  <Box tone="accent" title="AI inside the app (TypeScript)" items={['Leftover + waste-risk models (scikit-learn → JSON)', 'Matching model after safety rules', 'Ask FoodLoop: hybrid + graph search', 'AI quick fill (text or photo OCR), Open-Meteo weather']} />
                   <Box tone="accent" title="Database" items={['SQLite locally, Turso (libSQL) in production', 'Foreign keys, unique constraints, indexes', 'Forecasts stored with model version and inputs']} />
                 </div>
                 <Down />
@@ -193,7 +193,7 @@ export default function DocsPage() {
             <Section id="data" icon={Database} title="Data pipeline">
               <Table head={['Stage', 'What happens']} rows={[
                 ['Sources', 'Kaggle Food Waste dataset (real), synthetic donation-matching dataset (labelled), donor CSV uploads, the app database, Open-Meteo weather'],
-                ['Acquisition', 'CSV bulk import with row-by-row validation and preview, AI extraction from free text (structured JSON output), API pull for weather'],
+                ['Acquisition', 'CSV bulk import with row-by-row validation and preview, AI extraction from free text (structured JSON output), OCR of donor photos in the browser (Tesseract), API pull for weather'],
                 ['Cleaning', 'Deduplication, text and Yes/No normalisation, mixed date fixes, impossible values set to missing, training-data-only imputation'],
                 ['Lakehouse', 'Delta Lake medallion layers: bronze (raw) → silver (clean, typed, MERGE upserts) → gold (aggregates), versioned with schema checks'],
                 ['Warehouse', `DuckDB star schema: ${Object.keys(metrics.warehouse?.rows ?? {}).length} tables (facts for inventory waste, donation matches, app donations; 7 dimensions)`],
@@ -261,7 +261,7 @@ export default function DocsPage() {
             <Section id="try" icon={BarChart3} title="Try it">
               <p>
                 Sign in to the live demo with the donor, recipient, volunteer or admin test accounts listed in our submission. Good places to start: the AI Surplus
-                Forecast, Create Donation (try Quick fill with AI), a donation&apos;s AI matches, Ask FoodLoop, and the admin AI Model Monitoring page.
+                Forecast, Create Donation (try Quick fill with AI, or Read a photo), a donation&apos;s AI matches, Ask FoodLoop, and the admin AI Model Monitoring page.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button asChild><Link href="/login">Open the live demo <ArrowRight className="h-4 w-4" aria-hidden /></Link></Button>
