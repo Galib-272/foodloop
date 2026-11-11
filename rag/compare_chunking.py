@@ -1,7 +1,7 @@
 """
 Compare fixed-size chunking with semantic (variable) chunking on the same test questions.
 Builds two temporary indexes and writes rag/reports/chunking_comparison.md.
-Run: node scripts/py.mjs rag/compare_chunking.py
+Run: npm run rag:compare
 """
 from __future__ import annotations
 

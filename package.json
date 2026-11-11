@@ -16,6 +16,7 @@
     "rag:ingest": "node scripts/py.mjs rag/build_knowledge.py && node scripts/py.mjs rag/ingest.py && node scripts/py.mjs rag/build_graph.py",
     "rag:ask": "node scripts/py.mjs rag/agent.py",
     "rag:eval": "node scripts/py.mjs rag/eval.py",
+    "rag:compare": "node scripts/py.mjs rag/compare_chunking.py",
     "rag:all": "npm run rag:ingest && npm run rag:eval && npm run docs:metrics",
     "rag:publish": "sh scripts/rag-publish.sh",
     "test:rag": "npx -y tsx scripts/rag-parity.ts",
